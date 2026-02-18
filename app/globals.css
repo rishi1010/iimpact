@@ -10,6 +10,12 @@
   --color-impact-orange: #f26828;
 }
 
+@layer components {
+  .bento-card {
+    @apply bg-linear-to-br from-[#F7F1E7] to-[#F3D7A7] border-4 border-impact-blue rounded-2xl;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
