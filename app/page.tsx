@@ -5,7 +5,7 @@ import LogoPage from "./hero_sections/logoPage";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
       <Navbar />
       <Hero />
       <LogoPage />

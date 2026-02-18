@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import { Globe } from "@/components/ui/globe";
+import LessonCards from "../components/lesson-cards";
 
 const Bento = () => {
   return (
@@ -14,7 +16,7 @@ const Bento = () => {
         </div>
         {/* Bento */}
 
-        <div className="grid bg-linear-to-br from-[#F3EADB]  rounded-2xl to-[#F3D7A7] p-2 grid-flow-col grid-rows-8 grid-cols-6 gap-6 text-white w-4xl h-3xl">
+        <div className="grid bg-linear-to-br from-[#F3EADB] shadow-xl  rounded-2xl to-[#F3D7A7] p-2 grid-flow-col grid-rows-8 grid-cols-6 gap-6 text-white w-4xl h-3xl">
           {/* 3-phase */}
           <div className="row-span-8 col-span-2 bento-card "></div>
           {/* graph */}
@@ -52,11 +54,37 @@ const Bento = () => {
             </div>
           </div>
           {/* resources */}
-          <div className="row-span-4 col-span-2 bento-card"></div>
+          <div className=" relative row-span-4 col-span-2 overflow-hidden bento-card p-4 flex flex-col justify-between">
+            <LessonCards />
+            <div className=""></div>
+            <div className="flex flex-col justify-end gap-2 mt-1">
+              <h2 className="font-poppins font-bold text-lg leading-tight">
+                <span className="text-impact-orange">Premium</span>{" "}
+                <span className="text-impact-blue">Resources</span>
+              </h2>
+              <p className="text-impact-blue/70 w-full text-left font-sans tracking-tighter text-sm">
+                High-quality formula books, revision materials, and structured
+                study resources.
+              </p>
+            </div>
+          </div>
           {/* strategy */}
           <div className="row-span-4 col-span-2 bento-card"></div>
           {/* from anywhere */}
-          <div className="row-span-4 col-span-2 bento-card"></div>
+          <div className="row-span-4 col-span-2 overflow-hidden relative bento-card p-4 flex flex-col">
+            <Globe className="top-28" />
+            <div className="flex flex-col gap-2 mt-1">
+              <h2 className="font-poppins font-bold text-lg leading-tight">
+                <span className="text-impact-orange">Watch</span>{" "}
+                <span className="text-impact-blue">From Anywhere</span>
+              </h2>
+              <p className="text-impact-blue/70 w-full text-left font-sans tracking-tighter text-sm">
+                Complete video coverage of every concept, formula, and strategy.
+                Missed a live class? Our entire curriculum is available
+                on-demand, anytime.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

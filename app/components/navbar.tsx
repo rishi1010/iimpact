@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[90%] backdrop-blur-md bg-white/10 rounded-2xl border border-white/20">
       {/* Main row */}
-      <div className="flex items-center justify-between px-10 py-4">
+      <div className="flex items-center justify-between px-4 md:px-10 py-4">
         <Link href="/">
           <Image
             src="/iimpact_logo.png"
@@ -34,7 +34,7 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-[#222958] font-bold hover:underline decoration-[#F26828]"
+              className="text-impact-blue font-bold hover:underline decoration-impact-orange"
             >
               {link.label}
             </a>
@@ -43,7 +43,7 @@ const Navbar = () => {
 
         {/* Hamburger button */}
         <button
-          className="md:hidden text-[#222958]"
+          className="md:hidden text-impact-blue"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -59,7 +59,7 @@ const Navbar = () => {
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-[#222958] font-bold hover:underline decoration-[#F26828]"
+              className="text-impact-blue font-bold hover:underline decoration-[#F26828]"
             >
               {link.label}
             </a>
