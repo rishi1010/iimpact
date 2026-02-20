@@ -6,7 +6,7 @@ import ThreePhaseCard from "../components/three-phase-card";
 
 const Bento = () => {
   return (
-    <div className="relative w-screen h-screen pt-11 bg-linear-to-b from-[#addcee] to-[#F5F5F7]">
+    <div className="relative w-screen h-screen pt-11 bg-linear-to-b from-[#addcee] to-[#F6F4F0]">
       <div className="absolute top-96 left-52  text-impact-orange items-end flex flex-col gap-1">
         <div className="text-lg font-homemade">Hover over me</div>
         <svg
@@ -33,7 +33,7 @@ const Bento = () => {
         </div>
         {/* Bento */}
 
-        <div className="grid bg-linear-to-br from-[#F3EADB] shadow-xl  rounded-2xl to-[#F3D7A7] p-2 grid-flow-col grid-rows-8 grid-cols-6 gap-6 text-white w-4xl h-3xl">
+        <div className="grid bg-linear-to-br from-[#F3EADB] shadow-xs rounded-2xl to-[#F3D7A7] p-2 grid-flow-col grid-rows-8 grid-cols-6 gap-6 text-white w-4xl h-3xl">
           {/* 3-phase */}
           <ThreePhaseCard />
           {/* graph */}

@@ -1,6 +1,7 @@
 import Bento from "./hero_sections/bento";
 import Hero from "./hero_sections/hero";
 import LogoPage from "./hero_sections/logoPage";
+import MetricPage from "./hero_sections/metricBento";
 import Teams from "./hero_sections/teams";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <LogoPage />
       <Bento />
       <Teams />
+      <MetricPage />
     </div>
   );
 }
