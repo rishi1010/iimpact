@@ -1,4 +1,5 @@
 "use client";
+import Navbar from "../components/navbar";
 
 import Image from "next/image";
 import { motion } from "motion/react";
@@ -6,7 +7,21 @@ import { motion } from "motion/react";
 const Hero = () => {
   return (
     <div className="relative w-full h-screen flex items-center justify-center px-6">
-      <Image src="/hero-bg.png" alt="" fill quality={100} sizes="100vw" />
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+      >
+        <Navbar />
+      </motion.div>
+      <Image
+        src="/hero-bg.png"
+        alt=""
+        fill
+        quality={100}
+        sizes="100vw"
+        className="z-0"
+      />
       <div className="relative z-10 flex flex-col items-center gap-8 md:gap-14">
         {/* hero text */}
         <motion.div

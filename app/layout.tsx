@@ -10,6 +10,7 @@ import {
   Homemade_Apple,
 } from "next/font/google";
 import "./globals.css";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,6 +47,7 @@ const poppins = Poppins({
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
 const spectral = Spectral({
@@ -79,7 +81,7 @@ export default function RootLayout({
           antialiased
         `}
       >
-        {children}
+        <TooltipProvider>{children}</TooltipProvider>
       </body>
     </html>
   );
