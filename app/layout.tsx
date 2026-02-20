@@ -7,6 +7,7 @@ import {
   Poppins,
   Playfair_Display,
   Spectral,
+  Homemade_Apple,
 } from "next/font/google";
 import "./globals.css";
 
@@ -22,6 +23,12 @@ const geistMono = Geist_Mono({
 
 const manrope = Manrope({
   variable: "--font-manrope",
+  subsets: ["latin"],
+});
+
+const homemadeApple = Homemade_Apple({
+  variable: "--font-homemade-apple",
+  weight: ["400"],
   subsets: ["latin"],
 });
 
@@ -68,6 +75,7 @@ export default function RootLayout({
           ${poppins.variable}
           ${playfairDisplay.variable}
           ${spectral.variable}
+          ${homemadeApple.variable}
           antialiased
         `}
       >

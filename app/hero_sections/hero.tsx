@@ -36,7 +36,7 @@ const Hero = () => {
 
         {/* button */}
         <motion.div
-          className="p-0.75 cursor-pointer hover:scale-105 active:scale-90 transition-all duration-200 flex items-center rounded-full bg-linear-to-br from-white to-[#cdcdcd]"
+          className="p-0.75 cursor-pointer hover:scale-105 active:scale-90 transition-all duration-200 shadow-2xl flex items-center rounded-full bg-linear-to-br from-white to-[#cdcdcd]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
