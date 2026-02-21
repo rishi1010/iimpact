@@ -1,4 +1,5 @@
 import Bento from "./hero_sections/bento";
+import Courses from "./hero_sections/courses";
 import Hero from "./hero_sections/hero";
 import LogoPage from "./hero_sections/logoPage";
 import MetricPage from "./hero_sections/metricBento";
@@ -12,6 +13,7 @@ export default function Home() {
       <Bento />
       <Teams />
       <MetricPage />
+      <Courses />
     </div>
   );
 }
