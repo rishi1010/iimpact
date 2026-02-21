@@ -34,7 +34,7 @@ const ScribbleArrow: React.FC<ScribbleArrowProps> = ({
   const label = <div className="text-lg font-homemade">{text}</div>;
 
   return (
-    <div className={`flex flex-col gap-1 ${className} text-${color}`}>
+    <div className={`flex flex-col gap-1 z-10 ${className} text-${color}`}>
       {textPosition === "above" ? (
         <>
           {label}

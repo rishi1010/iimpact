@@ -33,7 +33,7 @@ const Faqs = () => {
   ];
 
   return (
-    <section id="faqs" className="relative w-screen bg-[#f6f4f0] p-12">
+    <section id="faqs" className="relative w-full bg-[#f6f4f0] p-12">
       <ScribbleArrow
         text={"We didn't use ai for this!"}
         className="absolute top-56 left-30 items-end"

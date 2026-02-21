@@ -68,7 +68,7 @@ const LogoPage = () => {
   return (
     <div
       id="logo"
-      className="relative w-full h-[100dvh] flex items-center  overflow-hidden pt-52"
+      className="relative w-full h-[100dvh] flex items-center  overflow-y-hidden pt-52"
     >
       <Image src="/logo-page-bg.png" alt="" fill quality={100} sizes="100vw" />
       {/* main body */}

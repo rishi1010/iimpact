@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 const ContactCta = () => {
   return (
     <section
-      className="bg-[url('/hero-bg.png')] w-screen h-141 bg-no-repeat bg-cover flex items-center justify-center flex-col gap-9"
+      className="bg-[url('/hero-bg.png')] w-full h-141 bg-no-repeat bg-cover flex items-center justify-center flex-col gap-9"
       id="contact-cta"
     >
       <h1 className="text-8xl font-manrope text-neutral-900 font-semibold">
