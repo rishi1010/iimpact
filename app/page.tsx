@@ -1,4 +1,6 @@
+import Footer from "./components/footer";
 import Bento from "./hero_sections/bento";
+import ContactCta from "./hero_sections/contact-cta";
 import Courses from "./hero_sections/courses";
 import Faqs from "./hero_sections/faqs";
 import Hero from "./hero_sections/hero";
@@ -16,6 +18,8 @@ export default function Home() {
       <MetricPage />
       <Courses />
       <Faqs />
+      <ContactCta />
+      <Footer />
     </div>
   );
 }

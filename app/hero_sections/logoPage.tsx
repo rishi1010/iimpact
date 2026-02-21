@@ -45,12 +45,12 @@ const TestimonialCard = ({
   name: string;
   score: string;
 }) => (
-  <div className="w-80 flex-shrink-0 h-96 bg-gradient-to-b from-white to-[#fafafa] p-7 rounded-3xl flex flex-col gap-10 shadow-sm">
+  <div className="w-80 shrink-0 h-96 bg-linear-to-b from-white to-[#fafafa] p-7 rounded-3xl flex flex-col gap-10 shadow-sm">
     <div className="text-balance text-zinc-500 font-light font-spectral text-lg leading-relaxed">
       "{text}"
     </div>
     <div className="flex w-full items-center gap-4 mt-auto">
-      <div className="rounded-full size-11 bg-gray-300 flex-shrink-0"></div>
+      <div className="rounded-full size-11 bg-gray-300 shrink-0"></div>
       <div className="font-sans text-lg text-[#555555]">
         {name} <span className="text-impact-orange">{score}</span>
       </div>
@@ -66,15 +66,18 @@ const LogoPage = () => {
   const doubled_logos = [...logos, ...logos];
 
   return (
-    <div className="relative w-full h-screen flex items-center  overflow-hidden pt-52">
+    <div
+      id="logo"
+      className="relative w-full h-screen flex items-center  overflow-hidden pt-52"
+    >
       <Image src="/logo-page-bg.png" alt="" fill quality={100} sizes="100vw" />
       {/* main body */}
       <div className="relative z-10 flex flex-col items-center justify-between gap-14 w-full">
         {/* Marquee container */}
         <div className="relative w-full overflow-hidden">
           {/* Fade edges */}
-          <div className="pointer-events-none absolute left-0 top-0 h-full w-48 z-10 bg-gradient-to-r from-white/60 to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 h-full w-48 z-10 bg-gradient-to-l from-white/60 to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 h-full w-48 z-10 bg-linear-to-r from-white/60 to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-48 z-10 bg-linear-to-l from-white/60 to-transparent" />
 
           {/* Scrolling track */}
           <div className="flex gap-3.5 animate-marquee w-max">
@@ -100,8 +103,8 @@ const LogoPage = () => {
           </div>
           {/* logo container */}
           <div className="relative w-2xl overflow-hidden">
-            <div className="pointer-events-none absolute left-0 top-0 h-full w-48 z-10 bg-gradient-to-r from-black/60 to-transparent" />
-            <div className="pointer-events-none absolute right-0 top-0 h-full w-48 z-10 bg-gradient-to-l from-black/60 to-transparent" />
+            <div className="pointer-events-none absolute left-0 top-0 h-full w-48 z-10 bg-linear-to-r from-black/60 to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 h-full w-48 z-10 bg-linear-to-l from-black/60 to-transparent" />
 
             <div className="flex gap-11 animate-marquee">
               {doubled_logos.map((src, i) => (

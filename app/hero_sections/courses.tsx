@@ -53,7 +53,7 @@ const flagshipFeatures: CourseFeature[] = ALL_FEATURES.map((label) => ({
 
 const Courses = () => {
   return (
-    <section className="w-full relative  bg-[#f6f4f0] py-20 px-6">
+    <section id="courses" className="w-full relative  bg-[#f6f4f0] py-20 px-6">
       <ScribbleArrow
         text="Prices for our Old Students"
         className="absolute top-54 right-16 items-start z-10"

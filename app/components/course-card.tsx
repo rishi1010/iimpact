@@ -79,7 +79,7 @@ const CourseCard = ({
         </div>
 
         {/* Old student toggle */}
-        <div className="flex gap-1 text-sm items-end flex-shrink-0">
+        <div className="flex gap-1 text-sm items-end shrink-0">
           <Switch checked={isOldStudent} onCheckedChange={setIsOldStudent} />
         </div>
       </div>
@@ -125,19 +125,19 @@ const CourseCard = ({
       <div className="border-t border-stone-200 my-5" />
 
       {/* Features */}
-      <ul className="flex flex-col gap-2.5 flex-grow">
+      <ul className="flex flex-col gap-2.5 grow">
         {features.map((feature, i) => (
           <li key={i} className="flex items-start gap-2.5">
             {feature.included ? (
               <Check
                 size={15}
-                className="text-green-600 mt-0.5 flex-shrink-0"
+                className="text-green-600 mt-0.5 shrink-0"
                 strokeWidth={2.5}
               />
             ) : (
               <X
                 size={15}
-                className="text-red-400 mt-0.5 flex-shrink-0"
+                className="text-red-400 mt-0.5 shrink-0"
                 strokeWidth={2.5}
               />
             )}

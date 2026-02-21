@@ -32,7 +32,7 @@ const Teams = () => {
         </div>
         {/* Teams */}
         <div className="flex w-full justify-between gap-10">
-          <div className="text-8xl w-1/2 leading-normal font-poppins uppercase font-semibold tracking-wide text-balance text-impact-blue text-balance">
+          <div className="text-8xl w-1/2 leading-normal font-poppins uppercase font-semibold tracking-wide text-balance text-impact-blue">
             From{" "}
             <span className="underline decoration-impact-orange">toppers </span>{" "}
             to{" "}

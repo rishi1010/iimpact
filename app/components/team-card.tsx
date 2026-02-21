@@ -59,7 +59,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
           </p>
 
           {/* Logos with Tooltips */}
-          <div className="flex items-center gap-1.5 ml-2 flex-shrink-0">
+          <div className="flex items-center gap-1.5 ml-2 shrink-0">
             {logos.map((logo, i) => (
               <Tooltip key={i}>
                 <TooltipTrigger asChild>

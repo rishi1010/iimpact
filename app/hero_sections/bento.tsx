@@ -6,7 +6,10 @@ import ThreePhaseCard from "../components/three-phase-card";
 
 const Bento = () => {
   return (
-    <section className="relative w-screen h-screen pt-11 bg-linear-to-b from-[#addcee] to-[#F6F4F0]">
+    <section
+      id="bento"
+      className="relative w-screen h-screen pt-11 bg-linear-to-b from-[#addcee] to-[#F6F4F0]"
+    >
       <div className="absolute top-96 left-52  text-impact-orange items-end flex flex-col gap-1">
         <div className="text-lg font-homemade">Hover over me</div>
         <svg
