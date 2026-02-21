@@ -33,7 +33,7 @@ const Bento = () => {
         </div>
         {/* Bento */}
 
-        <div className="grid bg-linear-to-br from-[#F3EADB] shadow-xs rounded-2xl to-[#F3D7A7] p-2 grid-flow-col grid-rows-8 grid-cols-6 gap-6 text-white w-4xl h-3xl">
+        <div className="grid bg-linear-to-br from-[#F3EADB] shadow-sm rounded-2xl to-[#F3D7A7] p-2 grid-flow-col grid-rows-8 grid-cols-6 gap-6 text-white w-4xl h-3xl">
           {/* 3-phase */}
           <ThreePhaseCard />
           {/* graph */}
