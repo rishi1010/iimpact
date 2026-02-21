@@ -6,7 +6,7 @@ const MetricPage = () => {
   return (
     <section
       id="metrics"
-      className=" relative w-screen h-screen bg-[#F6F4F0] p-12"
+      className=" relative w-screen h-[100dvh] bg-[#F6F4F0] p-12"
     >
       <ScribbleArrow
         text="In Just One Year"

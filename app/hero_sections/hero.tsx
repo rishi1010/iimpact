@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative w-full h-screen flex items-center justify-center px-6"
+      className="relative w-full h-[100dvh] flex items-center justify-center px-6"
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}

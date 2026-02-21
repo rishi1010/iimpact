@@ -79,6 +79,7 @@ export default function RootLayout({
           ${spectral.variable}
           ${homemadeApple.variable}
           antialiased
+          overflow-x-hidden
         `}
       >
         <TooltipProvider>{children}</TooltipProvider>

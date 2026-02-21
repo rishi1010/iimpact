@@ -10,7 +10,7 @@ import Teams from "./hero_sections/teams";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden">
+    <div>
       <Hero />
       <LogoPage />
       <Bento />

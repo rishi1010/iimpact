@@ -4,7 +4,7 @@ import ScribbleArrow from "../components/scribble-arrow";
 
 const Teams = () => {
   return (
-    <section className=" relative w-screen h-screen bg-[#F6F4F0] p-12">
+    <section className=" relative w-screen h-[100dvh] bg-[#F6F4F0] p-12">
       <ScribbleArrow
         text="Qa + Varc wizard"
         className="absolute top-96 right-1/2 items-end"
