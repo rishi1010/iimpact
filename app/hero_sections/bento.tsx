@@ -8,9 +8,9 @@ const Bento = () => {
   return (
     <section
       id="bento"
-      className="relative w-full overflow-visible min-h-[100dvh] pt-11 bg-linear-to-b from-[#addcee] to-[#F6F4F0]"
+      className="relative w-full shadow-2xl overflow-visible min-h-[100dvh] pt-11 bg-linear-to-b from-[#addcee] to-[#F6F4F0]"
     >
-      <div className="absolute top-96 left-52  text-impact-orange items-end flex flex-col gap-1">
+      <div className="absolute top-[30%] left-[8%]  text-impact-orange items-end flex flex-col gap-1">
         <div className="text-lg font-homemade">Hover over me</div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@ const Bento = () => {
       </div>
       <div className="w-full h-full flex flex-col items-center justify-center">
         {/* Title */}
-        <div className="text-8xl text-impact-blue italic font-playfair mb-10 ">
+        <div className="text-7xl text-impact-blue italic font-playfair mb-10 ">
           Why{" "}
           <span className="not-italic font-manrope font-medium underline decoration-impact-orange">
             IIMPact MBA?

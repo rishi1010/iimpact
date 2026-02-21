@@ -15,7 +15,7 @@ const Teams = () => {
 
       <ScribbleArrow
         text="Dilr strategist"
-        className="absolute top-96 right-15 items-start"
+        className="absolute top-[27%] right-15 items-start"
         rotation={270}
         textPosition="above"
         color="impact-blue"
@@ -23,20 +23,20 @@ const Teams = () => {
       <div className="w-full h-full flex flex-col items-center gap-24">
         {/* title and subheading */}
         <div className="flex flex-col gap-5 items-center justify-between w-full">
-          <div className="text-8xl italic w-full text-center font-playfair text-impact-blue">
+          <div className="text-7xl italic w-full text-center font-playfair text-impact-blue">
             Meet Team <span className="text-impact-orange">IIMPact</span>
           </div>
-          <p className="text-2xl text-impact-orange font-sans font-semibold">
+          <p className="text-xl text-impact-orange font-sans font-semibold">
             Trusted by 5000+ successful aspirants
           </p>
         </div>
         {/* Teams */}
         <div className="flex w-full justify-between gap-10">
-          <div className="text-8xl w-1/2 leading-normal font-poppins uppercase font-semibold tracking-wide text-balance text-impact-blue">
+          <div className="text-7xl w-1/2  font-poppins uppercase font-semibold tracking-wide text-balance text-impact-blue">
             From{" "}
-            <span className="underline decoration-impact-orange">toppers </span>{" "}
+            <div className="underline decoration-impact-orange">toppers </div>{" "}
             to{" "}
-            <span className="underline decoration-impact-orange">mentors </span>
+            <div className="underline decoration-impact-orange">mentors </div>
           </div>
           <div className="flex w-1/2 gap-9">
             <TeamCard

@@ -55,8 +55,8 @@ const Courses = () => {
   return (
     <section id="courses" className="w-full relative  bg-[#f6f4f0] py-20 px-6">
       <ScribbleArrow
-        text="Prices for our Old Students"
-        className="absolute top-54 right-16 items-start z-10"
+        text=" For our Old Students"
+        className="absolute top-[17%] right-[3%] items-start z-10"
         rotation={180}
         textPosition="above"
         color="impact-blue"

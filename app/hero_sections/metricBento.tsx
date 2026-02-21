@@ -10,13 +10,13 @@ const MetricPage = () => {
     >
       <ScribbleArrow
         text="In Just One Year"
-        className="absolute top-40 left-16 items-end"
+        className="absolute top-[20%] left-[3%] items-end"
         rotation={180}
         textPosition="above"
         color="impact-orange"
       />
       <div className="w-full h-full flex flex-col items-center gap-13">
-        <h1 className="text-7xl font-manrope font-bold tracking-tight text-impact-blue">
+        <h1 className="text-6xl font-manrope font-bold tracking-tight text-impact-blue">
           What{" "}
           <span className="underline decoration-impact-orange">IIMPact</span>{" "}
           delivered in 2025{" "}

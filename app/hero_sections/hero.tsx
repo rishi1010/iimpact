@@ -11,8 +11,8 @@ const Hero = () => {
       className="relative w-full h-[100dvh] flex items-center justify-center px-6"
     >
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
       >
         <Navbar />
@@ -59,8 +59,8 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
         >
-          <div className="w-32 h-12 sm:w-36 sm:h-14 md:w-40 md:h-16 flex items-center justify-center rounded-full bg-linear-to-b from-white to-[#e3e3e3]">
-            <div className="font-sans font-bold text-base md:text-xl text-neutral-800">
+          <div className=" sm:w-36 sm:h-14 md:w-36 md:h-12 flex items-center justify-center rounded-full bg-linear-to-b from-white to-[#e3e3e3]">
+            <div className="font-sans font-bold text-base md:text-lg text-neutral-800">
               Join Now
             </div>
           </div>
