@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 const Hero = () => {
   return (
-    <div className="relative w-full h-screen flex items-center justify-center px-6">
+    <section className="relative w-full h-screen flex items-center justify-center px-6">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

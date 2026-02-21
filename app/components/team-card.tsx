@@ -30,7 +30,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
   logos,
 }) => {
   return (
-    <div className="relative w-65 h-96 flex items-end rounded-2xl overflow-hidden shadow-2xl font-sans bg-[#4959BE]/30">
+    <div className="relative w-65 h-96 flex items-end rounded-2xl overflow-hidden shadow-2xl font-sans bg-[#4959BE]/30 hover:scale-110 transition-all duration-200">
       {/* Member photo */}
       <div className="inset-0 absolute overflow-hidden">
         <img

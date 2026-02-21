@@ -4,7 +4,7 @@ import ScribbleArrow from "../components/scribble-arrow";
 
 const MetricPage = () => {
   return (
-    <div className=" relative w-screen h-screen bg-[#F6F4F0] p-12">
+    <section className=" relative w-screen h-screen bg-[#F6F4F0] p-12">
       <ScribbleArrow
         text="In Just One Year"
         className="absolute top-40 left-16 items-end"
@@ -21,7 +21,7 @@ const MetricPage = () => {
 
         <MetricBento />
       </div>
-    </div>
+    </section>
   );
 };
 
