@@ -26,61 +26,66 @@ const Teams = () => {
             to{" "}
             <div className="underline decoration-impact-orange">mentors </div>
           </div>
-          <div className="flex w-1/2 gap-9">
-            <TeamCard
-              imageUrl="/dg.png"
-              name="Divyansh Gupta"
-              percentile="100"
-              examLabel="CAT 19"
-              collegeName="FMS Delhi"
-              companyName="Kearney"
-              logos={[
-                {
-                  url: "https://media.licdn.com/dms/image/v2/C510BAQGrnX7wBlptUA/company-logo_200_200/company-logo_200_200/0/1631347235309?e=2147483647&v=beta&t=y5LAzPv_kycav92CzR2Iwii_5uTAkpxtFw93FmQX7Sg",
-                  name: "FMS Delhi",
-                },
-                {
-                  url: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Indian_Institute_of_Technology_Delhi_Logo.svg/1280px-Indian_Institute_of_Technology_Delhi_Logo.svg.png",
-                  name: "IIT Delhi",
-                },
-                {
-                  url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTkRp5QqqJlg3gZPrLB_Xff2nThWeZdsPNww&s",
-                  name: "Kearney",
-                },
-              ]}
-              scribble={{
-                text: "Qa + Varc wizard",
-                side: "left",
-                color: "impact-orange",
-              }}
-            />
-            <TeamCard
-              imageUrl="/rm.png"
-              name="Rishi Mittal"
-              percentile="100"
-              examLabel="CAT 19"
-              collegeName="IIM B'lore"
-              companyName="Accenture"
-              logos={[
-                {
-                  url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKqa6_0RDjMesXoOyykCnNhjlGleeRMO86MQ&s",
-                  name: "IIM Bangalore",
-                },
-                {
-                  url: "https://upload.wikimedia.org/wikipedia/en/1/1b/NIT_Surat_Logo.svg",
-                  name: "NIT Surat",
-                },
-                {
-                  url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0ercDncGsEV9NkGdp78EyagH6U3ZFKiLyfQ&s",
-                  name: "Accenture",
-                },
-              ]}
-              scribble={{
-                text: "Qa + Dilr strategist",
-                side: "right",
-                color: "impact-blue",
-              }}
-            />
+          <div className="flex flex-col gap-4 w-1/2">
+            <div className="text-impact-blue/80 text-xl font-sans font-medium text-center w-full">
+              They cracked it. Now they'll help you
+            </div>
+            <div className="flex gap-9">
+              <TeamCard
+                imageUrl="/dg.png"
+                name="Divyansh Gupta"
+                percentile="100"
+                examLabel="CAT 19"
+                collegeName="FMS Delhi"
+                companyName="Kearney"
+                logos={[
+                  {
+                    url: "https://media.licdn.com/dms/image/v2/C510BAQGrnX7wBlptUA/company-logo_200_200/company-logo_200_200/0/1631347235309?e=2147483647&v=beta&t=y5LAzPv_kycav92CzR2Iwii_5uTAkpxtFw93FmQX7Sg",
+                    name: "FMS Delhi",
+                  },
+                  {
+                    url: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Indian_Institute_of_Technology_Delhi_Logo.svg/1280px-Indian_Institute_of_Technology_Delhi_Logo.svg.png",
+                    name: "IIT Delhi",
+                  },
+                  {
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTkRp5QqqJlg3gZPrLB_Xff2nThWeZdsPNww&s",
+                    name: "Kearney",
+                  },
+                ]}
+                scribble={{
+                  text: "Qa + Varc wizard",
+                  side: "left",
+                  color: "impact-orange",
+                }}
+              />
+              <TeamCard
+                imageUrl="/rm.png"
+                name="Rishi Mittal"
+                percentile="100"
+                examLabel="CAT 19"
+                collegeName="IIM B'lore"
+                companyName="Accenture"
+                logos={[
+                  {
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKqa6_0RDjMesXoOyykCnNhjlGleeRMO86MQ&s",
+                    name: "IIM Bangalore",
+                  },
+                  {
+                    url: "https://upload.wikimedia.org/wikipedia/en/1/1b/NIT_Surat_Logo.svg",
+                    name: "NIT Surat",
+                  },
+                  {
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0ercDncGsEV9NkGdp78EyagH6U3ZFKiLyfQ&s",
+                    name: "Accenture",
+                  },
+                ]}
+                scribble={{
+                  text: "Qa + Dilr strategist",
+                  side: "right",
+                  color: "impact-blue",
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
