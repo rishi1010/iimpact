@@ -8,9 +8,9 @@ const Bento = () => {
   return (
     <section
       id="bento"
-      className="relative w-full shadow-2xl overflow-visible min-h-[100dvh] pt-11 bg-linear-to-b from-[#addcee] to-[#F6F4F0]"
+      className="relative w-full  overflow-visible min-h-[100dvh] pt-11 bg-linear-to-b from-[#addcee] to-[#F6F4F0]"
     >
-      <div className="absolute top-[30%] left-[8%]  text-impact-orange items-end flex flex-col gap-1">
+      {/* <div className="absolute  top-[30%] left-[8%]  text-impact-orange items-end flex flex-col gap-1">
         <div className="text-lg font-homemade">Hover over me</div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +25,7 @@ const Bento = () => {
             fill="currentColor"
           />
         </svg>
-      </div>
+      </div> */}
       <div className="w-full h-full flex flex-col items-center justify-center">
         {/* Title */}
         <div className="text-7xl text-impact-blue italic font-playfair mb-10 ">
@@ -36,7 +36,7 @@ const Bento = () => {
         </div>
         {/* Bento */}
 
-        <div className="grid bg-linear-to-br from-[#F3EADB] shadow-sm rounded-2xl to-[#F3D7A7] p-2 grid-flow-col grid-rows-8 grid-cols-6 gap-6 text-white w-4xl h-3xl">
+        <div className="grid bg-linear-to-br shadow-sm from-[#F3EADB]  rounded-2xl to-[#F3D7A7] p-2 grid-flow-col grid-rows-8 grid-cols-6 gap-6 text-white w-4xl h-3xl">
           {/* 3-phase */}
           <ThreePhaseCard />
           {/* graph */}
@@ -117,8 +117,8 @@ const Bento = () => {
               </h2>
               <p className="text-impact-blue/70 w-full text-left font-sans tracking-tighter text-sm">
                 Complete video coverage of every concept, formula, and strategy.
-                Missed a live class? Our entire curriculum is available
-                on-demand, anytime.
+                Missed a live class? Our entire curriculum is available online,
+                anytime.
               </p>
             </div>
           </div>

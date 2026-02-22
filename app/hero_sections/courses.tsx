@@ -54,13 +54,6 @@ const flagshipFeatures: CourseFeature[] = ALL_FEATURES.map((label) => ({
 const Courses = () => {
   return (
     <section id="courses" className="w-full relative  bg-[#f6f4f0] py-20 px-6">
-      <ScribbleArrow
-        text=" For our Old Students"
-        className="absolute top-[17%] right-[3%] items-start z-10"
-        rotation={180}
-        textPosition="above"
-        color="impact-blue"
-      />
       {/* Heading */}
       <div className="text-center mb-16">
         <p className="text-impact-orange font-sans font-semibold text-sm uppercase tracking-widest mb-2">
@@ -81,11 +74,10 @@ const Courses = () => {
         <div className="w-full md:w-[28%]">
           <CourseCard
             title="CAT'26 Individual Section"
-            subtitle="Pick any one section"
+            subtitle="Pick one or more subjects"
             pricing={{
               originalPrice: "INR 9,999 each",
               earlyBirdPrice: "INR 7,000 each",
-              oldStudentPrice: "INR 6,500 each",
             }}
             features={individualFeatures}
             onEnroll={() => {}}
@@ -100,7 +92,6 @@ const Courses = () => {
             pricing={{
               originalPrice: "INR 29,999",
               earlyBirdPrice: "INR 21,000",
-              oldStudentPrice: "INR 19,500",
             }}
             features={fullCourseFeatures}
             isMiddle
@@ -112,11 +103,10 @@ const Courses = () => {
         <div className="w-full md:w-[39%]">
           <CourseCard
             title="CAT'26 Full Course + WATPI '26–'27"
-            subtitle="Our most complete package"
+            subtitle="With you from day-one to your first day in your dream B-school"
             pricing={{
               originalPrice: "INR 39,999",
               earlyBirdPrice: "INR 29,500",
-              oldStudentPrice: "INR 28,000",
             }}
             features={flagshipFeatures}
             isFlagship
@@ -127,8 +117,8 @@ const Courses = () => {
 
       {/* Footer note */}
       <p className="text-center text-xs text-neutral-400 font-sans mt-12">
-        * CAT'25 student pricing is exclusive and subject to verification. Early
-        bird prices are limited time offers.
+        All purchases are final. No refunds will be issued once a course has
+        been purchased. Early bird prices are limited time offers.
       </p>
     </section>
   );

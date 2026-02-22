@@ -34,17 +34,10 @@ const Faqs = () => {
 
   return (
     <section id="faqs" className="relative w-full bg-[#f6f4f0] p-12">
-      <ScribbleArrow
-        text={"We didn't use ai for this!"}
-        className="absolute top-56 left-30 items-end"
-        rotation={180}
-        textPosition="above"
-        color="impact-orange"
-      />
       <div className="flex flex-col h-full items-center gap-20">
         {/* subheading and text */}
         <div className="flex flex-col items-center">
-          <p className="text-neutral-300 font-mono text-2xl">FAQ</p>
+          <p className="text-impact-orange font-mono text-2xl">FAQ</p>
           <h1 className="font-poppins text-6xl font-bold text-impact-blue">
             Got Questions?
           </h1>

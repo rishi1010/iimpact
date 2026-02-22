@@ -90,7 +90,7 @@ const LogoPage = () => {
         <div className="p-0.75 cursor-pointer hover:scale-105 active:scale-90 transition-all duration-200 flex items-center rounded-full bg-linear-to-br from-white to-[#cdcdcd]">
           <div className="sm:w-36 sm:h-14 md:w-40 md:h-12 flex items-center justify-center rounded-full h-16 bg-linear-to-b from-white to-[#e3e3e3]">
             <div className="font-sans font-bold text-md text-neutral-800">
-              See Real Results
+              See All Results
             </div>
           </div>
         </div>

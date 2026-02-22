@@ -4,22 +4,10 @@ import ScribbleArrow from "../components/scribble-arrow";
 
 const Teams = () => {
   return (
-    <section className=" relative overflow-visible w-full h-[100dvh] bg-[#F6F4F0] p-12">
-      <ScribbleArrow
-        text="Qa + Varc wizard"
-        className="absolute top-96 right-1/2 items-end"
-        rotation={180}
-        textPosition="above"
-        color="impact-orange"
-      />
-
-      <ScribbleArrow
-        text="Dilr strategist"
-        className="absolute top-[27%] right-15 items-start"
-        rotation={270}
-        textPosition="above"
-        color="impact-blue"
-      />
+    <section
+      id="teams"
+      className=" relative overflow-visible w-full max-w-7xl mx-auto h-[100dvh] bg-[#F6F4F0] p-12"
+    >
       <div className="w-full h-full flex flex-col items-center gap-24">
         {/* title and subheading */}
         <div className="flex flex-col gap-5 items-center justify-between w-full">
@@ -31,7 +19,7 @@ const Teams = () => {
           </p>
         </div>
         {/* Teams */}
-        <div className="flex w-full justify-between gap-10">
+        <div className="flex w-full justify-between gap-5">
           <div className="text-7xl w-1/2  font-poppins uppercase font-semibold tracking-wide text-balance text-impact-blue">
             From{" "}
             <div className="underline decoration-impact-orange">toppers </div>{" "}
@@ -60,13 +48,18 @@ const Teams = () => {
                   name: "Kearney",
                 },
               ]}
+              scribble={{
+                text: "Qa + Varc wizard",
+                side: "left",
+                color: "impact-orange",
+              }}
             />
             <TeamCard
               imageUrl="/rm.png"
               name="Rishi Mittal"
               percentile="100"
               examLabel="CAT 19"
-              collegeName="IIM Blore"
+              collegeName="IIM B'lore"
               companyName="Accenture"
               logos={[
                 {
@@ -82,6 +75,11 @@ const Teams = () => {
                   name: "Accenture",
                 },
               ]}
+              scribble={{
+                text: "Qa + Dilr strategist",
+                side: "right",
+                color: "impact-blue",
+              }}
             />
           </div>
         </div>

@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "motion/react";
-import { useState } from "react";
 import { FileVideo } from "lucide-react";
 
 const lessons = [
@@ -17,22 +13,16 @@ const stackConfig = [
 ];
 
 const LessonCards = () => {
-  const [hovered, setHovered] = useState(false);
-
   return (
-    <div
-      className=" absolute top-20 -left-1 flex items-center justify-center w-full"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
+    <div className="absolute top-20 -left-1 flex items-center justify-center w-full">
       {[...lessons].reverse().map((lesson, i) => {
         const realIndex = lessons.length - 1 - i;
         const config = stackConfig[realIndex];
-        const hoveredY = realIndex === 0 ? 0 : realIndex === 1 ? -110 : -210;
 
         return (
-          <motion.div
-            className="absolute w-56  rounded-2xl px-5 py-4 flex flex-col gap-2"
+          <div
+            key={lesson.id}
+            className="absolute w-56 rounded-2xl px-5 py-4 flex flex-col gap-2"
             style={{
               backgroundColor:
                 realIndex === 0
@@ -41,29 +31,16 @@ const LessonCards = () => {
                     ? "#F5843E"
                     : "#F8A060",
               zIndex: config.zIndex,
-            }}
-            key={`${lesson.id}-${hovered}`} // forces remount when hovered changes
-            initial={{ opacity: 0, y: config.y, scale: config.scale }}
-            animate={{
+              transform: `translateY(${config.y}px) scale(${config.scale})`,
               opacity: config.opacity,
-              y: config.y,
-              scale: config.scale,
-            }}
-            transition={{
-              duration: 0.6,
-              ease: "easeOut",
-              delay: hovered ? (lessons.length - 1 - realIndex) * 0.6 : 0,
             }}
           >
-            {/* Icon + Title */}
             <div className="flex items-center gap-3">
               <FileVideo size={28} color="#f4f6f0" />
               <span className="text-[#f4f6f0] font-poppins font-bold text-sm">
                 {lesson.title}
               </span>
             </div>
-
-            {/* Duration + Button */}
             <div className="flex items-center gap-4 pl-1">
               <span className="text-[#f4f6f0] font-manrope text-sm">
                 {lesson.duration}
@@ -77,7 +54,7 @@ const LessonCards = () => {
                 View
               </button>
             </div>
-          </motion.div>
+          </div>
         );
       })}
     </div>
