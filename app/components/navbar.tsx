@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { label: "3-Phases", href: "#3-phases" },
+    { label: "3-Phases", href: "/three-phase" },
     { label: "Testimonials", href: "#testimonials" },
     { label: "Courses", href: "#courses" },
     { label: "Contact Us", href: "#contact-us" },
@@ -31,13 +31,13 @@ const Navbar = () => {
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-impact-blue font-bold hover:underline decoration-impact-orange"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
