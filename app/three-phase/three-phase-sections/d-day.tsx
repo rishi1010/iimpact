@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const DDay = () => {
   return (
-    <div className="w-full relative  min-h-dvh">
+    <section className="w-full relative  min-h-dvh">
       <Image
         src="/3p-assets/dd-bg.png"
         alt=""
@@ -48,7 +48,7 @@ const DDay = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

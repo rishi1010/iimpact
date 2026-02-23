@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Phase3 = () => {
   return (
-    <div className="w-full relative  min-h-dvh">
+    <section className="w-full relative  min-h-dvh">
       <Image
         src="/3p-assets/p3-bg.png"
         alt=""
@@ -40,7 +40,7 @@ const Phase3 = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

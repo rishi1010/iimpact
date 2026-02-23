@@ -2,7 +2,7 @@ import React from "react";
 
 const Testimonial = () => {
   return (
-    <div className="w-full min-h-dvh  text-neutral-900 bg-linear-to-b from-[#f6f4f0] via-[#AEDCEF] to-[#f4f6f0] ">
+    <section className="w-full min-h-dvh  text-neutral-900 bg-linear-to-b from-[#f6f4f0] via-[#AEDCEF] to-[#f4f6f0] ">
       <div className="max-w-7xl h-full mx-auto flex flex-col items-center justify-center gap-23">
         <div className="font-mono text-8xl text-center">“</div>
         <div className="flex flex-col items-center text-center gap-6 w-3/4">
@@ -21,7 +21,7 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
