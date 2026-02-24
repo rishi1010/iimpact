@@ -55,29 +55,6 @@ export const TeamCard: React.FC<TeamCardProps> = ({
   return (
     <div className="relative w-68 h-96 flex items-end rounded-2xl overflow-visible shadow-2xl font-sans hover:scale-110 transition-all duration-200">
       {/* Scribble arrow — hidden on sm/md, visible on lg+ */}
-      {scribble && (
-        <div
-          className={`
-            hidden lg:flex absolute top-[-15%] flex-col gap-1
-            text-${scribble.color ?? "impact-blue"}
-            ${
-              scribble.side === "right"
-                ? "right-[-45%] items-start"
-                : "left-[-45%] items-end"
-            }
-          `}
-        >
-          <span className="font-homemade text-lg">{scribble.text}</span>
-          {/* Arrow points down-left for right side, down-right for left side */}
-          <div
-            className={
-              scribble.side === "right" ? "rotate-250" : "rotate-180 self-end"
-            }
-          >
-            <ScribbleSvg />
-          </div>
-        </div>
-      )}
 
       {/* Card itself needs overflow-hidden for the photo */}
       <div className="absolute inset-0 rounded-2xl overflow-hidden bg-[#4959BE]/30">

@@ -28,7 +28,7 @@ const Teams = () => {
           </div>
           <div className="flex flex-col gap-4 w-1/2">
             <div className="text-impact-blue/80 text-xl font-sans font-medium text-center w-full">
-              They cracked it. Now they'll help you
+              They cracked it. Now they'll help you!
             </div>
             <div className="flex gap-9">
               <TeamCard

@@ -69,9 +69,9 @@ const Courses = () => {
       </div>
 
       {/* Cards — grow left to right */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-stretch gap-6 justify-center">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch gap-6 justify-center">
         {/* Smallest — Individual Section */}
-        <div className="w-full md:w-[28%]">
+        <div className="w-full md:w-[30%]">
           <CourseCard
             title="CAT'26 Individual Section"
             subtitle="Pick one or more subjects"
@@ -85,7 +85,7 @@ const Courses = () => {
         </div>
 
         {/* Middle — Full Course */}
-        <div className="w-full md:w-[33%]">
+        <div className="w-full md:w-[30%]">
           <CourseCard
             title="CAT'26 Full Course"
             subtitle="Complete CAT preparation"

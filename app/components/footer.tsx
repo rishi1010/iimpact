@@ -1,3 +1,7 @@
+import { Mail } from "lucide-react";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FiInstagram, FiYoutube } from "react-icons/fi";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -79,6 +83,21 @@ const Footer = () => {
           >
             Talk to us →
           </a>
+
+          <div className="flex w-full items-center justify-start mt-4 text-impact-orange/70 cursor-pointer gap-5">
+            <Link href="/placeholder">
+              <Mail size={24} />
+            </Link>
+            <Link href="/placeholder">
+              <FaLinkedinIn size={24} />
+            </Link>
+            <Link href="/placeholder">
+              <FiInstagram size={24} />
+            </Link>
+            <Link href="/placeholder">
+              <FiYoutube size={24} />
+            </Link>
+          </div>
         </div>
       </div>
 
