@@ -5,7 +5,16 @@ import { FiInstagram, FiYoutube } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
 
-const sections = [
+export interface Sections {
+  label: string;
+  href: string;
+}
+
+interface FooterProps {
+  section: Sections[];
+}
+
+const sections: Sections[] = [
   { label: "Features", href: "#bento" },
   { label: "Metrics", href: "#metrics" },
   { label: "Testimonials", href: "#logo" },
@@ -16,7 +25,7 @@ const sections = [
 ];
 
 const pages = [
-  { label: "3 Phase System", href: "/3-phase" },
+  { label: "3 Phase System", href: "/three-phase" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Contact Us", href: "/contact" },
 ];
@@ -24,7 +33,7 @@ const pages = [
 const linkClass =
   "text-impact-blue font-sans text-sm hover:underline decoration-impact-orange underline-offset-4 transition-all duration-150";
 
-const Footer = () => {
+const Footer: React.FC<FooterProps> = ({ section }) => {
   return (
     <footer className="relative bg-[#f6f4f0] pt-20 pb-0 px-12 overflow-hidden">
       {/* Main content */}
@@ -49,7 +58,7 @@ const Footer = () => {
           <p className="text-neutral-400 font-sans text-xs uppercase tracking-widest font-semibold">
             On this page
           </p>
-          {sections.map((s) => (
+          {section.map((s) => (
             <a key={s.href} href={s.href} className={linkClass}>
               {s.label}
             </a>

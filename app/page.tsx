@@ -7,8 +7,18 @@ import Hero from "./hero_sections/hero";
 import LogoPage from "./hero_sections/logoPage";
 import MetricPage from "./hero_sections/metricBento";
 import Teams from "./hero_sections/teams";
+import type { Sections } from "./components/footer";
 
 export default function Home() {
+  const sections: Sections[] = [
+    { label: "Features", href: "#bento" },
+    { label: "Metrics", href: "#metrics" },
+    { label: "Testimonials", href: "#logo" },
+    { label: "Our Team", href: "#teams" },
+    { label: "Courses", href: "#courses" },
+    { label: "FAQs", href: "#faqs" },
+    { label: "Contact Us", href: "#contact-cta" },
+  ];
   return (
     <div>
       <Hero />
@@ -19,7 +29,7 @@ export default function Home() {
       <Courses />
       <Faqs />
       <ContactCta />
-      <Footer />
+      <Footer section={sections} />
     </div>
   );
 }

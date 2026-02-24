@@ -195,7 +195,7 @@ const rightColumn = testimonials.filter((_, i) => i % 2 !== 0);
 
 const TestiOne = () => {
   return (
-    <section className="w-full py-20 px-6">
+    <section id="testi" className="w-full py-20 px-6">
       {/* Pinterest-style two-column grid */}
       <div className="max-w-4xl mx-auto">
         {/* Mobile: single column */}

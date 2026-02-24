@@ -4,15 +4,20 @@ import Footer from "../components/footer";
 import TestiOne from "./testi-sections/testi-section";
 import TestiBento from "./testi-sections/test-bento";
 import ContactCta from "../three-phase/three-phase-sections/contact-cta";
+import type { Sections } from "../components/footer";
 
 const TestimonialPage = () => {
+  const sections: Sections[] = [
+    { label: "Testimonials", href: "#testi" },
+    { label: "Metrics", href: "#metrics" },
+  ];
   return (
     <div>
       <Hero />
       <TestiOne />
       <TestiBento />
       <ContactCta />
-      <Footer />
+      <Footer section={sections} />
     </div>
   );
 };

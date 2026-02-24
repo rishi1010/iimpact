@@ -6,7 +6,10 @@ import { motion } from "motion/react";
 
 const TestiBento = () => {
   return (
-    <section className="w-full min-h-dvh bg-linear-to-b from-[#f6f4f0] via-[#AEDCEF] to-[#f4f6f0] flex items-center py-16 lg:py-0">
+    <section
+      id="metrics"
+      className="w-full min-h-dvh bg-linear-to-b from-[#f6f4f0] via-[#AEDCEF] to-[#f4f6f0] flex items-center py-16 lg:py-0"
+    >
       <div className="w-full mx-auto max-w-7xl flex flex-col lg:flex-row items-center justify-between px-6 lg:p-10 gap-12 lg:gap-16">
         {/* Text Area */}
         <div className="text-4xl sm:text-5xl md:text-6xl font-manrope text-center lg:text-left text-impact-blue flex flex-col gap-2">

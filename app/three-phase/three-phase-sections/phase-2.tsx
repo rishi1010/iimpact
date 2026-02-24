@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Phase2 = () => {
   return (
-    <section className="w-full relative  min-h-dvh">
+    <section id="phase2" className="w-full relative  min-h-dvh">
       <Image
         src="/3p-assets/p2-bg.png"
         alt=""
