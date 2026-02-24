@@ -11,7 +11,6 @@ const Navbar = () => {
   const links = [
     { label: "3-Phases", href: "/three-phase" },
     { label: "Testimonials", href: "/testimonials" },
-    { label: "Courses", href: "#courses" },
     { label: "Contact Us", href: "#contact-us" },
   ];
 
