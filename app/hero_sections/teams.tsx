@@ -6,7 +6,7 @@ const Teams = () => {
   return (
     <section
       id="teams"
-      className=" relative overflow-visible w-full max-w-7xl mx-auto h-[100dvh] bg-[#F6F4F0] p-12"
+      className=" relative overflow-visible w-full max-w-7xl mx-auto h-dvh bg-[#F6F4F0] p-12"
     >
       <div className="w-full h-full flex flex-col items-center gap-24">
         {/* title and subheading */}
