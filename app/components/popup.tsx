@@ -136,7 +136,7 @@ export function WhatsAppCommunityPopup() {
               <div className=" relative size-40 p-4 rounded-2xl bg-neutral-200 border border-neutral-300 flex items-center justify-center text-neutral-400 text-xs text-center px-3 leading-relaxed">
                 <Image src={"/qr-code.svg"} alt="qr code for the link" fill />
               </div>
-              <p className="text-neutral-400 text-xs text-center leading-snug max-w-[140px]">
+              <p className="text-neutral-400 text-xs text-center leading-snug max-w-35">
                 Scan with your phone to join instantly
               </p>
             </div>

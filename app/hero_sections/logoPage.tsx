@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { WhatsAppCommunityPopup } from "../components/popup";
+import { Marquee } from "@/components/ui/marquee";
 
 const testimonials = [
   {
@@ -46,100 +47,75 @@ const TestimonialCard = ({
   name: string;
   score: string;
 }) => (
-  <div className="w-80 shrink-0 h-96 bg-linear-to-b from-white to-[#fafafa] p-7 rounded-3xl flex flex-col gap-10 shadow-sm">
-    <div className="text-balance text-zinc-500 font-light font-spectral text-lg leading-relaxed">
-      "{text}"
+  <div className="w-72 sm:w-80 shrink-0 h-auto sm:h-96 bg-linear-to-b from-white to-[#fafafa] p-5 sm:p-7 rounded-3xl flex flex-col gap-6 sm:gap-10 shadow-sm mx-2">
+    <div className="text-balance text-zinc-500 font-light font-spectral text-base sm:text-lg leading-relaxed">
+      &ldquo;{text}&rdquo;
     </div>
     <div className="flex w-full items-center gap-4 mt-auto">
-      <div className="rounded-full size-11 bg-gray-300 shrink-0"></div>
-      <div className="font-sans text-lg text-[#555555]">
+      <div className="rounded-full size-10 sm:size-11 bg-gray-300 shrink-0" />
+      <div className="font-sans text-base sm:text-lg text-[#555555]">
         {name} <span className="text-impact-orange">{score}</span>
       </div>
     </div>
   </div>
 );
 
+const logos = Array.from({ length: 8 }, (_, i) => `/logos/logo-${i + 1}.png`);
+
 const LogoPage = () => {
-  // Duplicate for seamless loop
-  const doubled = [...testimonials, ...testimonials];
-
-  const logos = Array.from({ length: 8 }, (_, i) => `/logos/logo-${i + 1}.png`);
-  const doubled_logos = [...logos, ...logos];
-
   return (
     <div
       id="logo"
-      className="relative w-full min-h-dvh flex items-center  overflow-y-hidden pt-52"
+      className="relative w-full min-h-dvh flex items-center overflow-y-hidden pt-32 sm:pt-40 lg:pt-52"
     >
       <WhatsAppCommunityPopup />
       <Image src="/logo-page-bg.png" alt="" fill quality={100} sizes="100vw" />
-      {/* main body */}
-      <div className="relative z-10 flex flex-col items-center justify-between gap-14 w-full">
-        {/* Marquee container */}
-        <div className="relative w-full overflow-hidden">
-          {/* Fade edges */}
-          <div className="pointer-events-none absolute left-0 top-0 h-full w-48 z-10 bg-linear-to-r from-white/60 to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 h-full w-48 z-10 bg-linear-to-l from-white/60 to-transparent" />
 
-          {/* Scrolling track */}
-          <div className="flex gap-3.5 animate-marquee w-max">
-            {doubled.map((t, i) => (
+      {/* main body */}
+      <div className="relative z-10 flex flex-col items-center justify-between gap-10 sm:gap-14 w-full pb-12">
+        {/* Testimonials Marquee */}
+        <div className="relative w-full overflow-hidden">
+          <Marquee pauseOnHover className="[--duration:30s] [--gap:0.875rem]">
+            {testimonials.map((t, i) => (
               <TestimonialCard key={i} {...t} />
             ))}
-          </div>
+          </Marquee>
         </div>
-        {/* button */}
+
+        {/* See All Results button */}
         <div className="p-0.75 cursor-pointer hover:scale-105 active:scale-90 transition-all duration-200 flex items-center rounded-full bg-linear-to-br from-white to-[#cdcdcd]">
-          <div className="sm:w-36 sm:h-14 md:w-40 md:h-12 flex items-center justify-center rounded-full h-16 bg-linear-to-b from-white to-[#e3e3e3]">
-            <div className="font-sans font-bold text-md text-neutral-800">
+          <div className="flex items-center justify-center rounded-full h-12 sm:h-14 lg:h-16 px-6 bg-linear-to-b from-white to-[#e3e3e3]">
+            <div className="font-sans text-base font-bold text-neutral-800">
               See All Results
             </div>
           </div>
         </div>
-        {/* IIM logo container */}
-        <div className="flex items-center w-full justify-between p-16">
-          {/* text */}
-          <div className="font-light text-white text-2xl w-md">
+
+        {/* IIM logos section */}
+        <div className="flex flex-col lg:flex-row items-center w-full gap-6 lg:gap-0 lg:justify-between px-6 sm:px-10 lg:px-16">
+          {/* Text */}
+          <div className="font-light text-white text-base sm:text-xl lg:text-2xl text-center lg:text-left max-w-xs lg:w-md">
             100s of our students went to these top B schools with many more to
             others!
           </div>
-          {/* logo container */}
-          <div className="relative w-2xl overflow-hidden">
-            <div className="pointer-events-none absolute left-0 top-0 h-full w-48 z-10 bg-linear-to-r from-black/60 to-transparent" />
-            <div className="pointer-events-none absolute right-0 top-0 h-full w-48 z-10 bg-linear-to-l from-black/60 to-transparent" />
 
-            <div className="flex gap-11 animate-marquee">
-              {doubled_logos.map((src, i) => (
+          {/* Logo Marquee */}
+          <div className="relative w-full lg:w-2xl overflow-hidden">
+            <Marquee pauseOnHover className="[--duration:20s] [--gap:2.75rem]">
+              {logos.map((src, i) => (
                 <Image
                   key={i}
                   src={src}
                   alt={`IIM Logo ${i + 1}`}
                   width={50}
                   height={50}
-                  className="object-contain"
+                  className="object-contain mx-5"
                 />
               ))}
-            </div>
+            </Marquee>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </div>
   );
 };

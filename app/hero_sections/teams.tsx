@@ -1,36 +1,39 @@
 import React from "react";
 import { TeamCard } from "../components/team-card";
-import ScribbleArrow from "../components/scribble-arrow";
 
 const Teams = () => {
   return (
     <section
       id="teams"
-      className=" relative overflow-visible w-full max-w-7xl mx-auto h-dvh bg-[#F6F4F0] p-12"
+      className="relative overflow-visible w-full max-w-7xl mx-auto bg-[#F6F4F0] px-6 sm:px-10 lg:px-12 py-16 lg:py-20"
     >
-      <div className="w-full h-full flex flex-col items-center gap-24">
-        {/* title and subheading */}
-        <div className="flex flex-col gap-5 items-center justify-between w-full">
-          <div className="text-7xl italic w-full text-center font-playfair text-impact-blue">
+      <div className="w-full flex flex-col items-center gap-16 lg:gap-24">
+        {/* Title and subheading */}
+        <div className="flex flex-col gap-3 items-center w-full text-center">
+          <div className="text-4xl sm:text-5xl lg:text-7xl italic w-full text-center font-playfair text-impact-blue">
             Meet Team <span className="text-impact-orange">IIMPact</span>
           </div>
-          <p className="text-xl text-impact-orange font-sans font-semibold">
+          <p className="text-base sm:text-lg lg:text-xl text-impact-orange font-sans font-semibold">
             Trusted by 5000+ successful aspirants
           </p>
         </div>
-        {/* Teams */}
-        <div className="flex w-full justify-between gap-5">
-          <div className="text-7xl w-1/2  font-poppins uppercase font-semibold tracking-wide text-balance text-impact-blue">
-            From{" "}
-            <div className="underline decoration-impact-orange">toppers </div>{" "}
-            to{" "}
-            <div className="underline decoration-impact-orange">mentors </div>
+
+        {/* Bottom block: tagline + cards */}
+        <div className="flex flex-col lg:flex-row w-full justify-between gap-10 lg:gap-5">
+          {/* Left: tagline */}
+          <div className="text-4xl sm:text-5xl lg:text-7xl lg:w-1/2 font-poppins uppercase font-semibold tracking-wide text-impact-blue text-center lg:text-left">
+            From
+            <div className="underline decoration-impact-orange">toppers</div>
+            to
+            <div className="underline decoration-impact-orange">mentors</div>
           </div>
-          <div className="flex flex-col gap-4 w-1/2">
-            <div className="text-impact-blue/80 text-xl font-sans font-medium text-center w-full">
+
+          {/* Right: cards */}
+          <div className="flex flex-col gap-4 lg:w-1/2">
+            <div className="text-impact-blue/80 text-base sm:text-xl font-sans font-medium text-center w-full">
               They cracked it. Now they'll help you!
             </div>
-            <div className="flex gap-9">
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-9 items-center sm:items-start justify-center">
               <TeamCard
                 imageUrl="/dg.png"
                 name="Divyansh Gupta"

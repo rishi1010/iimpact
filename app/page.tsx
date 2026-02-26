@@ -20,7 +20,7 @@ export default function Home() {
     { label: "Contact Us", href: "#contact-cta" },
   ];
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Hero />
       <LogoPage />
       <Bento />

@@ -13,17 +13,18 @@ const FaqCard: React.FC<CardProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative w-1/2 px-4 py-4 flex flex-col  overflow-hidden">
+    <div className="relative w-full sm:w-3/4 lg:w-1/2 px-4 py-4 flex flex-col overflow-hidden">
       <span className="absolute top-0 left-0 w-4 h-4 border-t border-l border-impact-orange" />
       <span className="absolute top-0 right-0 w-4 h-4 border-t border-r border-impact-orange" />
       <span className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-impact-orange" />
       <span className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-impact-orange" />
-      {/* question + icon */}
+
+      {/* Question + icon */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between gap-2 w-full text-left"
       >
-        <h1 className="font-manrope text-xl text-neutral-900 tracking-wide">
+        <h1 className="font-manrope text-base sm:text-lg lg:text-xl text-neutral-900 tracking-wide">
           {question}
         </h1>
         <motion.div
@@ -35,7 +36,7 @@ const FaqCard: React.FC<CardProps> = ({ question, answer }) => {
         </motion.div>
       </button>
 
-      {/* answer — slides down */}
+      {/* Answer — slides down */}
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
@@ -46,7 +47,7 @@ const FaqCard: React.FC<CardProps> = ({ question, answer }) => {
             transition={{ duration: 0.35, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="pt-4 font-sans whitespace-pre-line text-neutral-500 text-lg tracking-tight">
+            <div className="pt-4 font-sans whitespace-pre-line text-neutral-500 text-sm sm:text-base lg:text-lg tracking-tight">
               {answer}
             </div>
           </motion.div>
