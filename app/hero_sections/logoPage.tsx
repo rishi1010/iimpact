@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { WhatsAppCommunityPopup } from "../components/popup";
 
 const testimonials = [
   {
@@ -70,6 +71,7 @@ const LogoPage = () => {
       id="logo"
       className="relative w-full min-h-dvh flex items-center  overflow-y-hidden pt-52"
     >
+      <WhatsAppCommunityPopup />
       <Image src="/logo-page-bg.png" alt="" fill quality={100} sizes="100vw" />
       {/* main body */}
       <div className="relative z-10 flex flex-col items-center justify-between gap-14 w-full">

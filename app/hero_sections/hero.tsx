@@ -24,6 +24,7 @@ const Hero = () => {
         quality={100}
         sizes="100vw"
         className="z-0"
+        priority
       />
       <div className="relative z-10 flex flex-col items-center gap-8 md:gap-14">
         {/* hero text */}
