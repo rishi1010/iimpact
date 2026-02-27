@@ -15,7 +15,7 @@ const TestimonialPage = () => {
     <div>
       <Hero />
       <TestiOne />
-      <TestiBento />
+      {/* <TestiBento /> */}
       <ContactCta />
       <Footer section={sections} />
     </div>
