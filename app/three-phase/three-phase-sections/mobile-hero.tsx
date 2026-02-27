@@ -14,14 +14,21 @@ const fadeUp: Variants = {
   }),
 };
 
-const slideFromRight: Variants = (delay: number) => ({
-  hidden: { opacity: 0, x: 80 },
-  visible: {
+const slideFromRight: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 80,
+  },
+  visible: (delay: number) => ({
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay },
-  },
-});
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1],
+      delay, // This now correctly maps to the 'custom' prop
+    },
+  }),
+};
 
 const diamonds = [
   { label: "Concepts", src: "/3p-assets/concept.png", delay: 0.2 },
@@ -57,7 +64,10 @@ const MobileHero = () => {
             style={{ zIndex: i + 1 }}
             initial="hidden"
             animate="visible"
-            variants={slideFromRight(diamond.delay)}
+            // 1. Pass the object directly
+            variants={slideFromRight}
+            // 2. Pass the dynamic value here
+            custom={diamond.delay}
           >
             {/* Placeholder — swap with real <Image> when assets are ready */}
             <div className=" relative w-64 h-48 flex items-center justify-center">

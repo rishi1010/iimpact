@@ -17,7 +17,7 @@ const ContactCta = () => {
           alt="olympic leaf"
           width={140}
           height={213}
-          className="w-12 sm:w-20 lg:w-[140px] h-auto"
+          className="w-12 sm:w-20 lg:w-35 h-auto"
         />
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-manrope text-neutral-900 font-semibold">
           Lets Talk!
@@ -27,7 +27,7 @@ const ContactCta = () => {
           alt="olympic leaf"
           width={140}
           height={213}
-          className="w-12 sm:w-20 lg:w-[140px] h-auto scale-x-[-1]"
+          className="w-12 sm:w-20 lg:w-35 h-auto scale-x-[-1]"
         />
       </div>
 
