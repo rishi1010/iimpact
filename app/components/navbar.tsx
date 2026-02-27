@@ -11,7 +11,7 @@ const Navbar = () => {
   const links = [
     { label: "Home", href: "/" },
     { label: "3-Phases", href: "/three-phase" },
-    { label: "Courses", href: "/three" },
+    { label: "Courses", href: "https://www.iimpact.mba/learn" },
     { label: "Testimonials", href: "/testimonials" },
     { label: "Contact Us", href: "/contact" },
   ];
@@ -32,13 +32,13 @@ const Navbar = () => {
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               className="text-impact-blue font-bold hover:underline decoration-impact-orange"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </div>
 

@@ -8,6 +8,10 @@ import Phase3 from "./three-phase-sections/phase-3";
 import DDay from "./three-phase-sections/d-day";
 import ContactCta from "./three-phase-sections/contact-cta";
 import type { Sections } from "../components/footer";
+import MobileHero from "./three-phase-sections/mobile-hero";
+import MPhase1 from "./three-phase-sections/mobile-phase1";
+import MPhase2 from "./three-phase-sections/mobile-phase2";
+import MPhase3 from "./three-phase-sections/mobile-phase3";
 
 const ThreePhase = () => {
   const sections: Sections[] = [
@@ -20,13 +24,35 @@ const ThreePhase = () => {
   ];
 
   return (
-    <div>
-      <Hero />
+    <div className="overflow-x-hidden">
+      <div className="hidden lg:block">
+        <Hero />
+      </div>
+      <div className="lg:hidden">
+        <MobileHero />
+      </div>
       <Testimonial />
-      <Phase1 />
-      <Phase2 />
-      <Phase3 />
-      <DDay />
+      <div className="hidden lg:block">
+        <Phase1 />
+      </div>
+      <div className="lg:hidden">
+        <MPhase1 />
+      </div>
+      <div className="hidden lg:block">
+        <Phase2 />
+      </div>
+      <div className="lg:hidden">
+        <MPhase2 />
+      </div>
+      <div className="hidden lg:block">
+        <Phase3 />
+      </div>
+      <div className="lg:hidden">
+        <MPhase3 />
+      </div>
+      <div className="hidden lg:block">
+        <DDay />
+      </div>
       <ContactCta />
       <Footer section={sections} />
     </div>
