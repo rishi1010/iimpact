@@ -47,7 +47,7 @@ const MobileBento = () => {
                 x2="412"
                 y2="13.5001"
                 stroke="#222958"
-                stroke-width="5"
+                strokeWidth="5"
               />
               <ellipse
                 cx="17"

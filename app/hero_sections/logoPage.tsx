@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { WhatsAppCommunityPopup } from "../components/popup";
 import { Marquee } from "@/components/ui/marquee";
+import Link from "next/link";
 
 const testimonials = [
   {
@@ -83,13 +84,16 @@ const LogoPage = () => {
         </div>
 
         {/* See All Results button */}
-        <div className="p-0.75 cursor-pointer hover:scale-105 active:scale-90 transition-all duration-200 flex items-center rounded-full bg-linear-to-br from-white to-[#cdcdcd]">
+        <Link
+          href={"/testimonials"}
+          className="p-0.75 cursor-pointer hover:scale-105 active:scale-90 transition-all duration-200 flex items-center rounded-full bg-linear-to-br from-white to-[#cdcdcd]"
+        >
           <div className="flex items-center justify-center rounded-full h-12 sm:h-14 lg:h-16 px-6 bg-linear-to-b from-white to-[#e3e3e3]">
             <div className="font-sans text-base font-bold text-neutral-800">
               See All Results
             </div>
           </div>
-        </div>
+        </Link>
 
         {/* IIM logos section */}
         <div className="flex flex-col lg:flex-row items-center w-full gap-6 lg:gap-0 lg:justify-between px-6 sm:px-10 lg:px-16">

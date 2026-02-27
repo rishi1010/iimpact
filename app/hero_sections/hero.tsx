@@ -54,7 +54,8 @@ const Hero = () => {
         </motion.div>
 
         {/* button */}
-        <motion.div
+        <motion.a
+          href="/contact"
           className="p-0.75 cursor-pointer hover:scale-105 active:scale-90 transition-all duration-200 shadow-2xl flex items-center rounded-full bg-linear-to-br from-white to-[#cdcdcd]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,7 +66,7 @@ const Hero = () => {
               Join Now
             </div>
           </div>
-        </motion.div>
+        </motion.a>
       </div>
     </section>
   );
