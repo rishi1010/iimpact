@@ -8,6 +8,7 @@ import LogoPage from "./hero_sections/logoPage";
 import MetricPage from "./hero_sections/metricBento";
 import Teams from "./hero_sections/teams";
 import type { Sections } from "./components/footer";
+import MobileBento from "./hero_sections/mobile-bento";
 
 export default function Home() {
   const sections: Sections[] = [
@@ -23,7 +24,12 @@ export default function Home() {
     <div className="overflow-x-hidden">
       <Hero />
       <LogoPage />
-      <Bento />
+      <div className="md:hidden">
+        <MobileBento />
+      </div>
+      <div className="hidden md:block">
+        <Bento />
+      </div>
       <Teams />
       <MetricPage />
       <Courses />
