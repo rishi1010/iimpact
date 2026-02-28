@@ -43,15 +43,15 @@ const Teams = () => {
                 companyName="Kearney"
                 logos={[
                   {
-                    url: "https://media.licdn.com/dms/image/v2/C510BAQGrnX7wBlptUA/company-logo_200_200/company-logo_200_200/0/1631347235309?e=2147483647&v=beta&t=y5LAzPv_kycav92CzR2Iwii_5uTAkpxtFw93FmQX7Sg",
+                    url: "/logos/fms-logo.jpeg",
                     name: "FMS Delhi",
                   },
                   {
-                    url: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Indian_Institute_of_Technology_Delhi_Logo.svg/1280px-Indian_Institute_of_Technology_Delhi_Logo.svg.png",
+                    url: "/logos/iitd-logo.png",
                     name: "IIT Delhi",
                   },
                   {
-                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTkRp5QqqJlg3gZPrLB_Xff2nThWeZdsPNww&s",
+                    url: "/logos/kearney-logo.png",
                     name: "Kearney",
                   },
                 ]}
@@ -70,15 +70,15 @@ const Teams = () => {
                 companyName="Accenture"
                 logos={[
                   {
-                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKqa6_0RDjMesXoOyykCnNhjlGleeRMO86MQ&s",
+                    url: "/logos/iimb-logo.png",
                     name: "IIM Bangalore",
                   },
                   {
-                    url: "https://upload.wikimedia.org/wikipedia/en/1/1b/NIT_Surat_Logo.svg",
+                    url: "/logos/nits-logo.png",
                     name: "NIT Surat",
                   },
                   {
-                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0ercDncGsEV9NkGdp78EyagH6U3ZFKiLyfQ&s",
+                    url: "/logos/acc-logo.png",
                     name: "Accenture",
                   },
                 ]}

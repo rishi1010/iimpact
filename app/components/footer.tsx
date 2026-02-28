@@ -208,22 +208,34 @@ const Footer: React.FC<FooterProps> = ({ section }) => {
             }}
           >
             {[
-              { icon: <Mail size={24} />, href: "/placeholder" },
+              {
+                icon: <Mail size={24} />,
+                href: "mailto:iimpact.mba@gmail.com",
+                label: "Email Us",
+              },
               {
                 icon: <FaLinkedinIn size={24} />,
                 href: "https://www.linkedin.com/company/mba-iimpact/",
+                label: "LinkedIn",
               },
               {
                 icon: <FiInstagram size={24} />,
                 href: "https://www.instagram.com/iimpact.mba/",
+                label: "Instagram",
               },
               {
                 icon: <FiYoutube size={24} />,
                 href: "https://www.youtube.com/@iimpactmba",
+                label: "Youtube",
               },
             ].map((item, i) => (
               <motion.div key={i} variants={iconVariants}>
-                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.label}
+                >
                   {item.icon}
                 </a>
               </motion.div>

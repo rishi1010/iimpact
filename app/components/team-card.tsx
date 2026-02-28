@@ -87,9 +87,10 @@ export const TeamCard: React.FC<TeamCardProps> = ({
                 <Tooltip key={i}>
                   <TooltipTrigger asChild>
                     <div className="relative w-7 h-7 rounded-md bg-white flex items-center justify-center overflow-hidden cursor-pointer">
-                      <img
+                      <Image
                         src={logo.url}
                         alt={logo.name}
+                        fill
                         className="w-full h-full object-contain p-0.5"
                       />
                     </div>

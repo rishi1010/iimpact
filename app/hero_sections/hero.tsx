@@ -27,31 +27,21 @@ const Hero = () => {
         priority
       />
       <div className="relative z-10 flex flex-col items-center gap-8 md:gap-14">
-        {/* hero text */}
-        <motion.div
-          className="flex text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-manrope text-impact-blue flex-col gap-2 items-center text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0 }}
-        >
+        {/* hero text — no animation, renders immediately for LCP */}
+        <div className="flex text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-manrope text-impact-blue flex-col gap-2 items-center text-center">
           <h1 className="font-semibold">India's MBA Dream</h1>
           <h1 className="italic underline decoration-impact-orange font-playfair">
             Redefined
           </h1>
-        </motion.div>
+        </div>
 
         {/* subtext */}
-        <motion.div
-          className="text-balance text-base sm:text-lg md:text-xl font-sans max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl text-center text-impact-blue"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-        >
+        <div className="text-balance text-base sm:text-lg md:text-xl font-sans max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl text-center text-impact-blue">
           A smarter way to crack CAT. Learn the topper's way of thinking with a
           proven 3-phase system led by{" "}
           <span className="font-bold">100%ilers</span> from IIM Bangalore & FMS
           Delhi.
-        </motion.div>
+        </div>
 
         {/* button */}
         <motion.a
@@ -61,7 +51,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
         >
-          <div className=" sm:w-36 sm:h-14 md:w-36 md:h-12 flex items-center justify-center rounded-full px-6 py-2 bg-linear-to-b from-white to-[#e3e3e3]">
+          <div className="sm:w-36 sm:h-14 md:w-36 md:h-12 flex items-center justify-center rounded-full px-6 py-2 bg-linear-to-b from-white to-[#e3e3e3]">
             <div className="font-sans font-bold text-base md:text-lg text-neutral-800">
               Join Now
             </div>
