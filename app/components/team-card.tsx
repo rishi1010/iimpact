@@ -4,6 +4,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Image from "next/image";
 
 interface Logo {
   url: string;
@@ -60,10 +61,11 @@ export const TeamCard: React.FC<TeamCardProps> = ({
       <div className="absolute inset-0 rounded-2xl overflow-hidden bg-[#4959BE]/30">
         {/* Member photo */}
         <div className="absolute inset-0">
-          <img
+          <Image
             src={imageUrl}
             alt={name}
             className="w-full h-full object-cover object-top"
+            fill
           />
         </div>
 
@@ -84,7 +86,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
               {logos.map((logo, i) => (
                 <Tooltip key={i}>
                   <TooltipTrigger asChild>
-                    <div className="w-7 h-7 rounded-md bg-white flex items-center justify-center overflow-hidden cursor-pointer">
+                    <div className="relative w-7 h-7 rounded-md bg-white flex items-center justify-center overflow-hidden cursor-pointer">
                       <img
                         src={logo.url}
                         alt={logo.name}

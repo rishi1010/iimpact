@@ -1,5 +1,6 @@
 import Navbar from "@/app/components/navbar";
 import React from "react";
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -11,8 +12,9 @@ const Hero = () => {
       </h1>
       <div className="relative w-3xl h-1/2 mt-2">
         {/* Image + mask */}
-        <img
+        <Image
           src="/3p-assets/3p-hero-bg.png"
+          alt="a man running"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-linear-to-r from-impact-blue to-impact-orange mix-blend-lighten" />

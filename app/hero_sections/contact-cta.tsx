@@ -2,13 +2,22 @@
 
 import React from "react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const ContactCta = () => {
   return (
     <section
-      className="bg-[url('/hero-bg.png')] w-full min-h-64 sm:min-h-96 lg:h-141 bg-no-repeat bg-cover flex items-center justify-center flex-col gap-6 sm:gap-8 lg:gap-9 px-6 sm:px-12 lg:px-20 py-16 lg:py-0 text-center"
+      className="relative w-full min-h-64 sm:min-h-96 lg:h-141  flex items-center justify-center flex-col gap-6 sm:gap-8 lg:gap-9 px-6 sm:px-12 lg:px-20 py-16 lg:py-0 text-center"
       id="contact-cta"
     >
+      <Image
+        src="/hero-bg.png"
+        alt=""
+        fill
+        quality={100}
+        sizes="100vw"
+        className="-z-10"
+      />
       <h1 className="text-5xl sm:text-6xl lg:text-8xl font-manrope text-neutral-900 font-semibold">
         Lets Talk!
       </h1>

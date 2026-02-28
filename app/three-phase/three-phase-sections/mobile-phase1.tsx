@@ -41,7 +41,10 @@ const MPhase1 = () => {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section className="relative w-full min-h-dvh bg-linear-to-t from-[#ADDCEE] to-[#f6f4f0] flex flex-col justify-between px-6 pt-20 pb-12 overflow-hidden">
+    <section
+      id="phase1"
+      className="relative w-full min-h-dvh bg-linear-to-t from-[#ADDCEE] to-[#f6f4f0] flex flex-col justify-between px-6 pt-20 pb-12 overflow-hidden"
+    >
       {/* ── Title ─────────────────────────────────────────────────── */}
       <motion.h1
         className="font-manrope font-bold text-4xl text-neutral-900 leading-tight mb-8"

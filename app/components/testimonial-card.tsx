@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Linkedin, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -128,7 +129,7 @@ export default function TestimonialCard({
           {/* Avatar */}
           <div className="w-14 h-14 rounded-full bg-neutral-300 shrink-0 overflow-hidden">
             {avatarUrl && (
-              <img
+              <Image
                 src={avatarUrl}
                 alt={`${name}'s avatar`}
                 className="w-full h-full object-cover"

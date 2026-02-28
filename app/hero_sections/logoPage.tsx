@@ -69,7 +69,7 @@ const LogoPage = () => {
       id="logo"
       className="relative w-full min-h-dvh flex items-center overflow-y-hidden pt-32 sm:pt-40 lg:pt-52"
     >
-      <WhatsAppCommunityPopup />
+      <WhatsAppCommunityPopup isPopUp={true} />
       <Image src="/logo-page-bg.png" alt="" fill quality={100} sizes="100vw" />
 
       {/* main body */}

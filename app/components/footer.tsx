@@ -20,7 +20,7 @@ interface FooterProps {
 const pages = [
   { label: "Main Page", href: "/" },
   { label: "3 Phase System", href: "/three-phase" },
-  { label: "Courses", href: "/three" },
+  { label: "Courses", href: "https://www.iimpact.mba/learn" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Contact Us", href: "/contact" },
 ];
@@ -276,7 +276,14 @@ const Footer: React.FC<FooterProps> = ({ section }) => {
           className="text-neutral-400 font-sans text-xs"
           variants={itemVariants}
         >
-          Built By Toppers, Designed By Apurv.
+          Built By Toppers, Designed By{" "}
+          <a
+            className="underline underline-offset-2"
+            href="mailto:apurvwork13@gmail.com"
+          >
+            Apurv
+          </a>
+          .
         </motion.p>
       </motion.div>
 
