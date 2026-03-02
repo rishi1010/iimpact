@@ -132,7 +132,7 @@ export default function TestimonialCard({
               <Image
                 src={avatarUrl}
                 alt={`${name}'s avatar`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
                 fill
               />
             )}
