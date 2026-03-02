@@ -127,12 +127,13 @@ export default function TestimonialCard({
         {/* Header row */}
         <div className="flex items-center gap-4">
           {/* Avatar */}
-          <div className="w-14 h-14 rounded-full bg-neutral-300 shrink-0 overflow-hidden">
+          <div className=" relative w-14 h-14 rounded-full bg-neutral-300 shrink-0 overflow-hidden">
             {avatarUrl && (
               <Image
                 src={avatarUrl}
                 alt={`${name}'s avatar`}
                 className="w-full h-full object-cover"
+                fill
               />
             )}
           </div>

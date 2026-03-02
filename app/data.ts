@@ -51,3 +51,411 @@ export const Faqs_data = [
       "Students receive a high level of personal attention through direct access to the mentors themselves — both 100 percentilers who teach and guide the program. As founders and primary instructors, they remain closely involved in each student's journey, offering guidance on:\n• Concepts and strategy\n• Preparation planning\n• Performance improvement and progress tracking",
   },
 ];
+
+interface QuestionItem {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+interface Testimonial {
+  name: string;
+  percentile: string;
+  description: string;
+  linkedinUrl: string;
+  avatarUrl: string;
+  questions: QuestionItem[];
+}
+
+export const Testimonials_data: Testimonial[] = [
+  {
+    name: "Rohan Vig",
+    percentile: "99.91%ile",
+    description: " Serial start-up founder",
+    linkedinUrl: "https://linkedin.com/in/rohan-vig",
+    avatarUrl: "https://avatar.vercel.sh/rohan-vig",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer: "being consistent with CAT prep while running my own business",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer:
+          "a tightly focused, mentor-curated plan designed by proven 100-percentilers.",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer:
+          "I achieved a 99.9+ percentile while working as a start-up founder",
+      },
+    ],
+  },
+  {
+    name: "Gursimar S Tuteja",
+    percentile: "99.9%ile",
+    description: " Last read a book during school times",
+    linkedinUrl: "https://linkedin.com/in/gursimar-singh-tuteja",
+    avatarUrl: "https://avatar.vercel.sh/gursimar-singh-tuteja",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer:
+          "having no sustained reading habit for tackling dense VARC passages.",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer:
+          "IIMpact's daily intent-driven reading combined with structured passage analysis.",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer: "VARC stabilised as my highest-scoring section.",
+      },
+    ],
+  },
+  {
+    name: "Aryan Chaudhary",
+    percentile: "99.89%ile",
+    description: " Hard switch from UPSC to CAT",
+    linkedinUrl: "https://linkedin.com/in/aryan-chaudhary",
+    avatarUrl: "https://avatar.vercel.sh/aryan-chaudhary",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer:
+          "beginning serious CAT preparation far later than most aspirants.",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer:
+          "IIMpact's sharply prioritised revision cycles with close personal mentor oversight.",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer:
+          "the nervous aspirant who started in September walked into an IIM A interview in February",
+      },
+    ],
+  },
+  {
+    name: "Arindam Kanoria",
+    percentile: "99.85%ile",
+    description: " Analysis turned effort into results",
+    linkedinUrl: "https://linkedin.com/in/arindam-kanoria",
+    avatarUrl: "https://avatar.vercel.sh/arindam-kanoria",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer: "when the hours I put in weren't translating into marks",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer:
+          "Rishi and Divyansh Sir's detailed insights from analysing my mock attempts",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer:
+          "my sharpest peak happened after my last mock, on the real CAT :)",
+      },
+    ],
+  },
+  {
+    name: "Shweth Shetty",
+    percentile: "99.84%ile",
+    description: " Multiple CAT attempts",
+    linkedinUrl: "https://linkedin.com/in/shweth-shetty",
+    avatarUrl: "https://avatar.vercel.sh/shweth-shetty",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer:
+          "gathering the resolve to re-attempt with purpose after a disappointing CAT 2024",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer: "a clear, focused roadmap curated by Divyansh and Rishi Sir",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer: "the anxiety disappeared on seeing my scores rise sharply.",
+      },
+    ],
+  },
+  {
+    name: "Eeshan Joshi",
+    percentile: "99.72%ile",
+    description: " Aced despite a 70-hr work week",
+    linkedinUrl: "https://linkedin.com/in/eeshan-joshi",
+    avatarUrl: "https://avatar.vercel.sh/eeshan-joshi",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer: "staying disciplined and consistent over months of prep",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer:
+          "well-structured, achievable schedules and IIMpact's mentors actually tracking my progress, ",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer: "mock percentiles started climbing faster with time",
+      },
+    ],
+  },
+  {
+    name: "Radha Agrawal",
+    percentile: "99.71%ile",
+    description: " Almost gave up on CAT midway",
+    linkedinUrl: "https://linkedin.com/in/radha-agrawal",
+    avatarUrl: "https://avatar.vercel.sh/radha-agrawal",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer:
+          "feeling demotivated during a difficult time right in the middle of prep",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer:
+          "Divyansh and Rishi sir's consistent support through my toughest times",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer: "I achieved my dream score against all odds",
+      },
+    ],
+  },
+  {
+    name: "Aastik Bhatt",
+    percentile: "99.7%ile",
+    description: "Found a helping hand in IIMpact",
+    linkedinUrl: "https://linkedin.com/in/aastik-bhatt",
+    avatarUrl: "https://avatar.vercel.sh/aastik-bhatt",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer: "not having anyone with real CAT experience to guide me.",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer:
+          "talking to mentors who had themselves aced the CAT and were keen to tailor my prep journey.",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer:
+          "my prep finally matched what CAT actually demands- no more and no less.",
+      },
+    ],
+  },
+  {
+    name: "Aditya Mukherjee",
+    percentile: "99.69%ile",
+    description: " Last solved a math problem 6 years ago",
+    linkedinUrl: "https://linkedin.com/in/aditya-mukherjee",
+    avatarUrl: "https://avatar.vercel.sh/aditya-mukherjee",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer:
+          "re-training my mind to solve multi-step problems without getting lost",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer:
+          "replacing brute force practice with DG and Rishi Sir's emphasis on structure, error analysis, and cataloguing",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer:
+          "my weakest sections gave me the scores that fetched me BLACKI calls",
+      },
+    ],
+  },
+  {
+    name: "Dhruv Kalra",
+    percentile: "99.68%ile",
+    description: " Learnt to beat the clock",
+    linkedinUrl: "https://linkedin.com/in/dhruv-kalra",
+    avatarUrl: "https://avatar.vercel.sh/dhruv-kalra",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer: "adjusting to the fast pace that CAT demands",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer: "timed homework and practice from Day 1",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer:
+          "I finished all sections well in time, maximising my attempt rate on the CAT day",
+      },
+    ],
+  },
+  {
+    name: "Tushar Bajaj",
+    percentile: "99.62%ile",
+    description: " Cut through the chaos with insight",
+    linkedinUrl: "https://linkedin.com/in/tushar-bajaj",
+    avatarUrl: "https://avatar.vercel.sh/tushar-bajaj",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer:
+          "confusion from conflicting advice across multiple coaching sources and materials",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer: "IIMpact's no-nonsense, easy to follow program and syllabus",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer:
+          "I delivered on my strengths and secured shortlists from IIM ABC ",
+      },
+    ],
+  },
+  {
+    name: "Yash Gupta",
+    percentile: "99.60%ile",
+    description: " Unlearning JEE math to ace CAT",
+    linkedinUrl: "https://linkedin.com/in/yash-gupta",
+    avatarUrl: "https://avatar.vercel.sh/yash-gupta",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer:
+          "unlearning the complex math methods used in engineering classes",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer: "Divyansh Sir's practical, pattern-based approach to CAT quant",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer:
+          "the entire exam became an exercise in using the tools I had in my catalogue",
+      },
+    ],
+  },
+  {
+    name: "Kanishk Sehgal",
+    percentile: "99.54%ile",
+    description: " First dance with competition",
+    linkedinUrl: "https://linkedin.com/in/kanishk-sehgal",
+    avatarUrl: "https://avatar.vercel.sh/kanishk-sehgal",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer:
+          "having no sense of how competitive exams or CAT questions really work.",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer:
+          "Phase 2 practice with past CAT papers and clear attempt strategy.",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer: "my mock scores became a reality on CAT day",
+      },
+    ],
+  },
+  {
+    name: "Mohan G Nayak",
+    percentile: "99.53%ile",
+    description: " Self-Prep to Guided Excellence",
+    linkedinUrl: "https://linkedin.com/in/mohan-gunakara-nayak",
+    avatarUrl: "https://avatar.vercel.sh/mohan-gunakara-nayak",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer: "doing self-prep without knowing if I was on the right track.",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer:
+          "putting my trust in DG Sir and Rishi Sir's experience and methods",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer:
+          "I performed way better on the D-Day than my mocks during self-prep",
+      },
+    ],
+  },
+  {
+    name: "Drona Kathuria",
+    percentile: "99.48%ile",
+    description: " Faced my DILR demons",
+    linkedinUrl: "https://linkedin.com/in/drona-kathuria",
+    avatarUrl: "https://avatar.vercel.sh/drona-kathuria",
+    questions: [
+      {
+        id: "Q1",
+        question: "The hardest part was ...",
+        answer:
+          "making sense of new DILR sets of varying difficulties from scratch ",
+      },
+      {
+        id: "Q2",
+        question: "What made things click...",
+        answer:
+          "understanding the pattern's using Rishi Sir's strategy playbook",
+      },
+      {
+        id: "Q3",
+        question: "It all paid off when ...",
+        answer:
+          "I knew exactly what to attack and what to avoid to get my best score",
+      },
+    ],
+  },
+];
