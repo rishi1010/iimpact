@@ -1,3 +1,15 @@
+// This is the data for the FAQs. the question is what will be visible first
+// and the answer is what will be visible when expanded.
+// if you want to add a new faq, add this to the faqs_data before ]
+// {
+//     question: "",
+//     answer:
+//       "",
+//   },
+
+// do not forget the ',' at the end, or it will show an error.
+// similarly for removing, make sure each {} is separated by a ','
+
 export const Faqs_data = [
   {
     question: "Is online coaching good for CAT?",
@@ -52,12 +64,15 @@ export const Faqs_data = [
   },
 ];
 
+// from here starts the data for the testimonials on the testimonials page.
+
+// DO NOT TOUCH THIS!!!!
 interface QuestionItem {
   id: string;
   question: string;
   answer: string;
 }
-
+// DO NOT TOUCH THIS!!!!
 interface Testimonial {
   name: string;
   percentile: string;
@@ -67,6 +82,12 @@ interface Testimonial {
   questions: QuestionItem[];
 }
 
+// This is the data for the testimonials. if you want to add a new testimonials,
+// add the image in testi-pics folder, in the public folder.
+// then copy one of the {} and paste it in the end, or any position you want
+// keeping the ',' in mind. and change the data.
+// and rename the avatar_url to what it needs to be
+// the name of the picture added in the testi-pics section, with the extension like .png .jpeg
 export const Testimonials_data: Testimonial[] = [
   {
     name: "Rohan Vig",
