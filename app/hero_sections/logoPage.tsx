@@ -6,36 +6,42 @@ import { WhatsAppCommunityPopup } from "../components/popup";
 import { Marquee } from "@/components/ui/marquee";
 import Link from "next/link";
 
-const testimonials = [
+type Testimonial = {
+  text: string;
+  name: string;
+  score?: string;
+};
+
+const testimonials: Testimonial[] = [
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla metus erat, porta nec sodales et, convallis quis dui. Nulla rhoncus, elit sit amet efficitur consequat, mi mauris fringilla nibh, vel volutpat ligula purus vitae lorem.",
+    text: "IIMpact's structured approach was exactly what I needed. Divyansh Sir's VARC sessions sharpened my reading, and Rishi Sir's DILR methods turned puzzles into patterns. Converted IIM B, C, L — joined IIM Calcutta, now interning at BCG.",
     name: "Tanishq Gupta",
     score: "99.99%ile",
   },
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla metus erat, porta nec sodales et, convallis quis dui. Nulla rhoncus, elit sit amet efficitur consequat, mi mauris fringilla nibh, vel volutpat ligula purus vitae lorem.",
-    name: "Ananya Sharma",
+    text: "Everyone said CAT is an engineer's game, but Divyansh Sir broke down QA in a way that just clicked. It was never about 8-hour grinds — smart strategy and consistency got me here.",
+    name: "Krish Kukreja",
     score: "99.85%ile",
   },
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla metus erat, porta nec sodales et, convallis quis dui. Nulla rhoncus, elit sit amet efficitur consequat, mi mauris fringilla nibh, vel volutpat ligula purus vitae lorem.",
-    name: "Rohan Mehta",
-    score: "99.72%ile",
+    text: "As a BDS graduate, I wasn't sure how I fit into the MBA crowd. Divyansh Sir's logical VARC approach and Rishi Sir's mock strategy gave me a clear roadmap. Converted IIM C & FMS, now a Strategy Consultant at McKinsey.",
+    name: "Dr. Saleha Perween",
   },
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla metus erat, porta nec sodales et, convallis quis dui. Nulla rhoncus, elit sit amet efficitur consequat, mi mauris fringilla nibh, vel volutpat ligula purus vitae lorem.",
-    name: "Priya Iyer",
-    score: "99.91%ile",
+    text: "Practicing law full-time, quant felt impossible to crack. Rishi Sir and Divyansh Sir made it about understanding over speed, and IIMpact's peer group kept me consistent. Converted IIM A, now with an offer from BCG.",
+    name: "Vipula Bhatt",
   },
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla metus erat, porta nec sodales et, convallis quis dui. Nulla rhoncus, elit sit amet efficitur consequat, mi mauris fringilla nibh, vel volutpat ligula purus vitae lorem.",
-    name: "Kabir Singh",
-    score: "99.68%ile",
+    text: "Coming from MBBS, I wasn't used to math-heavy exams at all. The structured approach made quant finally make sense and VARC stopped feeling like guesswork. Now at FMS, interning at Accenture Strategy.",
+    name: "Dr. Parth",
   },
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla metus erat, porta nec sodales et, convallis quis dui. Nulla rhoncus, elit sit amet efficitur consequat, mi mauris fringilla nibh, vel volutpat ligula purus vitae lorem.",
-    name: "Meera Nair",
-    score: "99.95%ile",
+    text: "Preparing after 3 years off books while working oil rig shifts wasn't easy. IIMpact's weekend planner kept me on schedule, and Rishi Sir's DILR videos were gold for someone returning to study mode.",
+    name: "Tharun Vijay",
+  },
+  {
+    text: "Juggling a 9-to-7 job, I couldn't afford to overthink my prep. Divyansh Sir's daily calendar removed all the guesswork, and Rishi Sir's SOTDs became my wind-down ritual every night.",
+    name: "Tanisha Tyagi",
   },
 ];
 
@@ -46,7 +52,7 @@ const TestimonialCard = ({
 }: {
   text: string;
   name: string;
-  score: string;
+  score?: string;
 }) => (
   <div className="w-72 sm:w-80 shrink-0 h-auto sm:h-96 bg-linear-to-b from-white to-[#fafafa] p-5 sm:p-7 rounded-3xl flex flex-col gap-6 sm:gap-10 shadow-sm mx-2">
     <div className="text-balance text-zinc-500 font-light font-spectral text-base sm:text-lg leading-relaxed">
@@ -55,7 +61,7 @@ const TestimonialCard = ({
     <div className="flex w-full items-center gap-4 mt-auto">
       <div className="rounded-full size-10 sm:size-11 bg-gray-300 shrink-0" />
       <div className="font-sans text-base sm:text-lg text-[#555555]">
-        {name} <span className="text-impact-orange">{score}</span>
+        {name} {score && <span className="text-impact-orange">{score}</span>}
       </div>
     </div>
   </div>

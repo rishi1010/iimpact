@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Linkedin, ChevronRight } from "lucide-react";
+import { Linkedin, ChevronRight, CircleStar } from "lucide-react";
 import Image from "next/image";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -64,7 +64,7 @@ function QuestionRow({ item }: QuestionRowProps) {
       >
         {/* Q label */}
         <span className="font-playfair text-lg font-bold shrink-0 leading-snug text-impact-orange">
-          {item.id}
+          <CircleStar />
         </span>
 
         {/* Question text */}
@@ -109,7 +109,7 @@ export default function TestimonialCard({
   name = "Name",
   percentile = "99.99%ile",
   description = "Aspiring engineer with a passion for solving hard problems and building things that matter.",
-  linkedinUrl = "#",
+  linkedinUrl,
   avatarUrl,
   questions = DEFAULT_QUESTIONS,
 }: Partial<TestimonialCardProps>) {
@@ -149,21 +149,23 @@ export default function TestimonialCard({
           </div>
 
           {/* LinkedIn icon */}
-          <a
-            href={linkedinUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profile"
-            className="shrink-0 w-8 h-8 rounded-md flex items-center justify-center  hover:opacity-80 transition-opacity"
-          >
-            <Linkedin
-              size={16}
-              strokeWidth={1}
-              color="#0A66C2"
-              fill="#0A66C2"
-              className="cursor-pointer"
-            />
-          </a>
+          {linkedinUrl && (
+            <a
+              href={linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="shrink-0 w-8 h-8 rounded-md flex items-center justify-center  hover:opacity-80 transition-opacity"
+            >
+              <Linkedin
+                size={16}
+                strokeWidth={1}
+                color="#0A66C2"
+                fill="#0A66C2"
+                className="cursor-pointer"
+              />
+            </a>
+          )}
         </div>
 
         {/* Divider */}

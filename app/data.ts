@@ -77,7 +77,7 @@ interface Testimonial {
   name: string;
   percentile: string;
   description: string;
-  linkedinUrl: string;
+  linkedinUrl?: string;
   avatarUrl: string;
   questions: QuestionItem[];
 }
@@ -93,7 +93,7 @@ export const Testimonials_data: Testimonial[] = [
     name: "Rohan Vig",
     percentile: "99.91%ile",
     description: " Serial start-up founder",
-    linkedinUrl: "https://linkedin.com/in/rohan-vig",
+    linkedinUrl: "https://www.linkedin.com/in/rohanvig/",
     avatarUrl: "/testi-pics/Rohan.jpeg",
     questions: [
       {
@@ -119,7 +119,7 @@ export const Testimonials_data: Testimonial[] = [
     name: "Gursimar S Tuteja",
     percentile: "99.9%ile",
     description: " Last read a book during school times",
-    linkedinUrl: "https://linkedin.com/in/gursimar-singh-tuteja",
+    linkedinUrl: "https://www.linkedin.com/in/gursimarsingh03/",
     avatarUrl: "/testi-pics/Gursimar.jpeg",
     questions: [
       {
@@ -145,7 +145,7 @@ export const Testimonials_data: Testimonial[] = [
     name: "Aryan Chaudhary",
     percentile: "99.89%ile",
     description: " Hard switch from UPSC to CAT",
-    linkedinUrl: "https://linkedin.com/in/aryan-chaudhary",
+    linkedinUrl: "https://www.linkedin.com/in/aryan1305choudhary/",
     avatarUrl: "/testi-pics/Aryan.jpeg",
     questions: [
       {
@@ -172,7 +172,7 @@ export const Testimonials_data: Testimonial[] = [
     name: "Arindam Kanoria",
     percentile: "99.85%ile",
     description: " Analysis turned effort into results",
-    linkedinUrl: "https://linkedin.com/in/arindam-kanoria",
+    linkedinUrl: "https://www.linkedin.com/in/arindamkanoria/",
     avatarUrl: "/testi-pics/Arindam.jpeg",
     questions: [
       {
@@ -198,7 +198,7 @@ export const Testimonials_data: Testimonial[] = [
     name: "Shweth Shetty",
     percentile: "99.84%ile",
     description: " Multiple CAT attempts",
-    linkedinUrl: "https://linkedin.com/in/shweth-shetty",
+    linkedinUrl: "https://www.linkedin.com/in/shweth-shetty-19ba08222/",
     avatarUrl: "/testi-pics/Shweth.jpeg",
     questions: [
       {
@@ -223,7 +223,7 @@ export const Testimonials_data: Testimonial[] = [
     name: "Eeshan Joshi",
     percentile: "99.72%ile",
     description: " Aced despite a 70-hr work week",
-    linkedinUrl: "https://linkedin.com/in/eeshan-joshi",
+    linkedinUrl: "https://www.linkedin.com/in/eeshan-joshi/",
     avatarUrl: "/testi-pics/Eeshan.jpeg",
     questions: [
       {
@@ -248,7 +248,6 @@ export const Testimonials_data: Testimonial[] = [
     name: "Radha Agrawal",
     percentile: "99.71%ile",
     description: " Almost gave up on CAT midway",
-    linkedinUrl: "https://linkedin.com/in/radha-agrawal",
     avatarUrl: "/testi-pics/Radha.jpeg",
     questions: [
       {
@@ -274,7 +273,7 @@ export const Testimonials_data: Testimonial[] = [
     name: "Aastik Bhatt",
     percentile: "99.7%ile",
     description: "Found a helping hand in IIMpact",
-    linkedinUrl: "https://linkedin.com/in/aastik-bhatt",
+    linkedinUrl: "https://www.linkedin.com/in/aastik-bhatt-25889419b/",
     avatarUrl: "/testi-pics/Aastik.jpeg",
     questions: [
       {
@@ -300,7 +299,7 @@ export const Testimonials_data: Testimonial[] = [
     name: "Aditya Mukherjee",
     percentile: "99.69%ile",
     description: " Last solved a math problem 6 years ago",
-    linkedinUrl: "https://linkedin.com/in/aditya-mukherjee",
+    linkedinUrl: "https://www.linkedin.com/in/aditya-mukherjee-5699331a9/",
     avatarUrl: "/testi-pics/Aditya.jpeg",
     questions: [
       {
@@ -327,7 +326,7 @@ export const Testimonials_data: Testimonial[] = [
     name: "Dhruv Kalra",
     percentile: "99.68%ile",
     description: " Learnt to beat the clock",
-    linkedinUrl: "https://linkedin.com/in/dhruv-kalra",
+    linkedinUrl: "https://www.linkedin.com/in/dhruv-kalra-590915217/",
     avatarUrl: "/testi-pics/Dhruv.jpeg",
     questions: [
       {
@@ -352,7 +351,7 @@ export const Testimonials_data: Testimonial[] = [
     name: "Tushar Bajaj",
     percentile: "99.62%ile",
     description: " Cut through the chaos with insight",
-    linkedinUrl: "https://linkedin.com/in/tushar-bajaj",
+    linkedinUrl: "https://www.linkedin.com/in/tusharbajaj111/",
     avatarUrl: "/testi-pics/Tushar.jpeg",
     questions: [
       {
@@ -378,7 +377,7 @@ export const Testimonials_data: Testimonial[] = [
     name: "Yash Gupta",
     percentile: "99.60%ile",
     description: " Unlearning JEE math to ace CAT",
-    linkedinUrl: "https://linkedin.com/in/yash-gupta",
+    linkedinUrl: "https://www.linkedin.com/in/yash-yg-gupta/",
     avatarUrl: "/testi-pics/Yash.jpeg",
     questions: [
       {
@@ -404,7 +403,6 @@ export const Testimonials_data: Testimonial[] = [
     name: "Kanishk Sehgal",
     percentile: "99.54%ile",
     description: " First dance with competition",
-    linkedinUrl: "https://linkedin.com/in/kanishk-sehgal",
     avatarUrl: "/testi-pics/Kanishk.jpeg",
     questions: [
       {
@@ -430,7 +428,7 @@ export const Testimonials_data: Testimonial[] = [
     name: "Mohan G Nayak",
     percentile: "99.53%ile",
     description: " Self-Prep to Guided Excellence",
-    linkedinUrl: "https://linkedin.com/in/mohan-gunakara-nayak",
+    linkedinUrl: "https://www.linkedin.com/in/mohannayak4/",
     avatarUrl: "/testi-pics/Mohan.jpeg",
     questions: [
       {
@@ -456,7 +454,7 @@ export const Testimonials_data: Testimonial[] = [
     name: "Drona Kathuria",
     percentile: "99.48%ile",
     description: " Faced my DILR demons",
-    linkedinUrl: "https://linkedin.com/in/drona-kathuria",
+    linkedinUrl: "https://www.linkedin.com/in/drona-kathuria-7a386a213/",
     avatarUrl: "/testi-pics/Drona.jpeg",
     questions: [
       {
