@@ -22,6 +22,7 @@ const pages = [
   { label: "3 Phase System", href: "/three-phase" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Contact Us", href: "/contact" },
+  { label: "Student Portal", href: "https://www.learn.iimpact.mba" },
 ];
 
 const linkClass =
@@ -265,7 +266,7 @@ const Footer: React.FC<FooterProps> = ({ section }) => {
 
       {/* ── 6. Bottom bar — copyright and credit stagger in ───────────────────── */}
       <motion.div
-        className="max-w-6xl mx-auto py-4 flex items-center justify-between"
+        className="max-w-6xl mx-auto py-4 flex flex-col sm:flex-row items-center justify-between"
         initial="hidden"
         animate={animate}
         variants={{

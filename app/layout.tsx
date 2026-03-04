@@ -11,6 +11,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import ScrollToTop from "./components/scroll";
 
 export const metadata: Metadata = {
   // Basic
@@ -149,6 +150,7 @@ export default function RootLayout({
         `}
       >
         <TooltipProvider>{children}</TooltipProvider>
+        <ScrollToTop />
       </body>
     </html>
   );

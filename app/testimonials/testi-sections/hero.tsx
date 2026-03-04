@@ -83,7 +83,7 @@ const Hero = () => {
             whileHover={{ y: -5 }}
             className="lg:row-span-2 lg:col-span-1 bg-linear-to-t from-impact-blue to-impact-blue/40 rounded-3xl flex flex-col items-center justify-center p-6 lg:p-4 font-poppins gap-3 shadow-xl"
           >
-            <p className="text-white text-4xl lg:text-5xl xl:text-6xl font-bold drop-shadow-sm">
+            <p className="text-white text-3xl lg:text-5xl xl:text-6xl font-bold drop-shadow-sm">
               1 in 6
             </p>
             <p className="text-white/90 font-sans text-sm lg:text-base text-center">
@@ -96,7 +96,7 @@ const Hero = () => {
             whileHover={{ y: -5 }}
             className="lg:row-span-2 lg:col-span-1 bg-linear-to-t from-impact-blue to-impact-blue/40 rounded-3xl flex flex-col items-center justify-center p-6 lg:p-4 font-poppins gap-3 shadow-xl"
           >
-            <p className="text-white text-4xl lg:text-5xl xl:text-6xl tracking-tight font-bold drop-shadow-sm">
+            <p className="text-white text-3xl text-center lg:text-5xl xl:text-6xl tracking-tight font-bold drop-shadow-sm">
               <CountUp end={25} suffix="%" enableScrollSpy scrollSpyOnce />
               <span className="text-base font-medium opacity-80">
                 {" "}
@@ -113,7 +113,7 @@ const Hero = () => {
             whileHover={{ y: -5 }}
             className="lg:row-span-2 lg:col-span-1 bg-linear-to-t from-impact-orange to-impact-orange/40 rounded-3xl flex flex-col items-center justify-center p-6 lg:p-4 font-poppins gap-3 shadow-xl"
           >
-            <p className="text-white text-4xl lg:text-5xl xl:text-6xl tracking-tight font-bold drop-shadow-sm">
+            <p className="text-white text-3xl text-center lg:text-5xl xl:text-6xl tracking-tight font-bold drop-shadow-sm">
               <CountUp end={50} suffix="%" enableScrollSpy scrollSpyOnce />
               <span className="text-base font-medium opacity-80">
                 {" "}
@@ -130,7 +130,7 @@ const Hero = () => {
             whileHover={{ y: -5 }}
             className="lg:row-span-2 lg:col-span-1 bg-linear-to-t from-impact-orange to-impact-orange/40 rounded-3xl flex flex-col items-center justify-center p-6 lg:p-4 font-poppins gap-3 shadow-xl"
           >
-            <p className="text-white text-4xl lg:text-5xl xl:text-6xl tracking-tight font-bold drop-shadow-sm">
+            <p className="text-white text-3xl text-center lg:text-5xl xl:text-6xl tracking-tight font-bold drop-shadow-sm">
               <CountUp end={70} suffix="%" enableScrollSpy scrollSpyOnce />
               <span className="text-base font-medium opacity-80">
                 {" "}

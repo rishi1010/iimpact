@@ -5,10 +5,12 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { WhatsAppCommunityPopup } from "./popup"; // adjust import path
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
+  const router = useRouter();
 
   const links = [
     { label: "Home", href: "/" },
@@ -48,6 +50,14 @@ const Navbar = () => {
             >
               Free Resources
             </button>
+            <button
+              onClick={() => {
+                window.open("https://www.learn.iimpact.mba", "_blank");
+              }}
+              className="text-impact-blue font-bold hover:underline decoration-[#F26828]"
+            >
+              Student Portal
+            </button>
           </div>
 
           {/* Hamburger button */}
@@ -81,6 +91,14 @@ const Navbar = () => {
               className="text-impact-blue font-bold hover:underline decoration-[#F26828]"
             >
               Free Resources
+            </button>
+            <button
+              onClick={() => {
+                window.open("https://www.learn.iimpact.mba", "_blank");
+              }}
+              className="text-impact-blue font-bold hover:underline decoration-[#F26828]"
+            >
+              Student Portal
             </button>
           </div>
         )}

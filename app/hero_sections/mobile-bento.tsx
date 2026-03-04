@@ -35,7 +35,7 @@ const MobileBento = () => {
           <div className="flex flex-col items-center gap-1  w-full">
             {/* Replace this div with your SVG/Image */}
             <svg
-              width="390"
+              width="350"
               height="40"
               viewBox="0 0 431 40"
               fill="none"
@@ -130,13 +130,12 @@ const MobileBento = () => {
               className="object-contain object-center scale-190 translate-x-[20%]  "
             />
             <div className="flex flex-col gap-1">
-              <h2 className="font-poppins font-bold text-base leading-tight">
-                <span className="text-impact-orange">Boost</span>{" "}
-                <span className="text-impact-blue">Your Scores</span>
+              <h2 className="font-poppins font-bold text-base text-impact-blue leading-tight">
+                <span className="text-impact-blue">Basics to</span>{" "}
+                <span className="text-impact-orange"> Boost</span> Your Scores
               </h2>
-              <p className="text-impact-blue/70 font-sans tracking-tighter text-base line-clamp-3">
-                Understand the 'why' behind every concept. No rote learning,
-                only deep comprehension.
+              <p className="text-impact-blue/70 font-sans tracking-tighter text-sm line-clamp-3">
+                CAT tests concepts, not tricks. Internalise before you memorise.
               </p>
             </div>
           </div>
@@ -156,9 +155,9 @@ const MobileBento = () => {
                 <span className="text-impact-orange">Strategic</span>{" "}
                 <span className="text-impact-blue">Mock Analysis</span>
               </h2>
-              <p className="text-impact-blue/70 font-sans tracking-tighter text-xs line-clamp-3">
+              <p className="text-impact-blue/70 font-sans tracking-tighter text-[10px] line-clamp-3">
                 Learn question selection and time management with detailed mock
-                reviews.
+                reviews and analysis.
               </p>
             </div>
           </div>
@@ -173,8 +172,8 @@ const MobileBento = () => {
               <span className="text-impact-blue">Resources</span>
             </h2>
             <p className="text-impact-blue/70 font-sans tracking-tighter text-sm">
-              High-quality formula books, revision materials, and structured
-              study resources.
+              Carefully curated no-nonsense study resources and revision
+              material, optimised for relevance.
             </p>
           </div>
         </div>
