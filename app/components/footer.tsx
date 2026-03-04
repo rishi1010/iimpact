@@ -18,7 +18,7 @@ interface FooterProps {
 }
 
 const pages = [
-  { label: "Main Page", href: "/" },
+  { label: "Home Page", href: "/" },
   { label: "3 Phase System", href: "/three-phase" },
   { label: "Courses", href: "https://www.iimpact.mba/learn" },
   { label: "Testimonials", href: "/testimonials" },

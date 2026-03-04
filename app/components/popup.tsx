@@ -13,8 +13,7 @@ import { VisuallyHidden } from "radix-ui";
 import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
 
-const WHATSAPP_LINK =
-  "https://wa.me/919969195741?text=I%20am%20interested%20in%20knowing%20more%20about%20IIMPact's%20MBA%20Courses";
+const WHATSAPP_LINK = "https://chat.whatsapp.com/Fb60eRIFJszGukzdu33vaZ";
 
 interface WhatsAppCommunityPopupProps {
   isPopUp?: boolean;
@@ -137,7 +136,11 @@ export function WhatsAppCommunityPopup({
 
             <div className="hidden sm:flex flex-col items-center justify-center gap-3 shrink-0">
               <div className="relative size-40 p-4 rounded-2xl bg-neutral-200 border border-neutral-300 flex items-center justify-center text-neutral-400 text-xs text-center px-3 leading-relaxed">
-                <Image src={"/qr-code.svg"} alt="qr code for the link" fill />
+                <Image
+                  src={"/qr-code-com.svg"}
+                  alt="qr code for the link"
+                  fill
+                />
               </div>
               <p className="text-neutral-400 text-xs text-center leading-snug max-w-35">
                 Scan with your phone to join instantly

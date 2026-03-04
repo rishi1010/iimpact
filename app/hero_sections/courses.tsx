@@ -2,6 +2,7 @@
 
 import CourseCard, { CourseFeature } from "../components/course-card";
 import ScribbleArrow from "../components/scribble-arrow";
+import { useRouter } from "next/navigation";
 
 const ALL_FEATURES = [
   "Live Concept Lectures + Recordings",
@@ -52,6 +53,7 @@ const flagshipFeatures: CourseFeature[] = ALL_FEATURES.map((label) => ({
 }));
 
 const Courses = () => {
+  const router = useRouter();
   return (
     <section id="courses" className="w-full relative  bg-[#f6f4f0] py-20 px-6">
       {/* Heading */}
@@ -80,7 +82,7 @@ const Courses = () => {
               earlyBirdPrice: "INR 7,000 each",
             }}
             features={individualFeatures}
-            onEnroll={() => {}}
+            onEnroll={() => router.push("/contact")}
           />
         </div>
 
@@ -95,7 +97,7 @@ const Courses = () => {
             }}
             features={fullCourseFeatures}
             isMiddle
-            onEnroll={() => {}}
+            onEnroll={() => router.push("/contact")}
           />
         </div>
 
@@ -110,7 +112,7 @@ const Courses = () => {
             }}
             features={flagshipFeatures}
             isFlagship
-            onEnroll={() => {}}
+            onEnroll={() => router.push("/contact")}
           />
         </div>
       </div>
