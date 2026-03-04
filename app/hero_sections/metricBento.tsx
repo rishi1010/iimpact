@@ -10,7 +10,7 @@ const MetricPage = () => {
       <div className="w-full h-full flex flex-col items-center gap-10 lg:gap-13">
         <h1 className="text-3xl sm:text-4xl lg:text-6xl font-manrope font-bold tracking-tight text-impact-blue text-center text-balance">
           What{" "}
-          <span className="underline decoration-impact-orange">IIMPact</span>{" "}
+          <span className="underline decoration-impact-orange">IIMpact</span>{" "}
           delivered in 2025
         </h1>
 

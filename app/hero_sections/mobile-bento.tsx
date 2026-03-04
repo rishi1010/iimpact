@@ -19,7 +19,7 @@ const MobileBento = () => {
       <div className="text-4xl text-impact-blue italic font-playfair mb-8 text-center">
         Why{" "}
         <span className="not-italic font-manrope font-medium underline decoration-impact-orange">
-          IIMPact MBA?
+          IIMpact MBA?
         </span>
       </div>
 

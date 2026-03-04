@@ -13,7 +13,6 @@ const Navbar = () => {
   const links = [
     { label: "Home", href: "/" },
     { label: "3-Phases", href: "/three-phase" },
-    { label: "Courses", href: "https://www.iimpact.mba/learn" },
     { label: "Testimonials", href: "/testimonials" },
     { label: "Contact Us", href: "/contact" },
   ];

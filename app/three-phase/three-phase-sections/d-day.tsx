@@ -22,7 +22,7 @@ const DDay = () => {
         </h1>
         <div className="flex self-start gap-17 mt-32  items-stretch  justify-center">
           <PhaseCard
-            title="You Have (from P-1)"
+            title="Phase 1 Builds"
             points={[
               "Strong Conceptual Foundation",
               "Problem Solving Intuition",
@@ -30,20 +30,20 @@ const DDay = () => {
             ]}
           />
           <PhaseCard
-            title="You Have (from P-2)"
+            title="Phase 2 Develops"
             points={[
               "Pattern Recognition",
               "Smart Attempt Strategy",
               "Question Selection",
             ]}
           />
+
           <PhaseCard
-            title="You Have (from P-3)"
+            title="Phase 3 Solidifies"
             points={[
-              "Full Length Mock Experience",
-              "Analysis Skill",
-              "Last Minute Revision Locked In",
-              "D-Day Confidence",
+              "Full length mock analysis",
+              "Last-minute revision",
+              " Confidence for D-Day",
             ]}
           />
         </div>

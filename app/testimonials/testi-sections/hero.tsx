@@ -60,10 +60,13 @@ const Hero = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-manrope font-semibold text-impact-blue leading-tight">
-              What Students Say About
+              Hear from past
             </h1>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-playfair italic underline decoration-impact-orange text-impact-blue leading-tight">
-              IIMPact
+              IIMpact
+            </h1>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-manrope font-semibold text-impact-blue leading-tight">
+              Achievers
             </h1>
           </motion.div>
         </div>

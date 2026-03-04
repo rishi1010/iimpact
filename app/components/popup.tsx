@@ -70,7 +70,7 @@ export function WhatsAppCommunityPopup({
           <VisuallyHidden.Root>
             <SheetHeader>
               <SheetTitle>
-                Join IIMPact&apos;s Free WhatsApp Community
+                Join IIMpact&apos;s Free WhatsApp Community
               </SheetTitle>
             </SheetHeader>
           </VisuallyHidden.Root>
@@ -92,7 +92,7 @@ export function WhatsAppCommunityPopup({
                 <strong className="text-neutral-700">
                   thousands of serious CAT aspirants
                 </strong>{" "}
-                in IIMPact&apos;s exclusive free community. Get daily prep
+                in IIMpact&apos;s exclusive free community. Get daily prep
                 resources, smart strategies, and live guidance from 100
                 percentilers - delivered directly to your phone.
               </p>

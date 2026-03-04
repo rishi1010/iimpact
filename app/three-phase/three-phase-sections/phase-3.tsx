@@ -20,13 +20,14 @@ const Phase3 = () => {
             Execution
           </span>
         </h1>
-        <div className="flex gap-17 mt-32 self-start items-stretch  justify-center">
+
+        <div className="flex gap-17 mt-25 self-start items-stretch  justify-center">
           <PhaseCard
             title="Live Mock Analysis"
             points={[
-              "We analyse each question with you",
-              "From a CONCEPT lens (phase 1)",
-              "From a STRATEGY lens (phase 2)",
+              "Apply our learnings to analyse each question ",
+              "Connect it to concepts from phase 1",
+              "Place it in the strategy you made in phase 2",
             ]}
           />
           <PhaseCard

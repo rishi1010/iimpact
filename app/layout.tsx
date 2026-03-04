@@ -14,23 +14,23 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 
 export const metadata: Metadata = {
   // Basic
-  title: "IIMPact — India's MBA Dream Redefined",
+  title: "IIMpact — India's MBA Dream Redefined",
   description:
     "A smarter way to crack CAT. Learn the topper's way of thinking with a proven 3-phase system led by 100%ilers from IIM Bangalore & FMS Delhi.",
 
   // Open Graph (WhatsApp, LinkedIn, Facebook)
   openGraph: {
-    title: "IIMPact — India's MBA Dream Redefined",
+    title: "IIMpact — India's MBA Dream Redefined",
     description:
       "A smarter way to crack CAT. Learn the topper's way of thinking with a proven 3-phase system led by 100%ilers from IIM Bangalore & FMS Delhi.",
     url: "https://www.iimpact.mba",
-    siteName: "IIMPact",
+    siteName: "IIMpact",
     images: [
       {
         url: "https://www.iimpact.mba/og-image.png", // must be absolute URL
         width: 1200,
         height: 630,
-        alt: "IIMPact — India's MBA Dream Redefined",
+        alt: "IIMpact — India's MBA Dream Redefined",
       },
     ],
     locale: "en_IN",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   // Twitter/X
   twitter: {
     card: "summary_large_image",
-    title: "IIMPact — India's MBA Dream Redefined",
+    title: "IIMpact — India's MBA Dream Redefined",
     description:
       "A smarter way to crack CAT. Learn the topper's way of thinking with a proven 3-phase system led by 100%ilers.",
     images: ["https://www.iimpact.mba/og-image.png"],
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     "online CAT coaching",
     "CAT study material",
     "MBA interview preparation",
-    "IIMPact",
+    "IIMpact",
     "CAT mock test",
     "VARC preparation",
     "Quant preparation",

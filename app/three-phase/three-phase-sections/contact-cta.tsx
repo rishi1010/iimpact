@@ -32,9 +32,9 @@ const ContactCta = () => {
       </div>
 
       {/* Subtext */}
-      <p className="text-base sm:text-xl lg:text-2xl font-manrope text-neutral-600 font-medium text-balance max-w-2xl">
-        Turn your confusion into a winning strategy with a free 1-on-1 with a
-        100%ile Mentor
+      <p className="text-base sm:text-xl lg:text-2xl font-manrope text-neutral-600 font-medium text-balance max-w-4xl">
+        Chart your MBA plans with a free 1-on-1 conversation with a 100%iler
+        mentor
       </p>
 
       {/* CTA Button */}

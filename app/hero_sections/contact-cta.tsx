@@ -21,9 +21,9 @@ const ContactCta = () => {
       <h1 className="text-5xl sm:text-6xl lg:text-8xl font-manrope text-neutral-900 font-semibold">
         Lets Talk!
       </h1>
-      <p className="text-base sm:text-xl lg:text-2xl font-manrope text-neutral-600 font-medium text-balance max-w-2xl">
-        Turn confusion into a clear plan with a free 1-on-1 conversation with a
-        100%iler mentor.
+      <p className="text-base sm:text-xl lg:text-2xl font-manrope text-neutral-600 font-medium text-balance max-w-4xl">
+        Chart your MBA plans with a free 1-on-1 conversation with a 100%iler
+        mentor.
       </p>
       <motion.a
         href="/contact"

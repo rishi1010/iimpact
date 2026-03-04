@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative w-full max-w-7xl mx-auto min-h-dvh flex flex-col items-center justify-center">
+    <section className="relative w-full max-w-7xl mx-auto h-dvh flex flex-col items-center justify-center">
       <Navbar />
       <h1 className="text-6xl font-manrope text-neutral-900 font-bold">
         The <span className="underline decoration-impact-orange">3-Phase</span>{" "}
@@ -13,9 +13,11 @@ const Hero = () => {
       <div className="relative w-3xl h-1/2 mt-2">
         {/* Image + mask */}
         <Image
+          fill
           src="/3p-assets/3p-hero-bg.png"
           alt="a man running"
-          className="w-full h-full object-cover"
+          className=" object-cover"
+          priority
         />
         <div className="absolute inset-0 bg-linear-to-r from-impact-blue to-impact-orange mix-blend-lighten" />
 

@@ -15,7 +15,7 @@ const Bento = () => {
         <div className="text-7xl text-impact-blue italic font-playfair mb-10 ">
           Why{" "}
           <span className="not-italic font-manrope font-medium underline decoration-impact-orange">
-            IIMPact MBA?
+            IIMpact MBA?
           </span>
         </div>
         {/* Bento */}
@@ -45,15 +45,12 @@ const Bento = () => {
 
             {/* Text content */}
             <div className="flex flex-col gap-2 mt-1">
-              <h2 className="font-poppins font-bold text-md leading-tight">
-                <span className="text-impact-orange">Boost</span>{" "}
-                <span className="text-impact-blue">
-                  Your Scores through Strategy
-                </span>
+              <h2 className="font-poppins font-bold text-md leading-tight text-impact-blue">
+                <span className="text-impact-blue">Basics to</span>{" "}
+                <span className="text-impact-orange"> Boost</span> Your Scores
               </h2>
               <p className="text-impact-blue/70 w-full text-left font-sans tracking-tighter text-sm">
-                Understand the 'why' behind every concept. No rote learning,
-                Only deep comprehension.
+                CAT tests concepts, not tricks. Internalise before you memorise.
               </p>
             </div>
           </div>
@@ -67,8 +64,8 @@ const Bento = () => {
                 <span className="text-impact-blue">Resources</span>
               </h2>
               <p className="text-impact-blue/70 w-full text-left font-sans tracking-tighter text-sm">
-                High-quality formula books, revision materials, and structured
-                study resources.
+                Carefully curated no-nonsense study resources and revision
+                material, optimised for relevance.
               </p>
             </div>
           </div>
@@ -86,7 +83,7 @@ const Bento = () => {
                 <span className="text-impact-blue">Mock Analysis</span>
               </h2>
               <p className="text-impact-blue/70 w-full text-left font-sans tracking-tighter text-sm">
-                Learn question selection, and time management with detailed mock
+                Learn question selection and time management with detailed mock
                 reviews and analysis.
               </p>
             </div>

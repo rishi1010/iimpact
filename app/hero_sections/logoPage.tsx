@@ -70,9 +70,9 @@ const LogoPage = () => {
         {/* IIM logos section */}
         <div className="flex flex-col lg:flex-row items-center w-full gap-6 lg:gap-0 lg:justify-between px-6 sm:px-10 lg:px-16">
           {/* Text */}
-          <div className="font-light text-white text-base sm:text-xl lg:text-2xl text-center lg:text-left max-w-xs lg:w-md">
-            100s of our students went to these top B schools with many more to
-            others!
+          <div className="font-light text-white text-base sm:text-xl lg:text-2xl text-center lg:text-left max-w-sm lg:w-md">
+            Hundreds of our students have made it to these top B-schools and
+            beyond.
           </div>
 
           {/* Logo Marquee */}

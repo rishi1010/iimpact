@@ -46,7 +46,7 @@ export default function ThreePhaseCard() {
       </div>
 
       <h1 className="font-poppins text-impact-blue font-bold text-xl self-start leading-tight">
-        Day One to{" "}
+        Day 1 to{" "}
         <span className="text-impact-orange italic font-playfair">D-Day</span>
       </h1>
     </div>

@@ -24,15 +24,16 @@ const Phase1 = () => {
           <PhaseCard
             title="Live Interactive Classes"
             points={[
-              "50 hours (not 300+ like other coaching classes)",
-              "Unmute and ask questions anytime",
-              "Learn how to think, not just formulas",
+              "50 hours (unlike 300+ hour full-time programs)",
+              "Open floor for doubts",
+              "Ways of thinking over formula memorisation",
             ]}
           />
           <PhaseCard
             title="For Beginners to Pros"
             points={[
-              "Complete beginners & veterans in same class",
+              "Systematic coverage: basics to exam-level",
+              "Beginners and veterans learn in the same class",
               "Taught by 100%ilers who know how to simplify",
             ]}
           />

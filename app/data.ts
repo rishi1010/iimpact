@@ -144,7 +144,7 @@ export const Testimonials_data: Testimonial[] = [
   {
     name: "Aryan Chaudhary",
     percentile: "99.89%ile",
-    description: " Hard switch from UPSC to CAT",
+    description: "Chasing momentum, not months",
     linkedinUrl: "https://www.linkedin.com/in/aryan1305choudhary/",
     avatarUrl: "/testi-pics/Aryan.jpeg",
     questions: [
@@ -484,6 +484,7 @@ export const Testimonials_data: Testimonial[] = [
 // these are testimonials for the landing page. similar instructions
 // apply.
 
+// Do Not Touch This!!!
 type TestimonialMain = {
   text: string;
   name: string;
@@ -491,6 +492,8 @@ type TestimonialMain = {
   avatarUrl: string;
 };
 
+// this is the data the can be updated. Please make sure if a new data is added,
+// they have text, name and avatarUrl. score is optional.
 export const Testimonials: TestimonialMain[] = [
   {
     text: "IIMpact's structured approach was exactly what I needed. Divyansh Sir's VARC sessions sharpened my reading, and Rishi Sir's DILR methods turned puzzles into patterns. Converted IIM B, C, L — joined IIM Calcutta, now interning at BCG.",

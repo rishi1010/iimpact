@@ -11,7 +11,7 @@ const Teams = () => {
         {/* Title and subheading */}
         <div className="flex flex-col gap-3 items-center w-full text-center">
           <div className="text-4xl sm:text-5xl lg:text-7xl italic w-full text-center font-playfair text-impact-blue">
-            Meet Team <span className="text-impact-orange">IIMPact</span>
+            Meet Team <span className="text-impact-orange">IIMpact</span>
           </div>
           <p className="text-base sm:text-lg lg:text-xl text-impact-orange font-sans font-semibold">
             Trusted by 5000+ successful aspirants

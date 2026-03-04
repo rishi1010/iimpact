@@ -37,10 +37,10 @@ const Hero = () => {
 
         {/* subtext */}
         <div className="text-balance text-base sm:text-lg md:text-xl font-sans max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl text-center text-impact-blue">
-          A smarter way to crack CAT. Learn the topper's way of thinking with a
-          proven 3-phase system led by{" "}
-          <span className="font-bold">100%ilers</span> from IIM Bangalore & FMS
-          Delhi.
+          IIMpact is the smarter way to crack CAT. Think like a topper using a
+          proven system developed by CAT{" "}
+          <span className="font-bold">100%ilers</span> from India’s best
+          B-Schools.
         </div>
 
         {/* button */}

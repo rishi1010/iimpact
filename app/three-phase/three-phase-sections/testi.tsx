@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import { motion, useInView } from "motion/react";
 
 const quote =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit massa et mi scelerisque, nec ultricies lectus commodo. Ut sed dignissim lectus, sit amet pharetra magna. Ut rutrum pretium laoreet. Sed egestas neque quis risus rhoncus, ut pellentesque purus convallis. Nulla venenatis in orci id aliquet. Nulla egestas ligula et cursus bibendum. Aenean id ullamcorper risus. Nullam efficitur aliquet sem id ornare. Donec quis enim nibh. Donec in consectetur nisi, nec tincidunt tortor.";
+  "Making the leap from a raw score of 56 to 145 in successive CAT attempts sounds like a lot- but with the IIMpact 3-Phase System, it became only a logical progression. Divyansh Sir and Rishi Sir's rock-solid fundamentals and their spirit of keeping things simple made the entire process feel productive every day, right from Day 1. Getting comfortable with the timer, knowing exactly what to look for when analysing a mock, and being able to refine my attempt strategy over months were direct results of the IIMpact method that prepared me for CAT day.";
 
 const words = quote.split(" ");
 
@@ -62,7 +62,7 @@ const Testimonial = () => {
               delay: words.length * 0.04 + 0.1,
             }}
           >
-            Student, 99.99 %ile
+            Tanishq Gupta, 99.99 %ile (CAT '24)
           </motion.div>
         </div>
       </div>

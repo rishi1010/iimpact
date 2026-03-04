@@ -20,29 +20,29 @@ const Phase2 = () => {
             Strategy
           </span>
         </h1>
-        <div className="flex gap-17 self-end mt-35 items-stretch  justify-center">
+        <div className="flex gap-12 self-end mt-35 items-stretch  justify-center">
           <PhaseCard
             title="Built On PYQ Testing"
             points={[
-              "Gold Standard Practice Material",
-              "Real Exam and Question Type",
-              "Learn how to solve any pattern",
+              "The gold-standard in practice material",
+              "Learn to map theory to question-types",
+              "Master every pattern of question asked",
             ]}
           />
           <PhaseCard
             title="Problem Catalogue"
             points={[
-              "Take Every Concept",
-              "Discuss Live and Predict Modifications",
-              "Document In Concept Trees",
+              "Revisit every concept through an exam lens",
+              "Predict modifications- think like the setter",
+              "Retain using handy concept-trees",
             ]}
           />
           <PhaseCard
             title="Strategy Playbook"
             points={[
-              "Identify Attempt Order",
-              "Which to Solve Fast, Which to Solve First",
-              "Which to Skip",
+              "Identify your ideal attempt strategy",
+              "Know what to solve fast, what to solve first",
+              "Know what to skip and why",
             ]}
           />
         </div>
