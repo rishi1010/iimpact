@@ -73,7 +73,7 @@ const Hero = () => {
 
         {/* ── Right: Bento Grid ──────────────────────────────────────── */}
         <motion.div
-          className="grid grid-cols-2 lg:grid-cols-2 lg:grid-rows-4 w-full lg:w-1/2 gap-4 lg:gap-6 lg:h-[70vh]"
+          className="grid grid-cols-2 mt-10 lg:grid-cols-2 lg:grid-rows-4 w-full lg:w-1/2 gap-4 lg:gap-6 lg:h-[70vh]"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
