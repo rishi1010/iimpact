@@ -117,7 +117,7 @@ export const Testimonials_data: Testimonial[] = [
   },
   {
     name: "Gursimar S Tuteja",
-    percentile: "99.9%ile",
+    percentile: "99.90%ile",
     description: " Last read a book during school times",
     linkedinUrl: "https://www.linkedin.com/in/gursimarsingh03/",
     avatarUrl: "/testi-pics/Gursimar.jpeg",
@@ -271,7 +271,7 @@ export const Testimonials_data: Testimonial[] = [
   },
   {
     name: "Aastik Bhatt",
-    percentile: "99.7%ile",
+    percentile: "99.70%ile",
     description: "Found a helping hand in IIMpact",
     linkedinUrl: "https://www.linkedin.com/in/aastik-bhatt-25889419b/",
     avatarUrl: "/testi-pics/Aastik.jpeg",
@@ -498,7 +498,7 @@ export const Testimonials: TestimonialMain[] = [
   {
     text: "IIMpact's structured approach was exactly what I needed. Divyansh Sir's VARC sessions sharpened my reading, and Rishi Sir's DILR methods turned puzzles into patterns. Converted IIM B, C, L — joined IIM Calcutta, now interning at BCG.",
     name: "Tanishq Gupta",
-    score: "IIM C",
+    score: "IIM Calcutta",
     avatarUrl: "/testi-pics/Tanishq.png",
   },
   {
@@ -511,30 +511,30 @@ export const Testimonials: TestimonialMain[] = [
     text: "As a BDS graduate, I wasn't sure how I fit into the MBA crowd. Divyansh Sir's logical VARC approach and Rishi Sir's mock strategy gave me a clear roadmap. Converted IIM C & FMS.",
     name: "Dr.Saleha Perween",
     avatarUrl: "/testi-pics/Saleha.png",
-    score: "IIM C",
+    score: "IIM Calcutta",
   },
   {
     text: "Practicing law full-time, quant felt impossible to crack. Rishi Sir and Divyansh Sir made it about understanding over speed, and IIMpact's peer group kept me consistent. Converted IIM A, now with an offer from BCG.",
     name: "Vipula Bhatt",
     avatarUrl: "/testi-pics/Vipula.png",
-    score: "IIM A",
+    score: "IIM Ahmedabad",
   },
   {
     text: "Coming from MBBS, I wasn't used to math-heavy exams at all. The structured approach made quant finally make sense and VARC stopped feeling like guesswork. Now at FMS, interning at Accenture Strategy.",
     name: "Dr. Parth",
     avatarUrl: "/testi-pics/Parth.png",
-    score: "FMS",
+    score: "FMS Delhi",
   },
   {
     text: "Preparing after 3 years off books while working oil rig shifts wasn't easy. IIMpact's weekend planner kept me on schedule, and Rishi Sir's DILR videos were gold for someone returning to study mode.",
     name: "Tharun Vijay",
     avatarUrl: "/testi-pics/Tharun.png",
-    score: "IIM B",
+    score: "IIM Bangalore",
   },
   {
     text: "Juggling a 9-to-7 job, I couldn't afford to overthink my prep. Divyansh Sir's daily calendar removed all the guesswork, and Rishi Sir's SOTDs became my wind-down ritual every night.",
     name: "Tanisha Tyagi",
     avatarUrl: "/testi-pics/Tanisha.png",
-    score: "IIM K",
+    score: "IIM Kozhikode",
   },
 ];

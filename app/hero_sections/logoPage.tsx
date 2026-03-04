@@ -23,11 +23,14 @@ const TestimonialCard = ({
       &ldquo;{text}&rdquo;
     </div>
     <div className="flex w-full items-center gap-4 mt-auto">
-      <div className=" relative rounded-full overflow-hidden size-10 sm:size-11 bg-gray-300 shrink-0">
+      <div className=" relative rounded-full overflow-hidden size-10 sm:size-14 bg-gray-300 shrink-0">
         <Image src={avatarUrl} alt={name} fill />
       </div>
-      <div className="font-sans text-base sm:text-lg text-[#555555]">
-        {name} {score && <span className="text-impact-orange">{score}</span>}
+      <div className="font-sans flex flex-col gap-1 text-base sm:text-lg text-[#555555]">
+        <div className="">{name}</div>
+        <div className="">
+          {score && <span className="text-impact-orange">{score}</span>}
+        </div>
       </div>
     </div>
   </div>
