@@ -55,11 +55,7 @@ const Teams = () => {
                     name: "Kearney",
                   },
                 ]}
-                scribble={{
-                  text: "Qa + Varc wizard",
-                  side: "left",
-                  color: "impact-orange",
-                }}
+                linkedinUrl="https://www.linkedin.com/in/divyansh-gupta-79aa3416b/"
               />
               <TeamCard
                 imageUrl="/rm.png"
@@ -82,11 +78,7 @@ const Teams = () => {
                     name: "Accenture",
                   },
                 ]}
-                scribble={{
-                  text: "Qa + Dilr strategist",
-                  side: "right",
-                  color: "impact-blue",
-                }}
+                linkedinUrl="https://www.linkedin.com/in/mittalrishi/"
               />
             </div>
           </div>
