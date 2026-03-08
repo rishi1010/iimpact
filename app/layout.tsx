@@ -8,6 +8,7 @@ import {
   Playfair_Display,
   Spectral,
   Homemade_Apple,
+  Forum,
 } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -89,6 +90,12 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const forum = Forum({
+  variable: "--font-forum-text",
+  weight: ["400"],
+  subsets: ["latin"],
+});
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -145,6 +152,7 @@ export default function RootLayout({
           ${playfairDisplay.variable}
           ${spectral.variable}
           ${homemadeApple.variable}
+          ${forum.variable}
           antialiased
           overflow-x-hidden
         `}
