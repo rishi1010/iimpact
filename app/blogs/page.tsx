@@ -64,26 +64,19 @@ const BlogsPage = () => {
             imageUrl="/geographer.png"
             title="Understanding the System"
             blurb="Preparing for the CAT exam involves more than mastering VARC, DILR, or Quant. A clear understanding of how performance is evaluated plays an equally important role."
+            slug="blog-2-understanding-the-system"
           />
           <BlogCard
             imageUrl="/geographer.png"
             title="Understanding the System"
             blurb="Preparing for the CAT exam involves more than mastering VARC, DILR, or Quant. A clear understanding of how performance is evaluated plays an equally important role."
+            slug="blog-2-understanding-the-system"
           />
           <BlogCard
             imageUrl="/geographer.png"
             title="Understanding the System"
             blurb="Preparing for the CAT exam involves more than mastering VARC, DILR, or Quant. A clear understanding of how performance is evaluated plays an equally important role."
-          />
-          <BlogCard
-            imageUrl="/geographer.png"
-            title="Understanding the System"
-            blurb="Preparing for the CAT exam involves more than mastering VARC, DILR, or Quant. A clear understanding of how performance is evaluated plays an equally important role."
-          />
-          <BlogCard
-            imageUrl="/geographer.png"
-            title="Understanding the System"
-            blurb="Preparing for the CAT exam involves more than mastering VARC, DILR, or Quant. A clear understanding of how performance is evaluated plays an equally important role."
+            slug="blog-2-understanding-the-system"
           />
         </div>
       </div>

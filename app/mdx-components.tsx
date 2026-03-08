@@ -4,10 +4,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Titles italic
     h1: ({ children }) => (
-      <h1 className="text-4xl font-bold italic mb-6">{children}</h1>
+      <h1 className="text-6xl text-center underline decoration-impact-blue underline-offset-6 font-bold font-forum text-impact-orange  mb-6">
+        {children}
+      </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="text-2xl font-semibold italic mb-4">{children}</h2>
+      <h2 className="text-2xl font-semibold  mb-4">{children}</h2>
+    ),
+    h3: ({ children }) => (
+      <h2 className="text-xl font-medium  mb-4">{children}</h2>
+    ),
+    h4: ({ children }) => (
+      <h2 className="text-lg font-regular  mb-4">{children}</h2>
     ),
 
     // Blockquotes gray
@@ -19,7 +27,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     // Paragraphs
     p: ({ children }) => (
-      <p className="text-base leading-relaxed mb-4">{children}</p>
+      <p className="text-5.5 tracking-tight leading-relaxed mb-4">{children}</p>
     ),
 
     // Inline code
@@ -34,6 +42,57 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <a href={href} className="underline text-blue-500 hover:text-blue-700">
         {children}
       </a>
+    ),
+
+    table: ({ children }) => (
+      <div className="overflow-x-auto my-6">
+        <table className="w-full border-collapse text-sm font-manrope">
+          {children}
+        </table>
+      </div>
+    ),
+
+    thead: ({ children }) => (
+      <thead className="bg-impact-blue text-white">{children}</thead>
+    ),
+
+    tbody: ({ children }) => (
+      <tbody className="divide-y divide-gray-200">{children}</tbody>
+    ),
+
+    tr: ({ children }) => (
+      <tr className="even:bg-impact-blue/5 hover:bg-impact-blue/10 transition-colors duration-150">
+        {children}
+      </tr>
+    ),
+
+    th: ({ children }) => (
+      <th className="px-4 py-3 text-left font-forum text-base font-normal tracking-wide">
+        {children}
+      </th>
+    ),
+
+    td: ({ children }) => (
+      <td className="px-4 py-3 text-gray-700">{children}</td>
+    ),
+
+    ul: ({ children }) => (
+      <ul className="my-4 ml-4 space-y-2 list-none">{children}</ul>
+    ),
+
+    ol: ({ children }) => (
+      <ol className="my-4 ml-6 space-y-2 list-decimal text-gray-700 font-manrope">
+        {children}
+      </ol>
+    ),
+
+    li: ({ children }) => (
+      <li className="font-manrope text-gray-700 text-base leading-relaxed">
+        <span className="flex items-start gap-2">
+          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-impact-orange shrink-0 in-[ol]:hidden" />
+          <span>{children}</span>
+        </span>
+      </li>
     ),
 
     ...components,
