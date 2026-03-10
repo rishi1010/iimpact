@@ -29,7 +29,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     // Paragraphs
     p: ({ children }) => (
-      <p className="text-5.5 tracking-tight leading-relaxed mb-4">{children}</p>
+      <p className="text-xl  tracking-tight leading-tight mb-4">{children}</p>
     ),
 
     // Inline code

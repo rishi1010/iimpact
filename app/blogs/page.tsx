@@ -3,6 +3,11 @@ import Navbar from "../components/navbar";
 import Image from "next/image";
 import BlogCard from "../components/blog-cards";
 
+export async function generateMetadata() {
+  const title = "Blogs by IIMpact";
+  return { title };
+}
+
 const BlogsPage = () => {
   return (
     <section className="w-full min-h-dvh px-4 md:px-11 bg-[#F8F0E5]">

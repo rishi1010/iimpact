@@ -7,6 +7,11 @@ import { FaArrowLeft } from "react-icons/fa";
 import BlogHero from "@/app/components/blog-hero";
 import ScrollProgress from "@/app/components/scroll-progress";
 
+export async function generateMetadata() {
+  const title = "CAT Performance Benchmarks & Targets";
+  return { title };
+}
+
 export default async function BlogPost() {
   const filePath = path.join(
     process.cwd(),
@@ -30,7 +35,7 @@ export default async function BlogPost() {
 
       {/* Hero: title + cover image + blurb */}
       <BlogHero
-        title="CAT Performance Benchmarks & Targets"
+        title="Understanding the CAT Exam: A Complete Overview for MBA Aspirants"
         blurb="Preparing for the CAT exam involves more than mastering VARC, DILR, or Quant. A clear understanding of how performance is evaluated plays an equally important role."
         imageUrl="/geographer.png"
       />
