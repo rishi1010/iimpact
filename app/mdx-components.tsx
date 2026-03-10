@@ -4,12 +4,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Titles italic
     h1: ({ children }) => (
-      <h1 className="text-6xl text-center underline decoration-impact-blue underline-offset-6 font-bold font-forum text-impact-orange  mb-6">
+      <h1 className="text-4xl md:text-6xl text-left  font-bold font-spectral italic text-neutral-700  mb-6">
         {children}
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="text-2xl font-semibold  mb-4">{children}</h2>
+      <h2 className="text-2xl font-semibold italic font-spectral tracking-tight  mb-4">
+        {children}
+      </h2>
     ),
     h3: ({ children }) => (
       <h2 className="text-xl font-medium  mb-4">{children}</h2>
@@ -53,7 +55,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     thead: ({ children }) => (
-      <thead className="bg-impact-blue text-white">{children}</thead>
+      <thead className="bg-impact-blue text-neutral-100">{children}</thead>
     ),
 
     tbody: ({ children }) => (

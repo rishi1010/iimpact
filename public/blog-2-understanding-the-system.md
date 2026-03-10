@@ -1,5 +1,3 @@
-# CAT Performance Benchmarks & Targets
-
 ## Understanding Cutoffs and Good Attempts
 
 Every serious CAT aspirant eventually asks two questions:
