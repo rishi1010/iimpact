@@ -138,7 +138,7 @@ export default function Page() {
 
                 {/* Book cover placeholder */}
                 <motion.div
-                  className="rounded-2xl relative  w-82.5 h-99 bg-linear-to-b from-[#f5d6c0] to-[#f0c4a4] shadow-2xl"
+                  className="rounded-3xl relative  w-82.5 h-99 bg-linear-to-b from-[#f5d6c0] to-[#f0c4a4] shadow-2xl"
                   initial={{ opacity: 0, y: 24, scale: 0.96 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{
@@ -263,6 +263,7 @@ export default function Page() {
                               `${selectedSection.id} ${card.year} ${slot}`,
                             )
                           }
+                          slug={`${selectedSection.id}_${card.year}`}
                         />
                       </motion.div>
                     ))}

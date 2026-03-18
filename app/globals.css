@@ -160,3 +160,42 @@
     @apply bg-background text-foreground;
   }
 }
+
+.corner-fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background-color: theme("colors.impact-orange");
+  transform: translate(-100%, -100%);
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.corner-fill::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  background-color: theme("colors.impact-orange");
+  transform: translate(100%, 100%);
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.corner-fill:hover::before,
+.corner-fill:hover::after {
+  transform: translate(0, 0);
+}
+
+.corner-fill:hover .corner-fill-tr {
+  transform: translate(0, 0);
+}
+
+.corner-fill:hover .corner-fill-bl {
+  transform: translate(0, 0);
+}

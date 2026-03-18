@@ -50,7 +50,7 @@ function CenterCard({
 
   const handleClick = () => {
     if (revealed) {
-      router.push(`/pyqs/${slug}-slot-2`);
+      router.push(`/pyqs/${slug}_slot_2`);
     } else {
       onClick();
     }
@@ -237,7 +237,7 @@ export function SlotDeck({
         zIndex={1}
         onClick={() => {
           onSelect?.("slot-1");
-          router.push(`/pyqs/${derivedSlug}-slot-1`);
+          router.push(`/pyqs/${derivedSlug}_slot_1`);
         }}
       />
 
@@ -251,7 +251,7 @@ export function SlotDeck({
         zIndex={1}
         onClick={() => {
           onSelect?.("slot-3");
-          router.push(`/pyqs/${derivedSlug}-slot-3`);
+          router.push(`/pyqs/${derivedSlug}_slot_3`);
         }}
       />
 
