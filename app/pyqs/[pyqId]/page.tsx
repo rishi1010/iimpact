@@ -40,7 +40,7 @@ export default async function PyqPage({
   const { pyqId } = await params;
   const parsed = parsePyqId(pyqId);
 
-  const dummy_passage = `Often the well intentioned music lover or the traditionally-minded professional composer asks two basic questions when faced with the electronic music phenomena: (1) . . . is this type of artistic creation music at all? and, (2) given that the product is accepted as music of a new type or order, is not such music "inhuman"? . . . As Lejaren Hiller points out in his book Experimental Music (co-author Leonard M. Isaacson), two questions which often arise when music is discussed are: (a) the substance of musical communication and its symbolic and semantic significance, if any, and (b) the particular processes, both mental and technical, which are involved in creating and responding to musical composition. The ever-present popular concept of music as a direct, open, emotional expression and as a subjective form of communication from the composer, is, of course still that of the nineteenth century, when composers themselves spoke of music in those terms . . . But since the third decade of our century many composers have preferred more objective definitions of music, epitomized in Stravinsky's description of it as "a form of speculation in terms of sound and time". An acceptance of this more characteristic twentieth-century view of the art of musical composition will of course immediately bring the layman closer to an understanding of, and sympathetic response to, electronic music, even if the forms, sounds and approaches it uses will still be of a foreign nature to him.
+  const dummy_passage = `Often the well intentioned music lover or the traditionally-minded professional composer asks two basic questions when faced with the electronic music phenomena: . . . is this type of artistic creation music at all? and, given that the product is accepted as music of a new type or order, is not such music "inhuman"? . . . As Lejaren Hiller points out in his book Experimental Music (co-author Leonard M. Isaacson), two questions which often arise when music is discussed are: (a) the substance of musical communication and its symbolic and semantic significance, if any, and (b) the particular processes, both mental and technical, which are involved in creating and responding to musical composition. The ever-present popular concept of music as a direct, open, emotional expression and as a subjective form of communication from the composer, is, of course still that of the nineteenth century, when composers themselves spoke of music in those terms . . . But since the third decade of our century many composers have preferred more objective definitions of music, epitomized in Stravinsky's description of it as "a form of speculation in terms of sound and time". An acceptance of this more characteristic twentieth-century view of the art of musical composition will of course immediately bring the layman closer to an understanding of, and sympathetic response to, electronic music, even if the forms, sounds and approaches it uses will still be of a foreign nature to him.
 
 A communication problem however will still remain. The principal barrier that electronic music presents at large, in relation to the communication process, is that composers in this medium are employing a new language of forms . . . where terms like 'densities', 'indefinite pitch relations', 'dynamic serialization', 'permutation', etc., are substitutes (or remote equivalents) for the traditional concepts of harmony, melody, rhythm, etc. . . . When the new structural procedures of electronic music are at last fully understood by the listener the barriers between him and the work he faces will be removed. . . .
 
@@ -58,8 +58,24 @@ The second objection usually levelled against electronic music is much more inno
       "None; they are unrelated to one another and form parts of different discussions.",
       'Its unfamiliar "language of forms" and novel terms mean that we cannot see electronic music as music since it does not employ traditional musical concepts.',
     ],
-    answer: "B",
-    explanation: "",
+    answer: 1,
+    explanation: `Option 1 cannot be inferred from the passage. Note what it says about COVID-19 and the stock market: 'When COVID-19 first struck, the stock market suffered stunning losses followed by an equally stunning recovery. Some of these dynamics are potentially attributable to former sports bettors, with no sports to bet on, entering the market as speculators rather than investors. The arrival of these new players might have increased inefficiencies and allowed savvy long-term investors to gain an edge over bettors with different goals...'. Option 1 says the rebound in financial markets is 'solely' attributable to displaced sports bettors. This is incorrect. Also this option talks of 'rapid recovery across assets and time horizons'. This is not something that the passage mentions.
+Both options 2 and 4 can be inferred from the lines, 'But in collective settings where contagion shapes behaviour – a run on the banks, a scramble to buy toilet paper – the probability distributions for possible events are often heavy-tailed. There is a much higher probability of extreme events, such as a stock market crash or a massive surge in infections. These events are still unlikely, but they occur more frequently and are larger than would be expected under normal distributions.'
+Option 3 can be inferred from the lines, 'One reason a first-order tail event can induce further tail events is that it changes the perceived costs of our actions and changes the rules that we play by. This game-change is an example of another key complex systems concept: nonstationarity.'`,
+  };
+
+  const dummy_question_2: Question = {
+    id: "q2",
+    text: `The passage suggests that contact tracing apps could inadvertently raise risky interactions by altering local behaviour. Which one of the assumptions below is most necessary for that suggestion to hold?`,
+    options: [
+      "Individuals base movement choices partly on observed infections and on the behaviour of others. So, local responses interact, which turns many small adjustments into large scale patterns that can frustrate the intended aim of risk reduction.",
+      "Urban networks have uniform traffic conditions at all hours, which allows perfectly predictable routing independent of personal choices, social signals, or crowd reactions and, therefore, makes interdependence negligible in city movement decisions.",
+      "App alerts always include precise location to within one metre and deliver real time updates for all users, which ensures that the data feed is perfectly accurate regardless of privacy settings, power limits, or network conditions.",
+      "Most users uninstall apps within a week, which leaves only highly exposed individuals participating. This neutralises any systematic bias in routing decisions and prevents any predictable change in aggregate contact patterns.",
+    ],
+    answer: 0,
+    explanation: `With regard to how contact tracing apps negatively impact our collective movement, the passage says, 'If each of us changes our behaviour to avoid the infected, we might generate a collective pattern we had aimed to avoid: higher levels of interaction between the infected and susceptible, or high levels of interaction among the asymptomatic.' In other words, local responses may interact to generate a collective pattern that goes against the original aim of the app. Option 1 is the correct choice.
+All other choices are easily eliminated. Options 2 and 4 talk of 'city movement' and 'routing decisions', which are completely unrelated to the contents of the passage. Option 3, too is unrelated to the question.`,
   };
 
   if (!parsed) {
@@ -133,7 +149,8 @@ The second objection usually levelled against electronic music is much more inno
         </div>
         {/* question map */}
         <div className="self-start">
-          <QuestionCard question={dummy_question} />
+          <QuestionCard key={dummy_question.id} question={dummy_question} />
+          <QuestionCard key={dummy_question_2.id} question={dummy_question_2} />
         </div>
       </div>
     </main>
