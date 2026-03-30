@@ -1,11 +1,19 @@
+"use client";
 const CornerFillButton = ({
   label,
   hover_label,
+  href,
+  onClick,
 }: {
   label: string;
   hover_label?: string;
+  href?: string;
+  onClick?: () => void;
 }) => (
-  <button className="group w-full relative overflow-hidden text-impact-blue hover:text-white font-mono text-md font-bold px-4 py-1 transition-colors duration-300">
+  <button
+    onClick={href ? () => window.open(href, "_blank") : onClick}
+    className="group w-full relative overflow-hidden text-impact-blue hover:text-white font-mono text-md font-bold px-4 py-1 transition-colors duration-300"
+  >
     {/* corner borders */}
     <span className="absolute top-0 left-0 w-4 h-4 border-t border-l border-impact-orange z-10" />
     <span className="absolute top-0 right-0 w-4 h-4 border-t border-r border-impact-orange z-10" />

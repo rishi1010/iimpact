@@ -25,7 +25,8 @@ interface SideCardProps {
   colorStop2: string;
   targetX: number;
   isOut: boolean;
-  onClick: () => void;
+  onNavigate: () => void;
+  onMock: () => void;
   zIndex: number;
 }
 
@@ -35,6 +36,37 @@ export interface SlotDeckProps {
   colorStop2?: string;
   onSelect?: (slot: "slot-1" | "slot-3") => void;
   slug?: string;
+}
+
+function CardButtons({
+  onNavigate,
+  onMock,
+}: {
+  onNavigate: () => void;
+  onMock: () => void;
+}) {
+  return (
+    <div className="flex flex-col gap-1.5 w-full px-4">
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onNavigate();
+        }}
+        className="w-full py-1.5 rounded-xl text-[10px] font-mono tracking-[0.2em] uppercase font-semibold bg-white/20 hover:bg-white/30 text-white/90 transition-colors"
+      >
+        Practice
+      </button>
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onMock();
+        }}
+        className="w-full py-1.5 rounded-xl text-[10px] font-mono tracking-[0.2em] uppercase font-semibold bg-white/10 hover:bg-white/20 text-white/70 transition-colors border border-white/15"
+      >
+        Take as Mock
+      </button>
+    </div>
+  );
 }
 
 function CenterCard({
@@ -48,19 +80,18 @@ function CenterCard({
 }: CenterCardProps) {
   const router = useRouter();
 
-  const handleClick = () => {
-    if (revealed) {
-      router.push(`/pyqs/${slug}_slot_2`);
-    } else {
-      onClick();
-    }
+  // TODO: replace with real Slot 2 mock URL
+  const MOCK_URL = "https://example.com/mock";
+
+  const handleCardClick = () => {
+    if (!revealed) onClick();
   };
 
   return (
     <div
       className="absolute inset-0 cursor-pointer"
       style={{ perspective: 1000, zIndex: 3 }}
-      onClick={handleClick}
+      onClick={handleCardClick}
     >
       <motion.div
         className="relative w-full h-full"
@@ -104,9 +135,13 @@ function CenterCard({
             Slot 2
           </span>
           <div className="w-6 h-px bg-white/20 my-1.5" />
-          <span className="font-mono text-[8px] text-white/30 tracking-[0.25em] uppercase">
+          <span className="font-mono text-[8px] text-white/30 tracking-[0.25em] uppercase mb-2">
             CAT PYQ
           </span>
+          <CardButtons
+            onNavigate={() => router.push(`/pyqs/${slug}_slot_2`)}
+            onMock={() => window.open(MOCK_URL, "_blank")}
+          />
         </div>
       </motion.div>
     </div>
@@ -120,16 +155,17 @@ function SideCard({
   colorStop2,
   targetX,
   isOut,
-  onClick,
+  onNavigate,
+  onMock,
   zIndex,
 }: SideCardProps) {
   return (
     <motion.div
       className="absolute inset-0 rounded-3xl flex flex-col items-center justify-center gap-1"
       style={{
-        background: `linear-gradient(160deg, ${colorStop2}cc 0%, ${colorStop1}cc 100%)`,
+        background: `linear-gradient(160deg, ${colorStop2} 0%, ${colorStop1} 100%)`,
         boxShadow: "0 16px 40px rgba(0,0,0,0.3)",
-        cursor: isOut ? "pointer" : "default",
+        cursor: isOut ? "default" : "default",
         zIndex,
       }}
       animate={{
@@ -144,7 +180,6 @@ function SideCard({
         delay: isOut ? 0.1 : 0,
       }}
       whileHover={isOut ? { y: -4, scale: 1.02 } : {}}
-      onClick={isOut ? onClick : undefined}
     >
       <span className="font-mono text-[8px] text-white/40 tracking-[0.35em] uppercase mb-1">
         {year}
@@ -153,9 +188,10 @@ function SideCard({
         {label}
       </span>
       <div className="w-6 h-px bg-white/20 my-1.5" />
-      <span className="font-mono text-[8px] text-white/30 tracking-[0.25em] uppercase">
+      <span className="font-mono text-[8px] text-white/30 tracking-[0.25em] uppercase mb-2">
         CAT PYQ
       </span>
+      {isOut && <CardButtons onNavigate={onNavigate} onMock={onMock} />}
     </motion.div>
   );
 }
@@ -171,6 +207,10 @@ export function SlotDeck({
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // TODO: replace these with real mock URLs per slot
+  const MOCK_URL_SLOT_1 = "https://example.com/mock";
+  const MOCK_URL_SLOT_3 = "https://example.com/mock";
+
   useEffect(() => {
     if (!revealed) return;
 
@@ -181,7 +221,6 @@ export function SlotDeck({
       }
     };
 
-    // Delay so the reveal click itself doesn't immediately re-close
     const id = setTimeout(() => {
       document.addEventListener("pointerdown", handlePointerDown);
     }, 0);
@@ -195,24 +234,14 @@ export function SlotDeck({
   const derivedSlug = slug ?? year;
 
   return (
-    /*
-     * The outer div is always exactly CARD_W × CARD_H and never moves.
-     * overflow: visible lets the side cards fan out without disturbing layout.
-     * The invisible hit-area div (pointer-events: none on children, none on
-     * the expanded sentinel) just gives containerRef the full fanned width
-     * so outside-click detection is accurate.
-     */
     <div
       ref={containerRef}
       style={{
         width: CARD_W,
         height: CARD_H,
         position: "relative",
-        // Extend the hit-testable area to cover all 3 cards when revealed
-        // by using an inset negative padding trick via outline (no layout impact)
       }}
     >
-      {/* Transparent sentinel that stretches to cover the full fanned area */}
       {revealed && (
         <div
           style={{
@@ -226,7 +255,6 @@ export function SlotDeck({
         />
       )}
 
-      {/* Side cards use absolute + overflow:visible; x animation moves them */}
       <SideCard
         label="Slot 1"
         year={year}
@@ -235,10 +263,11 @@ export function SlotDeck({
         targetX={-FAN_OFFSET}
         isOut={revealed}
         zIndex={1}
-        onClick={() => {
+        onNavigate={() => {
           onSelect?.("slot-1");
           router.push(`/pyqs/${derivedSlug}_slot_1`);
         }}
+        onMock={() => window.open(MOCK_URL_SLOT_1, "_blank")}
       />
 
       <SideCard
@@ -249,10 +278,11 @@ export function SlotDeck({
         targetX={FAN_OFFSET}
         isOut={revealed}
         zIndex={1}
-        onClick={() => {
+        onNavigate={() => {
           onSelect?.("slot-3");
           router.push(`/pyqs/${derivedSlug}_slot_3`);
         }}
+        onMock={() => window.open(MOCK_URL_SLOT_3, "_blank")}
       />
 
       <CenterCard
