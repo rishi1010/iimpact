@@ -1,24 +1,33 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
-import fs from "fs";
-import path from "path";
 import { useMDXComponents } from "@/app/mdx-components";
 import remarkGfm from "remark-gfm";
 import { FaArrowLeft } from "react-icons/fa";
 import BlogHero from "@/app/components/blog-hero";
 import ScrollProgress from "@/app/components/scroll-progress";
+import { getBlogBySlug } from "@/app/actions/content-actions";
+import { notFound } from "next/navigation";
 
-export async function generateMetadata() {
-  const title = "CAT Performance Benchmarks & Targets";
-  return { title };
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const blog = await getBlogBySlug(slug);
+  if (!blog) return { title: "Blog Not Found" };
+  return { title: blog.title };
 }
 
-export default async function BlogPost() {
-  const filePath = path.join(
-    process.cwd(),
-    "public",
-    "blog-2-understanding-the-system.md",
-  );
-  const content = fs.readFileSync(filePath, "utf-8");
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const blog = await getBlogBySlug(slug);
+
+  if (!blog) notFound();
+
   const components = useMDXComponents({});
 
   return (
@@ -35,17 +44,17 @@ export default async function BlogPost() {
 
       {/* Hero: title + cover image + blurb */}
       <BlogHero
-        title="Understanding the CAT Exam: A Complete Overview for MBA Aspirants"
-        blurb="Preparing for the CAT exam involves more than mastering VARC, DILR, or Quant. A clear understanding of how performance is evaluated plays an equally important role."
-        imageUrl="/geographer.png"
+        title={blog.title}
+        blurb={blog.blurb}
+        imageUrl={blog.cover_image_url || "/geographer.png"}
       />
 
-      <div className="h-px w-full bg-neutral-800 max-w-4xl mx-auto"></div>
+      <div className="h-px w-full bg-neutral-800 max-w-4xl mx-auto" />
 
       {/* MDX content */}
       <article className="w-full max-w-4xl font-spectral mx-auto py-8 md:py-12 px-0">
         <MDXRemote
-          source={content}
+          source={blog.content}
           components={components}
           options={{
             mdxOptions: {
