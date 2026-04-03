@@ -9,7 +9,13 @@ interface QuestionCardProps {
 }
 
 const QuestionCard = ({ question, globalIndex }: QuestionCardProps) => {
-  const hover_label = (question.answer + 10).toString(36).toUpperCase();
+  const isTita = question.is_tita ?? false;
+
+  const hover_label = isTita
+    ? (question.tita_answer ?? "N/A")
+    : question.answer !== null
+      ? (question.answer + 10).toString(36).toUpperCase()
+      : "N/A";
 
   return (
     <div className="w-full flex items-start gap-4 border-t border-impact-blue pt-4">
@@ -18,16 +24,23 @@ const QuestionCard = ({ question, globalIndex }: QuestionCardProps) => {
       </p>
 
       <div className="w-full flex flex-col gap-2 mr-4">
-        <p className="text-neutral-800 font-spectral text-lg font-medium tracking-tight">
+        <p className="text-neutral-800 font-spectral text-lg font-medium tracking-tight whitespace-pre-wrap">
           {question.text}
         </p>
-        <ol className="ml-4 text-neutral-600 font-sans text-md list-[upper-alpha]">
-          {question.options.map((option, index) => (
-            <li key={index} className="marker:text-impact-orange mt-2">
-              {option}
-            </li>
-          ))}
-        </ol>
+
+        {isTita ? (
+          <p className="ml-4 text-impact-orange font-mono text-sm tracking-widest">
+            [TITA — Type In The Answer]
+          </p>
+        ) : (
+          <ol className="ml-4 text-neutral-600 font-sans text-md list-[upper-alpha]">
+            {question.options.map((option, index) => (
+              <li key={index} className="marker:text-impact-orange mt-2">
+                {option}
+              </li>
+            ))}
+          </ol>
+        )}
       </div>
 
       <div className="flex ml-4 flex-col min-w-32 gap-4 shrink-0">
@@ -36,9 +49,10 @@ const QuestionCard = ({ question, globalIndex }: QuestionCardProps) => {
           key={question.id}
           trigger={<CornerFillButton label="Explanation" />}
           question={question.text}
-          options={question.options}
-          correctAnswer={question.answer}
+          options={isTita ? [] : question.options}
+          correctAnswer={isTita ? null : question.answer}
           explanation={question.explanation}
+          tita_answer={question.tita_answer}
         />
         <CornerFillButton
           label="Video Explanation"

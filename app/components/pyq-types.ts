@@ -4,8 +4,10 @@ export interface Question {
   id: string;
   text: string;
   options: string[];
-  answer: number;
+  answer: number | null;
   explanation: string;
+  is_tita?: boolean;
+  tita_answer?: string;
 }
 
 export interface QuestionSet {

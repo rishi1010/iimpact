@@ -28,7 +28,7 @@ const CornerFillButton = ({
       {label}
     </p>
     <p
-      className={`relative z-10 hidden ${hover_label ? "group-hover:block p-3" : ""}`}
+      className={`relative z-10 hidden ${hover_label ? "group-hover:block " : ""}`}
     >
       {hover_label}
     </p>

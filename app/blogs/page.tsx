@@ -4,6 +4,8 @@ import Image from "next/image";
 import BlogCard from "../components/blog-cards";
 import { getBlogs } from "../actions/content-actions";
 import { EmptyMuted } from "../components/empty-blog";
+import Footer from "../components/footer";
+import type { Sections } from "../components/footer";
 
 export async function generateMetadata() {
   const title = "Blogs by IIMpact";
@@ -14,6 +16,7 @@ const BlogsPage = async () => {
   const blogs = await getBlogs();
   const featured = blogs[0];
   const rest = blogs.slice(1);
+  const sections: Sections[] = [{ label: "Contact Us", href: "#contact" }];
 
   return (
     <section className="w-full min-h-dvh px-4 md:px-11 bg-[#F8F0E5]">
@@ -85,6 +88,7 @@ const BlogsPage = async () => {
 
         {blogs.length === 0 && <EmptyMuted />}
       </div>
+      <Footer section={sections} />
     </section>
   );
 };
