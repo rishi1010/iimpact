@@ -25,7 +25,7 @@ const QuestionSetCard = ({ group, startIndex }: QuestionSetCardProps) => {
               key={index}
               src={src}
               alt={`Context image ${index + 1}`}
-              className="h-40 md:h-48 max-w-[85vw] md:max-w-xs w-auto object-contain rounded shrink-0 border border-neutral-200"
+              className="h-40 md:h-68 max-w-[85vw] md:max-w-xl w-auto object-contain rounded shrink-0 border border-neutral-200"
             />
           ))}
         </div>
