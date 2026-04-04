@@ -4,7 +4,7 @@ import { QuestionSet } from "./pyq-types";
 
 interface QuestionSetCardProps {
   group: QuestionSet;
-  startIndex: number; // global question number for the first question in this set
+  startIndex: number;
 }
 
 const QuestionSetCard = ({ group, startIndex }: QuestionSetCardProps) => {
@@ -12,7 +12,7 @@ const QuestionSetCard = ({ group, startIndex }: QuestionSetCardProps) => {
     <div id={group.id} className="w-full flex flex-col gap-6 scroll-mt-6">
       {/* context */}
       {group.context && (
-        <div className="w-full text-neutral-800 whitespace-break-spaces font-spectral text-lg font-bold tracking-tight">
+        <div className="w-full text-neutral-800 whitespace-pre-wrap font-spectral text-base md:text-lg font-bold tracking-tight bg-neutral-100 rounded-lg p-4">
           {group.context}
         </div>
       )}
@@ -25,7 +25,7 @@ const QuestionSetCard = ({ group, startIndex }: QuestionSetCardProps) => {
               key={index}
               src={src}
               alt={`Context image ${index + 1}`}
-              className="h-48 max-w-xs w-auto object-contain rounded shrink-0 border border-neutral-200"
+              className="h-40 md:h-48 max-w-[85vw] md:max-w-xs w-auto object-contain rounded shrink-0 border border-neutral-200"
             />
           ))}
         </div>

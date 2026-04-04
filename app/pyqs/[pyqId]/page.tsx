@@ -68,6 +68,7 @@ export default async function PyqPage({
   }
 
   const { section, year, slot } = parsed;
+  const renderLatex = section === "qa";
 
   // fetch from supabase
   const paper = await getPaperBySlug(pyqId);
@@ -162,7 +163,7 @@ export default async function PyqPage({
               <FaArrowLeft />
             </a>
           </div>
-          <div className="w-full text-center font-spectral text-5xl text-white font-regular">
+          <div className="w-full text-center font-spectral text-3xl md:text-5xl text-white font-regular">
             {section.toUpperCase()} - Slot {slot} - CAT {year}
           </div>
           <div className="w-full flex flex-start gap-2">
@@ -184,8 +185,11 @@ export default async function PyqPage({
         </div>
 
         {/* two-column layout: index + questions */}
-        <div className="w-full max-w-6xl flex gap-8 px-4 pb-16">
-          <PyqIndex entries={indexEntries} />
+        <div className="w-full max-w-6xl flex gap-8 px-2 md:px-4 pb-16">
+          {/* hide index on mobile */}
+          <div className="hidden md:block">
+            <PyqIndex entries={indexEntries} />
+          </div>
 
           <div className="flex flex-col gap-12 flex-1 min-w-0">
             {sortedGroups.map((group) => {
@@ -208,6 +212,7 @@ export default async function PyqPage({
                     <QuestionCard
                       question={group.question}
                       globalIndex={globalIndex}
+                      renderLatex={renderLatex}
                     />
                   </div>
                 );

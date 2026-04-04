@@ -105,17 +105,21 @@ export default function Page() {
       {/* Collapsed: 3 sections */}
       <AnimatePresence>
         {!selected && !isCollapsing && (
-          <motion.div key="sections" className="flex flex-row w-full h-screen">
+          <motion.div
+            key="sections"
+            className="flex flex-col md:flex-row w-full h-auto md:h-screen pt-20 md:pt-0"
+          >
             {sections.map((section, i) => (
               <motion.div
                 key={section.id}
-                className="flex-1 flex flex-col items-center justify-center cursor-pointer relative group"
+                className="flex-1 flex flex-col items-center justify-center cursor-pointer relative group py-10 md:py-0"
                 style={{
-                  borderRight:
+                  borderBottom:
                     i < sections.length - 1
                       ? "1px solid rgba(255,255,255,0.25)"
                       : "none",
                 }}
+                // on md+ switch to borderRight
                 initial={{ y: -80, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -80, opacity: 0 }}
@@ -126,9 +130,8 @@ export default function Page() {
                 }}
                 onClick={() => handleSelect(section.id)}
               >
-                {/* Section label */}
                 <motion.h2
-                  className="font-spectral text-white text-6xl mb-5 tracking-wide select-none"
+                  className="font-spectral text-white text-4xl md:text-6xl mb-5 tracking-wide select-none"
                   initial={{ opacity: 0, y: -12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 + 0.25, duration: 0.4 }}
@@ -136,9 +139,8 @@ export default function Page() {
                   {section.label}
                 </motion.h2>
 
-                {/* Book cover placeholder */}
                 <motion.div
-                  className="rounded-3xl relative  w-82.5 h-99 bg-linear-to-b from-[#f5d6c0] to-[#f0c4a4] shadow-2xl"
+                  className="rounded-3xl relative w-48 h-64 md:w-82.5 md:h-99 bg-linear-to-b from-[#f5d6c0] to-[#f0c4a4] shadow-2xl"
                   initial={{ opacity: 0, y: 24, scale: 0.96 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{
@@ -156,7 +158,6 @@ export default function Page() {
                   />
                 </motion.div>
 
-                {/* Hover overlay glow */}
                 <motion.div
                   className="absolute inset-0 pointer-events-none"
                   style={{
@@ -242,7 +243,7 @@ export default function Page() {
                 {showContent && (
                   <motion.div
                     key="grid"
-                    className="grid grid-cols-1 md:grid-cols-3 gap-y-20  justify-items-center px-4 pb-10"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20  justify-items-center px-4 pb-10"
                   >
                     {(sectionCards[selectedSection.id] ?? []).map((card, i) => (
                       <motion.div

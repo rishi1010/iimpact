@@ -8,6 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { VisuallyHidden } from "radix-ui";
+import { LatexText } from "./latex-text";
 
 interface ExplanationDialogProps {
   trigger: React.ReactNode;
@@ -16,6 +17,7 @@ interface ExplanationDialogProps {
   correctAnswer: number | null;
   explanation: string;
   tita_answer?: string;
+  renderLatex?: boolean;
 }
 
 const ExplanationDialog = ({
@@ -25,6 +27,7 @@ const ExplanationDialog = ({
   correctAnswer,
   explanation,
   tita_answer,
+  renderLatex = false,
 }: ExplanationDialogProps) => {
   const isTita = options.length === 0 || correctAnswer === null;
 
@@ -37,9 +40,15 @@ const ExplanationDialog = ({
       <DialogContent className="max-w-4xl max-h-[90vh] flex flex-col">
         <div className="flex-1 overflow-y-auto no-scrollbar px-4 flex flex-col gap-6 py-4">
           {/* question title */}
-          <p className="font-spectral text-lg font-medium text-neutral-800 leading-snug whitespace-pre-wrap">
-            {question}
-          </p>
+          {renderLatex ? (
+            <LatexText className="font-spectral text-lg font-medium text-neutral-800 leading-snug">
+              {question}
+            </LatexText>
+          ) : (
+            <p className="font-spectral text-lg font-medium text-neutral-800 leading-snug whitespace-pre-wrap">
+              {question}
+            </p>
+          )}
 
           <div className="border-t border-neutral-200" />
 
@@ -58,13 +67,9 @@ const ExplanationDialog = ({
               {options.map((option, index) => (
                 <li
                   key={index}
-                  className={`marker:font-bold ${
-                    index === correctAnswer
-                      ? "text-impact-orange marker:text-impact-orange"
-                      : "text-neutral-400 marker:text-neutral-400"
-                  }`}
+                  className={`marker:font-bold ${index === correctAnswer ? "text-impact-orange marker:text-impact-orange" : "text-neutral-400 marker:text-neutral-400"}`}
                 >
-                  {option}
+                  {renderLatex ? <LatexText>{option}</LatexText> : option}
                 </li>
               ))}
             </ol>
@@ -77,9 +82,15 @@ const ExplanationDialog = ({
             <p className="font-mono text-sm font-bold text-impact-blue uppercase tracking-widest">
               Explanation
             </p>
-            <p className="font-spectral text-neutral-700 leading-relaxed">
-              {explanation}
-            </p>
+            {renderLatex ? (
+              <LatexText className="font-spectral text-neutral-700 leading-relaxed">
+                {explanation}
+              </LatexText>
+            ) : (
+              <p className="font-spectral text-neutral-700 leading-relaxed">
+                {explanation}
+              </p>
+            )}
           </div>
         </div>
 
