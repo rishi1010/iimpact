@@ -87,7 +87,7 @@ const ExplanationDialog = ({
                 {explanation}
               </LatexText>
             ) : (
-              <p className="font-spectral text-neutral-700 leading-relaxed">
+              <p className="font-spectral text-neutral-700 leading-relaxed text-justify">
                 {explanation}
               </p>
             )}
