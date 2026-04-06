@@ -36,7 +36,7 @@ const Hero = () => {
         </div>
 
         {/* subtext */}
-        <div className="text-balance text-base sm:text-lg md:text-xl font-sans max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl text-center text-impact-blue">
+        <div className="text-balance text-sm sm:text-lg md:text-xl font-sans max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl text-center text-impact-blue">
           IIMpact is the smarter way to crack CAT. Think like a topper using a
           proven system developed by CAT{" "}
           <span className="font-bold">100%ilers</span> from India’s best

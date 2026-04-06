@@ -26,7 +26,7 @@ const TestiBento = () => {
             whileHover={{ y: -5 }}
             className="lg:row-span-2 lg:col-span-2 bg-linear-to-t from-impact-blue to-impact-blue/40 rounded-3xl flex flex-col items-center justify-center p-8 lg:p-4 font-poppins gap-4 shadow-xl "
           >
-            <p className="text-white text-5xl lg:text-6xl font-bold drop-shadow-sm">
+            <p className="text-white text-3xl lg:text-6xl font-bold drop-shadow-sm">
               1 in 6
             </p>
             <p className="text-white/90 font-sans text-base lg:text-lg text-center">
@@ -39,7 +39,7 @@ const TestiBento = () => {
             whileHover={{ y: -5 }}
             className="lg:row-span-2 lg:col-span-2 bg-linear-to-t from-impact-blue to-impact-blue/40 rounded-3xl flex flex-col items-center justify-center p-8 lg:p-4 font-poppins gap-4 shadow-xl  "
           >
-            <p className="text-white text-5xl lg:text-6xl tracking-tight font-bold drop-shadow-sm">
+            <p className="text-white text-3xl lg:text-6xl tracking-tight font-bold drop-shadow-sm">
               <CountUp end={25} suffix="%" enableScrollSpy scrollSpyOnce />
               <span className="text-xl font-medium opacity-80"> students</span>
             </p>
@@ -53,7 +53,7 @@ const TestiBento = () => {
             whileHover={{ y: -5 }}
             className="lg:row-span-2 lg:col-span-2 bg-linear-to-t from-impact-orange to-impact-orange/40 rounded-3xl flex flex-col items-center justify-center p-8 lg:p-4 font-poppins gap-4 shadow-xl "
           >
-            <p className="text-white text-5xl lg:text-6xl tracking-tight font-bold drop-shadow-sm">
+            <p className="text-white text-3xl lg:text-6xl tracking-tight font-bold drop-shadow-sm">
               <CountUp end={50} suffix="%" enableScrollSpy scrollSpyOnce />
               <span className="text-xl font-medium opacity-80"> students</span>
             </p>
@@ -67,7 +67,7 @@ const TestiBento = () => {
             whileHover={{ y: -5 }}
             className="lg:row-span-2 lg:col-span-2 bg-linear-to-t from-impact-orange to-impact-orange/40 rounded-3xl flex flex-col items-center justify-center p-8 lg:p-4 font-poppins gap-4 shadow-xl "
           >
-            <p className="text-white text-5xl lg:text-6xl tracking-tight font-bold drop-shadow-sm">
+            <p className="text-black text-3xl lg:text-6xl tracking-tight font-bold drop-shadow-sm">
               <CountUp end={70} suffix="%" enableScrollSpy scrollSpyOnce />
               <span className="text-xl font-medium opacity-80"> students</span>
             </p>

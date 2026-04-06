@@ -89,7 +89,7 @@ const CourseCard = ({
           }
         `}
       >
-        {isFlagship ? "Enroll Now →" : "Get Started"}
+        {isFlagship ? "Get Started" : "Get Started"}
       </button>
 
       <div className="border-t border-stone-200 my-5" />

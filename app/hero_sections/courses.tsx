@@ -71,7 +71,7 @@ const Courses = () => {
       </div>
 
       {/* Cards — grow left to right */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-stretch gap-6 justify-center">
+      <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-stretch gap-6 justify-center">
         {/* Smallest — Individual Section */}
         <div className="w-full md:w-[30%]">
           <CourseCard
