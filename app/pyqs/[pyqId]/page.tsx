@@ -95,6 +95,7 @@ export default async function PyqPage({
         explanation: q.explanation,
         is_tita: q.is_tita,
         tita_answer: q.tita_answer,
+        video_url: q.video_url ?? "",
       })),
     })),
 
@@ -109,6 +110,7 @@ export default async function PyqPage({
         explanation: q.explanation,
         is_tita: q.is_tita,
         tita_answer: q.tita_answer,
+        video_url: q.video_url ?? "",
       },
     })),
   ];

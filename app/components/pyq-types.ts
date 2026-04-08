@@ -8,6 +8,7 @@ export interface Question {
   explanation: string;
   is_tita?: boolean;
   tita_answer?: string;
+  video_url: string;
 }
 
 export interface QuestionSet {

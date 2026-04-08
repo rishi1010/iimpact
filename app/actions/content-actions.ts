@@ -24,6 +24,7 @@ export type Question = {
   is_tita: boolean;
   tita_answer: string;
   order_index: number;
+  video_url: string;
 };
 
 export type QuestionSet = {

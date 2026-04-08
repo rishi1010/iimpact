@@ -3,6 +3,7 @@ import CornerFillButton from "./corner-button";
 import ExplanationDialog from "./explanation-dialog";
 import { Question } from "./pyq-types";
 import { LatexText } from "./latex-text";
+import { VideoDialog } from "./video-dialog";
 
 interface QuestionCardProps {
   question: Question;
@@ -73,10 +74,14 @@ const QuestionCard = ({
             tita_answer={question.tita_answer}
             renderLatex={renderLatex}
           />
-          <CornerFillButton
-            label="Video Explanation"
-            href="https://www.youtube.com"
-          />
+          {question.video_url ? (
+            <VideoDialog video_url={question.video_url} />
+          ) : (
+            <CornerFillButton
+              label="Video Explanation"
+              hover_label="Video Coming Soon"
+            />
+          )}
         </div>
       </div>
     </div>
