@@ -68,13 +68,14 @@ function CardButtons({
         Practice
       </button>
       <button
+        disabled
         onClick={(e) => {
           e.stopPropagation();
           onMock();
         }}
-        className={`w-full rounded-xl font-mono tracking-[0.2em] uppercase font-semibold bg-white/10 hover:bg-white/20 text-white/70 transition-colors border border-white/15 ${isMobile ? "py-1 text-[8px]" : "py-1.5 text-[10px]"}`}
+        className={`w-full rounded-xl font-mono tracking-[0.2em] uppercase font-semibold bg-white/10 hover:bg-white/20 text-white/70 transition-colors border  border-white/15 ${isMobile ? "py-1 text-[8px]" : "py-1.5 text-[8px]"} cursor-not-allowed`}
       >
-        Mock
+        Mock coming soon
       </button>
     </div>
   );
