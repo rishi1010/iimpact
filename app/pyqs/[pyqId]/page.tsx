@@ -187,7 +187,7 @@ export default async function PyqPage({
         </div>
 
         {/* two-column layout: index + questions */}
-        <div className="w-full max-w-6xl flex gap-8 px-2 md:px-4 pb-16">
+        <div className="w-full max-w-7xl flex gap-20 px-2 md:px-4 pb-16">
           {/* hide index on mobile */}
           <div className="hidden md:block">
             <PyqIndex entries={indexEntries} />

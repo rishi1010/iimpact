@@ -1,7 +1,20 @@
 import type { MDXComponents } from "mdx/types";
+import Image from "next/image"; // Import the Next.js Image component
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
+    // Standard Markdown Image mapping
+    img: ({ src, alt }) => (
+      <span className="relative block w-full aspect-video my-8 overflow-hidden rounded-xl border border-neutral-200">
+        <Image
+          src={src as string}
+          alt={alt || "Blog image"}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </span>
+    ),
     // Titles italic
     h1: ({ children }) => (
       <h1 className="text-4xl md:text-6xl text-left  font-bold font-spectral italic text-neutral-700  mb-6">
@@ -100,3 +113,29 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ...components,
   };
 }
+
+// Add this: A specialized set for your "Explanation" pages
+export const explanationComponents: MDXComponents = {
+  ...useMDXComponents({}), // Get all the defaults (h1, table, li, etc.)
+
+  // Overwrite the Paragraph
+  p: ({ children }) => (
+    <p className="font-spectral text-neutral-700 leading-relaxed text-justify mb-4">
+      {children}
+    </p>
+  ),
+
+  // Overwrite the Image for a "smaller" look
+  img: ({ src, alt }) => (
+    <div className="my-6 flex justify-center">
+      <div className="relative w-full max-w-md aspect-4/3 overflow-hidden rounded-lg border border-neutral-100">
+        <Image
+          src={src as string}
+          alt={alt || "Illustration"}
+          fill
+          className="object-contain"
+        />
+      </div>
+    </div>
+  ),
+};

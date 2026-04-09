@@ -25,7 +25,7 @@ const QuestionCard = ({
       : "N/A";
 
   return (
-    <div className="w-full flex flex-col gap-4 border-t border-impact-blue pt-4">
+    <div className="w-full flex flex-col gap-4 border-t border-impact-blue pt-4 text-justify">
       {/* question number + text + buttons: side by side on md+ */}
       <div className="flex flex-col md:flex-row md:items-start md:gap-4">
         {/* left: number + text + options */}
@@ -40,7 +40,7 @@ const QuestionCard = ({
                 {question.text}
               </LatexText>
             ) : (
-              <p className="text-neutral-800 font-spectral text-lg font-medium tracking-tight whitespace-pre-wrap">
+              <p className="text-neutral-800 text-justify font-spectral text-lg font-medium tracking-tight whitespace-pre-wrap">
                 {question.text}
               </p>
             )}

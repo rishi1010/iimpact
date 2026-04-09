@@ -9,6 +9,9 @@ import {
 } from "@/components/ui/dialog";
 import { VisuallyHidden } from "radix-ui";
 import { LatexText } from "./latex-text";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { explanationComponents } from "@/app/mdx-components";
+import remarkGfm from "remark-gfm";
 
 interface ExplanationDialogProps {
   trigger: React.ReactNode;
@@ -67,7 +70,7 @@ const ExplanationDialog = ({
               {options.map((option, index) => (
                 <li
                   key={index}
-                  className={`marker:font-bold ${index === correctAnswer ? "text-impact-orange marker:text-impact-orange" : "text-neutral-400 marker:text-neutral-400"}`}
+                  className={`marker:font-bold text-justify ${index === correctAnswer ? "text-impact-orange marker:text-impact-orange" : "text-neutral-400 marker:text-neutral-400"}`}
                 >
                   {renderLatex ? <LatexText>{option}</LatexText> : option}
                 </li>
@@ -83,13 +86,21 @@ const ExplanationDialog = ({
               Explanation
             </p>
             {renderLatex ? (
-              <LatexText className="font-spectral text-neutral-700 leading-relaxed">
+              <LatexText className="font-spectral  text-neutral-700 leading-relaxed">
                 {explanation}
               </LatexText>
             ) : (
-              <p className="font-spectral text-neutral-700 leading-relaxed text-justify">
-                {explanation}
-              </p>
+              <div className="">
+                <MDXRemote
+                  source={explanation}
+                  components={explanationComponents} // Use the specialized set here
+                  options={{
+                    mdxOptions: {
+                      remarkPlugins: [remarkGfm],
+                    },
+                  }}
+                />
+              </div>
             )}
           </div>
         </div>
