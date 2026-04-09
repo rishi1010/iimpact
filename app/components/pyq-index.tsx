@@ -13,7 +13,19 @@ const PyqIndex = ({ entries }: PyqIndexProps) => {
   const handleClick = (anchorId: string) => {
     setActiveId(anchorId);
     const el = document.getElementById(anchorId);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      // Listens for the end of the scroll exactly once
+      window.addEventListener(
+        "scrollend",
+        () => {
+          setActiveId(null);
+        },
+        { once: true },
+      );
+    }
   };
 
   return (

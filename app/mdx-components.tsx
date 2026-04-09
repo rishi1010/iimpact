@@ -1,4 +1,5 @@
 import type { MDXComponents } from "mdx/types";
+import React from "react";
 import Image from "next/image"; // Import the Next.js Image component
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -137,5 +138,30 @@ export const explanationComponents: MDXComponents = {
         />
       </div>
     </div>
+  ),
+};
+
+// Add this: A specialized set for your "Explanation" pages
+export const contextComponents: MDXComponents = {
+  ...useMDXComponents({}), // Get all the defaults (h1, table, li, etc.)
+
+  // Overwrite the Paragraph
+  p: ({ children }) => (
+    <p className="w-full text-neutral-800 whitespace-pre-wrap font-spectral text-base md:text-lg font-bold tracking-tight bg-neutral-100 rounded-lg p-4 text-justify">
+      {children}
+    </p>
+  ),
+
+  // Overwrite the Image for a "smaller" look
+  img: ({ src, alt }) => (
+    <span className="my-6 flex justify-center" style={{ display: "block" }}>
+      <Image
+        src={src as string}
+        alt={alt || "Illustration"}
+        width={1200}
+        height={600}
+        className="w-full max-w-3xl object-contain rounded border"
+      />
+    </span>
   ),
 };

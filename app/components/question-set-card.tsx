@@ -1,6 +1,9 @@
 import React from "react";
 import QuestionCard from "./question-card";
 import { QuestionSet } from "./pyq-types";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { contextComponents } from "@/app/mdx-components";
+import remarkGfm from "remark-gfm";
 
 interface QuestionSetCardProps {
   group: QuestionSet;
@@ -12,8 +15,16 @@ const QuestionSetCard = ({ group, startIndex }: QuestionSetCardProps) => {
     <div id={group.id} className="w-full flex flex-col gap-6 scroll-mt-6">
       {/* context */}
       {group.context && (
-        <div className="w-full text-neutral-800 whitespace-pre-wrap font-spectral text-base md:text-lg font-bold tracking-tight bg-neutral-100 rounded-lg p-4 text-justify">
-          {group.context}
+        <div className="">
+          <MDXRemote
+            source={group.context}
+            components={contextComponents} // Use the specialized set here
+            options={{
+              mdxOptions: {
+                remarkPlugins: [remarkGfm],
+              },
+            }}
+          />
         </div>
       )}
 

@@ -10,6 +10,7 @@ import {
   flattenQuestions,
 } from "@/app/components/pyq-types";
 import { getPaperBySlug } from "@/app/actions/content-actions";
+import React from "react";
 
 type Section = "varc" | "dilr" | "qa";
 
@@ -194,32 +195,32 @@ export default async function PyqPage({
           </div>
 
           <div className="flex flex-col gap-12 flex-1 min-w-0">
-            {sortedGroups.map((group) => {
-              if (group.type === "set") {
-                return (
+            {sortedGroups.map((group, index) => (
+              <React.Fragment
+                key={group.type === "set" ? group.id : group.question.id}
+              >
+                {/* Render the Card */}
+                {group.type === "set" ? (
                   <QuestionSetCard
-                    key={group.id}
                     group={group}
                     startIndex={groupStartMap.get(group.id) ?? 1}
                   />
-                );
-              } else {
-                const globalIndex = globalIndexMap.get(group.question.id) ?? 1;
-                return (
-                  <div
-                    key={group.question.id}
-                    id={group.question.id}
-                    className="scroll-mt-6"
-                  >
+                ) : (
+                  <div id={group.question.id} className="scroll-mt-6">
                     <QuestionCard
                       question={group.question}
-                      globalIndex={globalIndex}
+                      globalIndex={globalIndexMap.get(group.question.id) ?? 1}
                       renderLatex={renderLatex}
                     />
                   </div>
-                );
-              }
-            })}
+                )}
+
+                {/* Divider logic: Render if not the last item */}
+                {index < sortedGroups.length - 1 && (
+                  <div className="h-px w-full bg-impact-blue" />
+                )}
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </div>
