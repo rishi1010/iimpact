@@ -143,16 +143,26 @@ export const explanationComponents: MDXComponents = {
 
 // Add this: A specialized set for your "Explanation" pages
 export const contextComponents: MDXComponents = {
-  ...useMDXComponents({}), // Get all the defaults (h1, table, li, etc.)
+  ...useMDXComponents({}),
 
-  // Overwrite the Paragraph
   p: ({ children }) => (
     <p className="w-full text-neutral-800 whitespace-pre-wrap font-spectral text-base md:text-lg font-bold tracking-tight bg-neutral-100 rounded-lg p-4 text-justify">
       {children}
     </p>
   ),
 
-  // Overwrite the Image for a "smaller" look
+  ol: ({ children }) => (
+    <ol className="w-full font-spectral text-base md:text-lg font-bold tracking-tight bg-neutral-100 rounded-lg p-4 my-0 ml-6 space-y-2 list-decimal text-neutral-800">
+      {children}
+    </ol>
+  ),
+
+  li: ({ children }) => (
+    <li className="font-spectral text-neutral-800 text-base md:text-lg font-bold leading-relaxed tracking-tight">
+      {children}
+    </li>
+  ),
+
   img: ({ src, alt }) => (
     <span className="my-6 flex justify-center" style={{ display: "block" }}>
       <Image

@@ -7,6 +7,8 @@ import { EmptyMuted } from "../components/empty-blog";
 import Footer from "../components/footer";
 import type { Sections } from "../components/footer";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata() {
   const title = "Blogs by IIMpact";
   return { title };
