@@ -6,12 +6,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Standard Markdown Image mapping
     img: ({ src, alt }) => (
-      <span className="relative block w-full aspect-video my-8 overflow-hidden rounded-xl border border-neutral-200">
+      <span className="relative block w-full aspect-video my-8 overflow-hidden rounded-xl border-0 border-neutral-200">
         <Image
           src={src as string}
           alt={alt || "Blog image"}
           fill
-          className="object-cover"
+          className="object-contain"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </span>
@@ -23,7 +23,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="text-2xl font-semibold italic font-spectral tracking-tight  mb-4">
+      <h2 className="text-2xl font-semibold italic font-spectral tracking-tight mt-4  mb-4">
         {children}
       </h2>
     ),
@@ -93,17 +93,19 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     ul: ({ children }) => (
-      <ul className="my-4 ml-4 space-y-2 list-none">{children}</ul>
+      <ul className="my-4 ml-4 space-y-2 list-none font-spectral">
+        {children}
+      </ul>
     ),
 
     ol: ({ children }) => (
-      <ol className="my-4 ml-6 space-y-2 list-decimal text-gray-700 font-manrope">
+      <ol className="my-4 ml-6 space-y-2 list-decimal text-gray-700 font-spectral">
         {children}
       </ol>
     ),
 
     li: ({ children }) => (
-      <li className="font-manrope text-gray-700 text-base leading-relaxed">
+      <li className="font-manrope text-gray-700 text-base leading-relaxed font-spectral">
         <span className="flex items-start gap-2">
           <span className="mt-2 w-1.5 h-1.5 rounded-full bg-impact-orange shrink-0 in-[ol]:hidden" />
           <span>{children}</span>
