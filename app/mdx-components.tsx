@@ -28,22 +28,24 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </h2>
     ),
     h3: ({ children }) => (
-      <h2 className="text-xl font-medium  mb-4">{children}</h2>
+      <h3 className="text-xl font-medium mt-4  mb-4">{children}</h3>
     ),
     h4: ({ children }) => (
-      <h2 className="text-lg font-regular  mb-4">{children}</h2>
+      <h4 className="text-lg font-regular mt-4 mb-4">{children}</h4>
     ),
 
     // Blockquotes gray
     blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-gray-300 pl-4 text-gray-400 italic my-6">
+      <blockquote className="border-l-4 border-impact-orange pl-4 text-black italic my-6">
         {children}
       </blockquote>
     ),
 
     // Paragraphs
     p: ({ children }) => (
-      <p className="text-xl  tracking-tight leading-tight mb-4">{children}</p>
+      <p className="text-xl text-justify  tracking-tight leading-tight mb-4">
+        {children}
+      </p>
     ),
 
     // Inline code
@@ -55,7 +57,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     // Links
     a: ({ href, children }) => (
-      <a href={href} className="underline text-blue-500 hover:text-blue-700">
+      <a href={href} className="underline text-impact-blue hover:text-blue-700">
         {children}
       </a>
     ),
@@ -93,7 +95,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     ul: ({ children }) => (
-      <ul className="my-4 ml-4 space-y-2 list-none font-spectral">
+      <ul className="my-4 ml-4  space-y-2 list-none font-spectral">
         {children}
       </ul>
     ),
@@ -105,7 +107,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     li: ({ children }) => (
-      <li className="font-manrope text-gray-700 text-base leading-relaxed font-spectral">
+      <li className="font-manrope text-black text-base leading-relaxed font-spectral">
         <span className="flex items-start gap-2">
           <span className="mt-2 w-1.5 h-1.5 rounded-full bg-impact-orange shrink-0 in-[ol]:hidden" />
           <span>{children}</span>
