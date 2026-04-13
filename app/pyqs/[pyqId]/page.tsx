@@ -11,6 +11,7 @@ import {
 } from "@/app/components/pyq-types";
 import { getPaperBySlug } from "@/app/actions/content-actions";
 import React from "react";
+import Image from "next/image";
 
 type Section = "varc" | "dilr" | "qa";
 
@@ -158,19 +159,25 @@ export default async function PyqPage({
       <div className="flex flex-col gap-10 w-full h-full items-center z-10">
         {/* banner */}
         <div className="w-full bg-linear-to-b from-[#EA804E] py-6 px-7 to-impact-orange flex flex-col justify-evenly gap-6">
-          <div className="w-full flex flex-start">
+          <div className="w-full relative flex justify-between">
             <a
               href="/pyqs"
               className="size-10 flex items-center justify-center self-start bg-impact-blue rounded-full hover:bg-impact-orange hover:scale-105 transition-all duration-200 active:scale-95 text-white"
             >
               <FaArrowLeft />
             </a>
+            <Image
+              src={"/iimpact-logo-white.png"}
+              alt="impact logo"
+              width={100}
+              height={30}
+            />
           </div>
           <div className="w-full text-center font-spectral text-3xl md:text-5xl text-white font-regular">
             {section.toUpperCase()} - Slot {slot} - CAT {year}
           </div>
           <div className="w-full flex flex-start gap-2">
-            <span className="text-impact-blue/40 font-mono text-lg">
+            <span className="text-white font-mono text-lg">
               {flatQuestions.length} Questions
             </span>
             {/* <div className="flex gap-2 items-center">

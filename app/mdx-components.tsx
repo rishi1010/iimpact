@@ -95,7 +95,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     ul: ({ children }) => (
-      <ul className="my-4 ml-4  space-y-2 list-none font-spectral">
+      <ul className="mt-0 mb-1 ml-4 space-y-1 list-none font-spectral">
         {children}
       </ul>
     ),

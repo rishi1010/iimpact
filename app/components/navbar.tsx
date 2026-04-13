@@ -12,10 +12,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const Navbar = () => {
+const Navbar = ({ pyq = false }: { pyq?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
+
+  const textColor = pyq ? "text-impact-blue" : "text-impact-blue";
+  const stripColor = pyq ? "bg-white/80" : "bg-white/10";
 
   const links = [
     { label: "Home", href: "/" },
@@ -32,7 +35,9 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="absolute top-8 left-1/2 -translate-x-1/2 z-50 w-[90%] backdrop-blur-md bg-white/10 rounded-2xl border border-white/20">
+      <nav
+        className={`absolute top-8 left-1/2 -translate-x-1/2 z-50 w-[90%] backdrop-blur-md ${stripColor} rounded-2xl border border-white/20`}
+      >
         <div className="flex items-center justify-between px-4 md:px-10 py-4">
           <Link href="/">
             <Image
@@ -49,7 +54,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-impact-blue font-bold hover:underline decoration-impact-orange"
+                className={`${textColor} font-bold hover:underline decoration-impact-orange`}
               >
                 {link.label}
               </a>
@@ -58,7 +63,9 @@ const Navbar = () => {
             {/* Free Resources dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="text-impact-blue font-bold hover:underline decoration-impact-orange flex items-center gap-1 outline-none">
+                <button
+                  className={`${textColor} font-bold hover:underline decoration-impact-orange flex items-center gap-1 outline-none`}
+                >
                   Free Resources
                   <ChevronDown className="h-3.5 w-3.5 mt-0.5" />
                 </button>
@@ -70,7 +77,7 @@ const Navbar = () => {
                 <DropdownMenuItem asChild>
                   <a
                     href="/pyqs"
-                    className="text-impact-blue font-bold cursor-pointer rounded-lg px-3 py-2 hover:bg-white/50 focus:bg-white/50"
+                    className={`${textColor} font-bold cursor-pointer rounded-lg px-3 py-2 hover:bg-white/50 focus:bg-white/50`}
                   >
                     PYQs
                   </a>
@@ -78,14 +85,14 @@ const Navbar = () => {
                 <DropdownMenuItem asChild>
                   <a
                     href="/blogs"
-                    className="text-impact-blue font-bold cursor-pointer rounded-lg px-3 py-2 hover:bg-white/50 focus:bg-white/50"
+                    className={`${textColor} font-bold cursor-pointer rounded-lg px-3 py-2 hover:bg-white/50 focus:bg-white/50`}
                   >
                     Blogs
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => setSheetOpen(true)}
-                  className="text-impact-blue font-bold cursor-pointer rounded-lg px-3 py-2 hover:bg-white/50 focus:bg-white/50"
+                  className={`${textColor} font-bold cursor-pointer rounded-lg px-3 py-2 hover:bg-white/50 focus:bg-white/50`}
                 >
                   Free Community
                 </DropdownMenuItem>
@@ -96,7 +103,7 @@ const Navbar = () => {
               onClick={() =>
                 window.open("https://www.learn.iimpact.mba", "_blank")
               }
-              className="text-impact-blue font-bold hover:underline decoration-[#F26828]"
+              className={`${textColor} font-bold hover:underline decoration-[#F26828]`}
             >
               Student Portal
             </button>
@@ -104,7 +111,7 @@ const Navbar = () => {
 
           {/* Hamburger */}
           <button
-            className="md:hidden text-impact-blue"
+            className={`md:hidden ${textColor}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -120,7 +127,7 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-impact-blue font-bold hover:underline decoration-[#F26828]"
+                className={`${textColor} font-bold hover:underline decoration-[#F26828]`}
               >
                 {link.label}
               </a>
@@ -129,7 +136,7 @@ const Navbar = () => {
             {/* Mobile free resources — inline expand */}
             <button
               onClick={() => setResourcesOpen((o) => !o)}
-              className="text-impact-blue font-bold hover:underline decoration-[#F26828] flex items-center gap-1"
+              className={`${textColor} font-bold hover:underline decoration-[#F26828] flex items-center gap-1`}
             >
               Free Resources
               <ChevronDown
@@ -142,14 +149,14 @@ const Navbar = () => {
                 <a
                   href="/pyqs"
                   onClick={() => setIsOpen(false)}
-                  className="text-impact-blue font-bold hover:underline decoration-[#F26828]"
+                  className={`${textColor} font-bold hover:underline decoration-[#F26828]`}
                 >
                   PYQs
                 </a>
                 <a
                   href="/blogs"
                   onClick={() => setIsOpen(false)}
-                  className="text-impact-blue font-bold hover:underline decoration-[#F26828]"
+                  className={`${textColor} font-bold hover:underline decoration-[#F26828]`}
                 >
                   Blogs
                 </a>
@@ -158,7 +165,7 @@ const Navbar = () => {
                     setSheetOpen(true);
                     setIsOpen(false);
                   }}
-                  className="text-impact-blue font-bold hover:underline decoration-[#F26828] text-left"
+                  className={`${textColor} font-bold hover:underline decoration-[#F26828] text-left`}
                 >
                   Free Community
                 </button>
@@ -169,7 +176,7 @@ const Navbar = () => {
               onClick={() =>
                 window.open("https://www.learn.iimpact.mba", "_blank")
               }
-              className="text-impact-blue font-bold hover:underline decoration-[#F26828]"
+              className={`${textColor} font-bold hover:underline decoration-[#F26828]`}
             >
               Student Portal
             </button>
