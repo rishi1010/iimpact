@@ -107,7 +107,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     li: ({ children }) => (
-      <li className="font-manrope text-black text-base leading-relaxed font-spectral">
+      <li className="font-manrope text-black text-base leading-relaxed font-spectral last:mb-4">
         <span className="flex items-start gap-2">
           <span className="mt-2 w-1.5 h-1.5 rounded-full bg-impact-orange shrink-0 in-[ol]:hidden" />
           <span>{children}</span>
