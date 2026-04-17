@@ -9,6 +9,7 @@ export interface Question {
   is_tita?: boolean;
   tita_answer?: string;
   video_url: string;
+  label: string;
 }
 
 export interface QuestionSet {
@@ -82,9 +83,10 @@ export function deriveIndexEntries(groups: QuestionGroup[]): IndexEntry[] {
       };
     } else {
       const idx = counter++;
+      const questionLabel = group.question.label?.trim();
       return {
         anchorId: group.question.id,
-        label: `Q${idx}`,
+        label: questionLabel ? questionLabel : `Q${idx}`,
         questionRange: `Q${idx}`,
       };
     }

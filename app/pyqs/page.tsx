@@ -100,7 +100,7 @@ export default function Page() {
 
   return (
     <div className="relative min-h-screen bg-linear-to-b from-[#798AFC] to-impact-blue flex items-center justify-center overflow-hidden">
-      {!selected && <Navbar pyq />}
+      {!selected && <Navbar />}
 
       {/* Collapsed: 3 sections */}
       <AnimatePresence>

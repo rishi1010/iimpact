@@ -25,6 +25,7 @@ export type Question = {
   tita_answer: string;
   order_index: number;
   video_url: string;
+  label: string;
 };
 
 export type QuestionSet = {

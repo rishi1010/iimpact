@@ -12,6 +12,7 @@ import {
 import { getPaperBySlug } from "@/app/actions/content-actions";
 import React from "react";
 import Image from "next/image";
+import Navbar from "@/app/components/navbar";
 
 type Section = "varc" | "dilr" | "qa";
 
@@ -98,6 +99,7 @@ export default async function PyqPage({
         is_tita: q.is_tita,
         tita_answer: q.tita_answer,
         video_url: q.video_url ?? "",
+        label: q.label,
       })),
     })),
 
@@ -113,6 +115,7 @@ export default async function PyqPage({
         is_tita: q.is_tita,
         tita_answer: q.tita_answer,
         video_url: q.video_url ?? "",
+        label: q.label,
       },
     })),
   ];
@@ -156,7 +159,8 @@ export default async function PyqPage({
 
   return (
     <main className="min-h-screen w-full bg-[#f6f4f0] text-neutral-900 px-5 py-4 font-sans">
-      <div className="flex flex-col gap-10 w-full h-full items-center z-10">
+      <Navbar />
+      <div className="flex flex-col gap-10 w-full h-full items-center mt-24 z-10">
         {/* banner */}
         <div className="w-full bg-linear-to-b from-[#EA804E] py-6 px-7 to-impact-orange flex flex-col justify-evenly gap-6">
           <div className="w-full relative flex justify-between">
@@ -166,12 +170,6 @@ export default async function PyqPage({
             >
               <FaArrowLeft />
             </a>
-            <Image
-              src={"/iimpact-logo-white.png"}
-              alt="impact logo"
-              width={100}
-              height={30}
-            />
           </div>
           <div className="w-full text-center font-spectral text-3xl md:text-5xl text-white font-regular">
             {section.toUpperCase()} - Slot {slot} - CAT {year}

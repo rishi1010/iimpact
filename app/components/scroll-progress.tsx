@@ -19,7 +19,7 @@ export default function ScrollProgress() {
   }, []);
 
   return (
-    <div className="fixed top-8 right-8 z-50">
+    <div className="fixed bottom-8 md:top-8 right-8 z-50">
       <div
         className="size-10 rounded-full flex items-center justify-center shadow-md"
         style={{

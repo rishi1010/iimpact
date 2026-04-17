@@ -124,7 +124,7 @@ function CenterCard({
           >
             {year}
           </span>
-          <span className="font-mono text-[7px] text-white/35 tracking-[0.3em] uppercase">
+          <span className="font-mono text-[7px] text-white/85 font-semibold tracking-[0.3em] uppercase">
             tap to reveal
           </span>
         </div>

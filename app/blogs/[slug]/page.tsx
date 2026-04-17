@@ -2,10 +2,13 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { useMDXComponents } from "@/app/mdx-components";
 import remarkGfm from "remark-gfm";
 import { FaArrowLeft } from "react-icons/fa";
+import { IoMdShare } from "react-icons/io";
 import BlogHero from "@/app/components/blog-hero";
 import ScrollProgress from "@/app/components/scroll-progress";
 import { getBlogBySlug } from "@/app/actions/content-actions";
 import { notFound } from "next/navigation";
+import Navbar from "@/app/components/navbar";
+import ShareButton from "@/app/components/share-button";
 
 export async function generateMetadata({
   params,
@@ -32,6 +35,7 @@ export default async function BlogPost({
 
   return (
     <section className="w-full flex flex-col items-center gap-4 max-w-7xl mx-auto py-6 md:py-10 px-4 sm:px-6 lg:px-10">
+      <Navbar pyq />
       {/* Top bar: back button */}
       <div className="w-full flex flex-start">
         <a
@@ -66,6 +70,9 @@ export default async function BlogPost({
 
       {/* Sticky scroll progress */}
       <ScrollProgress />
+
+      {/* Fixed share button */}
+      <ShareButton title={blog.title} />
     </section>
   );
 }

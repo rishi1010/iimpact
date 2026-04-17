@@ -15,7 +15,7 @@ export default function BlogCard({
 }: BlogCardProps) {
   return (
     <Link href={`/blogs/${slug}`}>
-      <div className="w-100 h-110.5 cursor-pointer flex flex-col bg-[#f5f0e8] overflow-hidden shrink-0">
+      <div className="w-100 h-110.5 cursor-pointer flex flex-col bg-[#f6f4f0] overflow-hidden shrink-0">
         {/* Image — fixed height */}
         <div className="group relative w-full h-70 overflow-hidden">
           <img

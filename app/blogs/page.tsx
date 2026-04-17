@@ -21,7 +21,7 @@ const BlogsPage = async () => {
   const sections: Sections[] = [{ label: "Contact Us", href: "#contact" }];
 
   return (
-    <section className="w-full min-h-dvh px-4 md:px-11 bg-[#F8F0E5]">
+    <section className="w-full min-h-dvh px-4 md:px-11 bg-[#f6f4f0]">
       <Navbar />
       <div className="relative w-full max-w-7xl mx-auto h-full flex flex-col items-center gap-10 md:gap-18">
         {/* the heading div with the image */}
