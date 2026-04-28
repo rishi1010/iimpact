@@ -37,12 +37,14 @@ interface SideCardProps {
   isMobile: boolean;
 }
 
+// SlotDeckProps
 export interface SlotDeckProps {
   year?: string;
   colorStop1?: string;
   colorStop2?: string;
   onSelect?: (slot: "slot-1" | "slot-3") => void;
   slug?: string;
+  slotCount?: 2 | 3; // NEW
 }
 
 function CardButtons({
@@ -218,12 +220,14 @@ function SideCard({
   );
 }
 
+// SlotDeck function signature
 export function SlotDeck({
   year = "2025",
   colorStop1 = "#F26828",
   colorStop2 = "#FFAC86",
   onSelect,
   slug,
+  slotCount = 3, // NEW
 }: SlotDeckProps) {
   const [revealed, setRevealed] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -283,21 +287,23 @@ export function SlotDeck({
         }}
         onMock={() => window.open(MOCK_URL_SLOT_1, "_blank")}
       />
-      <SideCard
-        label="Slot 3"
-        year={year}
-        colorStop1={colorStop1}
-        colorStop2={colorStop2}
-        targetX={FAN_OFFSET}
-        isOut={revealed}
-        zIndex={1}
-        isMobile={isMobile}
-        onNavigate={() => {
-          onSelect?.("slot-3");
-          router.push(`/pyqs/${derivedSlug}_slot_3`);
-        }}
-        onMock={() => window.open(MOCK_URL_SLOT_3, "_blank")}
-      />
+      {slotCount === 3 && (
+        <SideCard
+          label="Slot 3"
+          year={year}
+          colorStop1={colorStop1}
+          colorStop2={colorStop2}
+          targetX={FAN_OFFSET}
+          isOut={revealed}
+          zIndex={1}
+          isMobile={isMobile}
+          onNavigate={() => {
+            onSelect?.("slot-3");
+            router.push(`/pyqs/${derivedSlug}_slot_3`);
+          }}
+          onMock={() => window.open(MOCK_URL_SLOT_3, "_blank")}
+        />
+      )}
       <CenterCard
         year={year}
         colorStop1={colorStop1}

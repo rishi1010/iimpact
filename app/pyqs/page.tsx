@@ -11,7 +11,7 @@ const sections = [
   {
     id: "varc",
     label: "VARC",
-    title: "Varc",
+    title: "VARC",
     accent: "#E8D5B7",
     border: "border-[#E8D5B7]/20",
     textAccent: "text-[#E8D5B7]",
@@ -39,41 +39,42 @@ const sections = [
 
 type SlotCard = {
   year: string;
+  slotCount: 2 | 3; // NEW
 };
 
 const sectionCards: Record<string, SlotCard[]> = {
   varc: [
-    { year: "2025" },
-    { year: "2024" },
-    { year: "2023" },
-    { year: "2022" },
-    { year: "2021" },
-    { year: "2020" },
-    { year: "2019" },
-    { year: "2018" },
-    { year: "2017" },
+    { year: "2025", slotCount: 3 },
+    { year: "2024", slotCount: 3 },
+    { year: "2023", slotCount: 3 },
+    { year: "2022", slotCount: 3 },
+    { year: "2021", slotCount: 3 },
+    { year: "2020", slotCount: 3 },
+    { year: "2019", slotCount: 2 },
+    { year: "2018", slotCount: 2 },
+    { year: "2017", slotCount: 2 },
   ],
   dilr: [
-    { year: "2025" },
-    { year: "2024" },
-    { year: "2023" },
-    { year: "2022" },
-    { year: "2021" },
-    { year: "2020" },
-    { year: "2019" },
-    { year: "2018" },
-    { year: "2017" },
+    { year: "2025", slotCount: 3 },
+    { year: "2024", slotCount: 3 },
+    { year: "2023", slotCount: 3 },
+    { year: "2022", slotCount: 3 },
+    { year: "2021", slotCount: 3 },
+    { year: "2020", slotCount: 3 },
+    { year: "2019", slotCount: 2 },
+    { year: "2018", slotCount: 2 },
+    { year: "2017", slotCount: 2 },
   ],
   qa: [
-    { year: "2025" },
-    { year: "2024" },
-    { year: "2023" },
-    { year: "2022" },
-    { year: "2021" },
-    { year: "2020" },
-    { year: "2019" },
-    { year: "2018" },
-    { year: "2017" },
+    { year: "2025", slotCount: 3 },
+    { year: "2024", slotCount: 3 },
+    { year: "2023", slotCount: 3 },
+    { year: "2022", slotCount: 3 },
+    { year: "2021", slotCount: 3 },
+    { year: "2020", slotCount: 3 },
+    { year: "2019", slotCount: 2 },
+    { year: "2018", slotCount: 2 },
+    { year: "2017", slotCount: 2 },
   ],
 };
 
@@ -259,6 +260,7 @@ export default function Page() {
                       >
                         <SlotDeck
                           year={card.year}
+                          slotCount={card.slotCount}
                           onSelect={(slot) =>
                             console.log(
                               `${selectedSection.id} ${card.year} ${slot}`,
