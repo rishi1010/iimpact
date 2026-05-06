@@ -227,7 +227,7 @@ export function SlotDeck({
   colorStop2 = "#FFAC86",
   onSelect,
   slug,
-  slotCount = 3, // NEW
+  slotCount = 3,
 }: SlotDeckProps) {
   const [revealed, setRevealed] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -267,53 +267,66 @@ export function SlotDeck({
 
   const derivedSlug = slug ?? year;
 
+  // When slotCount === 2 and revealed, shift the whole inner group right by
+  // FAN_OFFSET / 2 so the gap between slot-1 and slot-2 aligns with the
+  // center of the card above them. When collapsed (not revealed) all cards
+  // sit at x=0 so no shift is needed — the stacked deck looks the same as
+  // the 3-card version.
+  const innerShiftX = slotCount === 2 && revealed ? FAN_OFFSET / 2 : 0;
+
   return (
     <div
       ref={containerRef}
       style={{ width: CARD_W, height: CARD_H, position: "relative" }}
     >
-      <SideCard
-        label="Slot 1"
-        year={year}
-        colorStop1={colorStop1}
-        colorStop2={colorStop2}
-        targetX={-FAN_OFFSET}
-        isOut={revealed}
-        zIndex={1}
-        isMobile={isMobile}
-        onNavigate={() => {
-          onSelect?.("slot-1");
-          router.push(`/pyqs/${derivedSlug}_slot_1`);
-        }}
-        onMock={() => window.open(MOCK_URL_SLOT_1, "_blank")}
-      />
-      {slotCount === 3 && (
+      <motion.div
+        style={{ position: "absolute", inset: 0 }}
+        animate={{ x: innerShiftX }}
+        transition={{ type: "spring", stiffness: 140, damping: 22 }}
+      >
         <SideCard
-          label="Slot 3"
+          label="Slot 1"
           year={year}
           colorStop1={colorStop1}
           colorStop2={colorStop2}
-          targetX={FAN_OFFSET}
+          targetX={-FAN_OFFSET}
           isOut={revealed}
           zIndex={1}
           isMobile={isMobile}
           onNavigate={() => {
-            onSelect?.("slot-3");
-            router.push(`/pyqs/${derivedSlug}_slot_3`);
+            onSelect?.("slot-1");
+            router.push(`/pyqs/${derivedSlug}_slot_1`);
           }}
-          onMock={() => window.open(MOCK_URL_SLOT_3, "_blank")}
+          onMock={() => window.open(MOCK_URL_SLOT_1, "_blank")}
         />
-      )}
-      <CenterCard
-        year={year}
-        colorStop1={colorStop1}
-        colorStop2={colorStop2}
-        isFlipped={revealed}
-        onClick={() => setRevealed(true)}
-        slug={derivedSlug}
-        revealed={revealed}
-        isMobile={isMobile}
-      />
+        {slotCount === 3 && (
+          <SideCard
+            label="Slot 3"
+            year={year}
+            colorStop1={colorStop1}
+            colorStop2={colorStop2}
+            targetX={FAN_OFFSET}
+            isOut={revealed}
+            zIndex={1}
+            isMobile={isMobile}
+            onNavigate={() => {
+              onSelect?.("slot-3");
+              router.push(`/pyqs/${derivedSlug}_slot_3`);
+            }}
+            onMock={() => window.open(MOCK_URL_SLOT_3, "_blank")}
+          />
+        )}
+        <CenterCard
+          year={year}
+          colorStop1={colorStop1}
+          colorStop2={colorStop2}
+          isFlipped={revealed}
+          onClick={() => setRevealed(true)}
+          slug={derivedSlug}
+          revealed={revealed}
+          isMobile={isMobile}
+        />
+      </motion.div>
     </div>
   );
 }
