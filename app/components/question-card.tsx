@@ -4,6 +4,9 @@ import ExplanationDialog from "./explanation-dialog";
 import { Question } from "./pyq-types";
 import { LatexText } from "./latex-text";
 import { VideoDialog } from "./video-dialog";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { questionComponents } from "@/app/mdx-components";
+import remarkGfm from "remark-gfm";
 
 interface QuestionCardProps {
   question: Question;
@@ -40,9 +43,15 @@ const QuestionCard = ({
                 {question.text}
               </LatexText>
             ) : (
-              <p className="text-neutral-800 text-justify font-spectral text-lg font-medium tracking-tight whitespace-pre-wrap">
-                {question.text}
-              </p>
+              <MDXRemote
+                source={question.text}
+                components={questionComponents}
+                options={{
+                  mdxOptions: {
+                    remarkPlugins: [remarkGfm],
+                  },
+                }}
+              />
             )}
 
             {isTita ? (

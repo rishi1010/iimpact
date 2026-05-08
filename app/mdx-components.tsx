@@ -179,3 +179,25 @@ export const contextComponents: MDXComponents = {
     </span>
   ),
 };
+
+export const questionComponents: MDXComponents = {
+  ...useMDXComponents({}),
+
+  p: ({ children }) => (
+    <p className="text-neutral-800 text-justify font-spectral text-lg font-medium tracking-tight whitespace-pre-wrap">
+      {children}
+    </p>
+  ),
+
+  img: ({ src, alt }) => (
+    <span className="my-4 flex justify-center" style={{ display: "block" }}>
+      <Image
+        src={src as string}
+        alt={alt || "Illustration"}
+        width={1200}
+        height={600}
+        className="w-full max-w-3xl object-contain rounded border"
+      />
+    </span>
+  ),
+};
