@@ -13,6 +13,49 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { explanationComponents } from "@/app/mdx-components";
 import remarkGfm from "remark-gfm";
 
+// ---------------------------------------------------------------------------
+// LatexWithImages
+// Splits a string on markdown image tokens (![]()) and renders each segment
+// with the appropriate renderer — <img> for images, <LatexText> for everything
+// else. Order is fully preserved so images appear inline with the math text.
+// ---------------------------------------------------------------------------
+function LatexWithImages({
+  children,
+  className,
+}: {
+  children: string;
+  className?: string;
+}) {
+  // Split on markdown image syntax, keeping the delimiter in the array
+  const parts = children.split(/(!\[.*?\]\(.*?\))/g);
+
+  return (
+    <div className={className}>
+      {parts.map((part, i) => {
+        const imageMatch = part.match(/!\[(.*?)\]\((.*?)\)/);
+
+        if (imageMatch) {
+          const [, alt, src] = imageMatch;
+          return (
+            <img
+              key={i}
+              src={src}
+              alt={alt}
+              className="my-4 max-w-full rounded-md"
+            />
+          );
+        }
+
+        // Skip empty / whitespace-only segments
+        return part.trim() ? <LatexText key={i}>{part}</LatexText> : null;
+      })}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// ExplanationDialog
+// ---------------------------------------------------------------------------
 interface ExplanationDialogProps {
   trigger: React.ReactNode;
   question: string;
@@ -42,7 +85,7 @@ const ExplanationDialog = ({
       </VisuallyHidden.Root>
       <DialogContent className="max-w-4xl max-h-[90vh] flex flex-col">
         <div className="flex-1 overflow-y-auto no-scrollbar px-4 flex flex-col gap-6 py-4">
-          {/* question title */}
+          {/* Question title */}
           {renderLatex ? (
             <LatexText className="font-spectral text-lg font-medium text-neutral-800 leading-snug">
               {question}
@@ -55,7 +98,7 @@ const ExplanationDialog = ({
 
           <div className="border-t border-neutral-200" />
 
-          {/* options or tita */}
+          {/* Options or TITA answer */}
           {isTita ? (
             <div className="flex flex-col gap-1">
               <p className="font-mono text-xs text-neutral-400 uppercase tracking-widest">
@@ -70,7 +113,11 @@ const ExplanationDialog = ({
               {options.map((option, index) => (
                 <li
                   key={index}
-                  className={`marker:font-bold text-justify ${index === correctAnswer ? "text-impact-orange marker:text-impact-orange" : "text-neutral-400 marker:text-neutral-400"}`}
+                  className={`marker:font-bold text-justify ${
+                    index === correctAnswer
+                      ? "text-impact-orange marker:text-impact-orange"
+                      : "text-neutral-400 marker:text-neutral-400"
+                  }`}
                 >
                   {renderLatex ? <LatexText>{option}</LatexText> : option}
                 </li>
@@ -80,20 +127,22 @@ const ExplanationDialog = ({
 
           <div className="border-t border-neutral-200" />
 
-          {/* explanation */}
+          {/* Explanation */}
           <div className="flex flex-col gap-2">
             <p className="font-mono text-sm font-bold text-impact-blue uppercase tracking-widest">
               Explanation
             </p>
             {renderLatex ? (
-              <LatexText className="font-spectral  text-neutral-700 leading-relaxed">
+              // LatexWithImages handles inline images mixed with KaTeX math,
+              // preserving the order of all segments.
+              <LatexWithImages className="font-spectral text-neutral-700 leading-relaxed">
                 {explanation}
-              </LatexText>
+              </LatexWithImages>
             ) : (
-              <div className="">
+              <div>
                 <MDXRemote
                   source={explanation}
-                  components={explanationComponents} // Use the specialized set here
+                  components={explanationComponents}
                   options={{
                     mdxOptions: {
                       remarkPlugins: [remarkGfm],
@@ -105,7 +154,7 @@ const ExplanationDialog = ({
           </div>
         </div>
 
-        {/* footer stays outside scroll */}
+        {/* Footer — stays outside the scroll area */}
         <DialogFooter className="border-t border-neutral-100 pt-4">
           <DialogClose asChild>
             <button className="group relative overflow-hidden text-impact-blue hover:text-white font-mono text-sm font-bold px-4 py-1 transition-colors duration-300">
