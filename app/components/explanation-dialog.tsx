@@ -54,6 +54,41 @@ function LatexWithImages({
 }
 
 // ---------------------------------------------------------------------------
+// Table-width helpers
+// Used to size the dialog based on the widest markdown table found in the
+// explanation content, so wide tables get a wider dialog instead of getting
+// squashed. Only relevant for the MDX (non-LaTeX) explanation path, since
+// LaTeX explanations don't contain GFM tables.
+// ---------------------------------------------------------------------------
+
+// Finds every markdown table (header row + separator row) in the given
+// string and returns the largest column count among them, or null if there
+// are no tables at all.
+function getTableColumnCount(markdown: string): number | null {
+  const matches = [...markdown.matchAll(/^\|(.+)\|\s*\n\|[\s\-:|]+\|/gm)];
+  if (matches.length === 0) return null;
+
+  return Math.max(
+    ...matches.map(
+      (m) => m[1].split("|").filter((c) => c.trim() !== "").length,
+    ),
+  );
+}
+
+// Converts a column count into an inline width style for the dialog,
+// clamped between a sensible floor and ceiling, and never exceeding the
+// viewport. Returns undefined when there's no table, so the dialog falls
+// back to its normal section-based width.
+function getDialogWidthStyle(
+  columns: number | null,
+): React.CSSProperties | undefined {
+  if (!columns) return undefined;
+
+  const px = Math.min(Math.max(columns * 160, 480), 1100);
+  return { width: `min(${px}px, 95vw)`, maxWidth: `min(${px}px, 95vw)` };
+}
+
+// ---------------------------------------------------------------------------
 // ExplanationDialog
 // ---------------------------------------------------------------------------
 interface ExplanationDialogProps {
@@ -77,6 +112,10 @@ const ExplanationDialog = ({
 }: ExplanationDialogProps) => {
   const isTita = options.length === 0 || correctAnswer === null;
 
+  // Only the MDX path can contain GFM tables, so skip detection for LaTeX.
+  const tableColumns = !renderLatex ? getTableColumnCount(explanation) : null;
+  const dialogWidthStyle = getDialogWidthStyle(tableColumns);
+
   return (
     <Dialog>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
@@ -85,7 +124,8 @@ const ExplanationDialog = ({
       </VisuallyHidden.Root>
       <DialogContent
         section={renderLatex ? "qa" : "dilr"}
-        className="max-h-[90vh] flex flex-col"
+        className="max-h-[90vh] flex flex-col transition-[width,max-width] duration-200 ease-out"
+        style={dialogWidthStyle}
       >
         <div className="flex-1 overflow-y-auto no-scrollbar px-4 flex flex-col gap-6 py-4">
           {/* Question title */}

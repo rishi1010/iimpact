@@ -133,7 +133,7 @@ export const explanationComponents: MDXComponents = {
   // Overwrite the Image for a "smaller" look
   img: ({ src, alt }) => (
     <div className="my-6 flex justify-center">
-      <div className="relative w-full max-w-md aspect-4/3 overflow-hidden rounded-lg border border-neutral-100">
+      <div className="relative w-full max-w-2xl aspect-4/3 overflow-hidden rounded-lg border border-neutral-100">
         <Image
           src={src as string}
           alt={alt || "Illustration"}
