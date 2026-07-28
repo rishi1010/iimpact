@@ -92,6 +92,19 @@ export default function Contact() {
           >
             or click here to open WhatsApp →
           </motion.a>
+
+          <motion.div
+            className="text-sm sm:text-base text-neutral-600 font-sans  hover:opacity-70 transition-opacity"
+            {...fadeUp(0.7)}
+          >
+            or email us at:{" "}
+            <motion.a
+              href="mailto:iimpact.mba@gmail.com"
+              className="underline underline-offset-4"
+            >
+              iimpact.mba@gmail.com
+            </motion.a>
+          </motion.div>
         </div>
       </div>
 
