@@ -1,7 +1,7 @@
 import React from "react";
 import CornerFillButton from "./corner-button";
 import ExplanationDialog from "./explanation-dialog";
-import { Question } from "./pyq-types";
+import { Question, Section } from "./pyq-types";
 import { LatexText } from "./latex-text";
 import { VideoDialog } from "./video-dialog";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -12,12 +12,14 @@ interface QuestionCardProps {
   question: Question;
   globalIndex: number;
   renderLatex?: boolean;
+  section?: Section;
 }
 
 const QuestionCard = ({
   question,
   globalIndex,
   renderLatex = false,
+  section,
 }: QuestionCardProps) => {
   const isTita = question.is_tita ?? false;
 
@@ -82,6 +84,7 @@ const QuestionCard = ({
             explanation={question.explanation}
             tita_answer={question.tita_answer}
             renderLatex={renderLatex}
+            section={section}
           />
           {question.video_url ? (
             <VideoDialog video_url={question.video_url} />

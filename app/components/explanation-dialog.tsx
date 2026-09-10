@@ -12,6 +12,7 @@ import { LatexText } from "./latex-text";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { explanationComponents } from "@/app/mdx-components";
 import remarkGfm from "remark-gfm";
+import { Section } from "./pyq-types";
 
 // ---------------------------------------------------------------------------
 // LatexWithImages
@@ -64,27 +65,51 @@ function LatexWithImages({
 // Finds every markdown table (header row + separator row) in the given
 // string and returns the largest column count among them, or null if there
 // are no tables at all.
+//
+// The count comes from the separator row (|---|---|), which is the only row
+// GFM guarantees has one cell per column. Counting non-empty *header* cells
+// undercounts grouped headers badly — a row like
+//   |  | Window |  |  | Split |  |  | Grand Total |
+// has 8 columns but only 3 non-empty labels, which sized an 8-column table
+// as if it were 3 columns and left it scrolling inside the dialog.
 function getTableColumnCount(markdown: string): number | null {
-  const matches = [...markdown.matchAll(/^\|(.+)\|\s*\n\|[\s\-:|]+\|/gm)];
+  const matches = [
+    ...markdown.matchAll(/^\|.+\|[ \t]*\n\|([ \t\-:|]+)\|[ \t]*$/gm),
+  ];
   if (matches.length === 0) return null;
 
-  return Math.max(
-    ...matches.map(
-      (m) => m[1].split("|").filter((c) => c.trim() !== "").length,
-    ),
-  );
+  return Math.max(...matches.map((m) => m[1].split("|").length));
 }
 
+// Minimum width the table-sized dialog is allowed to shrink to, per section.
+// VARC explanations are prose-heavy and their tables are usually narrow
+// (2-3 columns), so the column-derived width would squash the surrounding
+// text — they get a wider floor than the other sections.
+const sectionMinWidth: Record<Section, number> = {
+  varc: 900,
+  dilr: 480,
+  qa: 480,
+};
+
+// VARC explanations use a standard "Option | Verdict | Why" table where the
+// verdict is a short label ("Affirms gap - eliminate") that reads badly when
+// it wraps onto two lines. Pinning that column to a single line lets the
+// auto table layout give it exactly the width it needs, and the wide "Why"
+// column absorbs what's left — so the dialog itself doesn't grow.
+const varcTableClass =
+  "[&_th:nth-child(2)]:whitespace-nowrap [&_td:nth-child(2)]:whitespace-nowrap";
+
 // Converts a column count into an inline width style for the dialog,
-// clamped between a sensible floor and ceiling, and never exceeding the
-// viewport. Returns undefined when there's no table, so the dialog falls
-// back to its normal section-based width.
+// clamped between the section's floor and a sensible ceiling, and never
+// exceeding the viewport. Returns undefined when there's no table, so the
+// dialog falls back to its normal section-based width.
 function getDialogWidthStyle(
   columns: number | null,
+  minWidth: number,
 ): React.CSSProperties | undefined {
   if (!columns) return undefined;
 
-  const px = Math.min(Math.max(columns * 160, 480), 1100);
+  const px = Math.min(Math.max(columns * 160, minWidth), 1100);
   return { width: `min(${px}px, 95vw)`, maxWidth: `min(${px}px, 95vw)` };
 }
 
@@ -99,6 +124,7 @@ interface ExplanationDialogProps {
   explanation: string;
   tita_answer?: string;
   renderLatex?: boolean;
+  section?: Section;
 }
 
 const ExplanationDialog = ({
@@ -109,12 +135,19 @@ const ExplanationDialog = ({
   explanation,
   tita_answer,
   renderLatex = false,
+  section,
 }: ExplanationDialogProps) => {
   const isTita = options.length === 0 || correctAnswer === null;
 
+  // Fall back to the old renderLatex-based guess when no section is given.
+  const dialogSection: Section = section ?? (renderLatex ? "qa" : "dilr");
+
   // Only the MDX path can contain GFM tables, so skip detection for LaTeX.
   const tableColumns = !renderLatex ? getTableColumnCount(explanation) : null;
-  const dialogWidthStyle = getDialogWidthStyle(tableColumns);
+  const dialogWidthStyle = getDialogWidthStyle(
+    tableColumns,
+    sectionMinWidth[dialogSection],
+  );
 
   return (
     <Dialog>
@@ -123,7 +156,7 @@ const ExplanationDialog = ({
         <DialogTitle>{question}</DialogTitle>
       </VisuallyHidden.Root>
       <DialogContent
-        section={renderLatex ? "qa" : "dilr"}
+        section={dialogSection}
         className="max-h-[90vh] flex flex-col transition-[width,max-width] duration-200 ease-out"
         style={dialogWidthStyle}
       >
@@ -182,7 +215,11 @@ const ExplanationDialog = ({
                 {explanation}
               </LatexWithImages>
             ) : (
-              <div>
+              <div
+                className={
+                  dialogSection === "varc" ? varcTableClass : undefined
+                }
+              >
                 <MDXRemote
                   source={explanation}
                   components={explanationComponents}

@@ -209,6 +209,7 @@ export default async function PyqPage({
                   <QuestionSetCard
                     group={group}
                     startIndex={groupStartMap.get(group.id) ?? 1}
+                    section={section}
                   />
                 ) : (
                   <div id={group.question.id} className="scroll-mt-6">
@@ -216,6 +217,7 @@ export default async function PyqPage({
                       question={group.question}
                       globalIndex={globalIndexMap.get(group.question.id) ?? 1}
                       renderLatex={renderLatex}
+                      section={section}
                     />
                   </div>
                 )}
